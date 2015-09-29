@@ -1,9 +1,0 @@
-var postdoc: = {
-  title: "",
-  link: "",
-  rank: "",
-  source: "",
-  time: "",
-  ID: "",
-  }
-
