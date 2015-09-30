@@ -20,8 +20,13 @@ app.use(function(req,res,next){
 	next();
 });
 
-app.use('/hello', function(req, res, next){
-	res.send('Hello World!');
+app.use('/dashboard', function(req, res, next){
+	res.send('This is where all updates will be posted.');
+	next();
+});
+
+app.use('/discussion', function(req, res, next){
+	res.send('This is the forum for talking about what's going on.');
 	next();
 });
 
