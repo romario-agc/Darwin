@@ -26,7 +26,7 @@ app.use('/dashboard', function(req, res, next){
 });
 
 app.use('/discussion', function(req, res, next){
-	res.send('This is the forum for talking about what's going on.');
+	res.send('This is the forum for talking about whats going on.');
 	next();
 });
 
