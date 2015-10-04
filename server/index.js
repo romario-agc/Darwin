@@ -21,18 +21,105 @@ app.use(function(req,res,next){
 });
 
 app.use('/dashboard', function(req, res, next){
-	res.send('This is where all updates will be posted.');
+	res.send('/r/leagueoflegends');
 	next();
 });
 
-app.use('/discussion', function(req, res, next){
-	res.send('This is the forum for talking about whats going on.');
+app.use('/settings', function(req, res, next){
+	res.send('Settings');
 	next();
 });
 
 //Connect to MongoDB
-mongoose.connect('mongodb://localhost/darwinapp');
+mongoose.connect('mongodb://romario:NnoirO123*@apollo.modulusmongo.net:27017/geti2miH');
 mongoose.connection.once('open',function(){
+/*
+// define model for a single post in update
+var singlepost = mongoose.model('singlepost', {
+  	title: "",
+  	link: "",
+  	rank: "",
+  	source: "",
+  	time: "",
+ });
+// define model for history of full page updates
+var updatehistory = mongoose.model('updatehistory', {
+  	time: "", 
+  	update: "",
+ });
+//request for single post data
+ app.get('/api/singlepost', function(req, res) {
+
+        // use mongoose to get all posts in the database
+        singlepost.find(function(err, singlepost) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(singlepost); // return all single posts in JSON format
+        });
+    });
+*/
+
+    // get all todos
+    app.get('/api/todos', function(req, res) {
+
+        // use mongoose to get all todos in the database
+        Todo.find(function(err, todos) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(todos); // return all todos in JSON format
+        });
+    });
+
+    // create todo and send back all todos after creation
+    app.post('/api/todos', function(req, res) {
+
+        // create a todo, information comes from AJAX request from Angular
+        Todo.create({
+            text : req.body.text,
+            done : false
+        }, function(err, todo) {
+            if (err)
+                res.send(err);
+
+            // get and return all the todos after you create another
+            Todo.find(function(err, todos) {
+                if (err)
+                    res.send(err)
+                res.json(todos);
+            });
+        });
+
+    });
+
+    // delete a todo
+    app.delete('/api/todos/:todo_id', function(req, res) {
+        Todo.remove({
+            _id : req.params.todo_id
+        }, function(err, todo) {
+            if (err)
+                res.send(err);
+
+            // get and return all the todos after you create another
+            Todo.find(function(err, todos) {
+                if (err)
+                    res.send(err)
+                res.json(todos);
+            });
+        });
+    });
+
+
+ // application -------------------------------------------------------------
+    app.get('*', function(req, res) {
+        res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
+    });
+
 
 console.log('Listening on port 3000...');
 app.listen(3000);
