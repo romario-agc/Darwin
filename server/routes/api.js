@@ -27,22 +27,10 @@ function download(url, callback) {
 // Source url
 var url = "https://www.reddit.com/r/leagueoflegends"
 
-/*
-var update1 = new update({
-		update_time: new Date(),
-		updateid: new Date()
-});
-update1.save(function (err, updateObj) {
-  		if (err) {
-   			console.log(err);
-  		} else {
-  			console.log('Saved to MongoDB successfully:', updateObj);
-  	}
-});
-*/
 
 //Models
 var post = require('./models/post');
+//var update = require ('./models/updatelist');
 
 
 //Routes
@@ -67,6 +55,14 @@ download(url, function(data) {
         comments: $("a.comments.may-blank").eq(i).text()
       });
         console.log(frontpage);
+        frontpage.save();
+        /*
+        var addhistory = new update ({
+        	update_time: new date(),
+        	posts: frontpage
+        });
+        console.log(addhistory);
+        */
       });
     //fs.writeFileSync('update.json', util.inspect(frontpage), 'utf-8');
   }
