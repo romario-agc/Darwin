@@ -6,11 +6,8 @@ var express = require('express');
 var router = express.Router();
 
 
-//Connectiong to Database
-//mongoose.connect('mongodb://localhost/darwinapp');
 // Utility function that downloads a URL and invokes
 // callback with the data.
-
 function download(url, callback) {
   https.get(url, function(res) {
     var data = "";
