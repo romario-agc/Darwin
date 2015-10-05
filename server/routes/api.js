@@ -4,7 +4,8 @@ var cheerio = require("cheerio");
 var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
-
+var fs = require('fs');
+var util = require('util')
 
 // Utility function that downloads a URL and invokes
 // callback with the data.
@@ -67,6 +68,7 @@ download(url, function(data) {
       });
         console.log(frontpage);
       });
+    //fs.writeFileSync('update.json', util.inspect(frontpage), 'utf-8');
   }
   else {
     console.log("error");  
