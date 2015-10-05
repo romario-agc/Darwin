@@ -1,7 +1,0 @@
-{ rank: 25,
-  score: 681,
-  title: 'As a sailor i only have 150mb of data each day. Looking for Spoiler Free Abstract or summaries of the games at Worlds.',
-  link: '/r/leagueoflegends/comments/3mvk4h/too_many_vote_cheaters_and_brigaders_from_this/',
-  time: '14 hours ago',
-  comments: '136 comments',
-  _id: 560e10914bf485170d570bf3 }

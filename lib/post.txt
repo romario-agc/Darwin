@@ -1,7 +1,0 @@
-{ rank: 25,
-  score: 1037,
-  title: '[spoiler] Korean casters&apos; opinions - Day 2',
-  link: '/r/leagueoflegends/comments/3n2cs8/whoa_a_new_subreddit_theme/',
-  time: '1 hour ago',
-  comments: '5 comments',
-  _id: 560e9bbf0d9836b30e416e78 }

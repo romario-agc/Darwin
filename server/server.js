@@ -1,3 +1,4 @@
+//Depencencies
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
@@ -20,6 +21,9 @@ app.use(function(req,res,next){
 	next();
 });
 
+
+//Routes
+
 app.use('/dashboard', function(req, res, next){
 	res.send('/r/leagueoflegends');
 	next();
@@ -30,8 +34,11 @@ app.use('/settings', function(req, res, next){
 	next();
 });
 
+app.use('/api', require('./routes/api'));
+
+
 //Connect to MongoDB
-mongoose.connect('mongodb://romario:NnoirO123*@apollo.modulusmongo.net:27017/geti2miH');
+mongoose.connect('mongodb://localhost/darwinapp');
 mongoose.connection.once('open',function(){
 /*
 // define model for a single post in update
@@ -47,20 +54,23 @@ var updatehistory = mongoose.model('updatehistory', {
   	time: "", 
   	update: "",
  });
+
+*/
+/*
 //request for single post data
- app.get('/api/singlepost', function(req, res) {
+ app.get('/api/post1', function(req, res) {
 
         // use mongoose to get all posts in the database
-        singlepost.find(function(err, singlepost) {
+        post.find(function(err, post) {
 
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
             if (err)
                 res.send(err)
 
-            res.json(singlepost); // return all single posts in JSON format
+            res.json(post); // return all single posts in JSON format
         });
     });
-*/
+
 
     // get all todos
     app.get('/api/todos', function(req, res) {
@@ -119,6 +129,7 @@ var updatehistory = mongoose.model('updatehistory', {
     app.get('*', function(req, res) {
         res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
     });
+*/
 
 
 console.log('Listening on port 3000...');
