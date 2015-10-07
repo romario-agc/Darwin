@@ -30,9 +30,13 @@ var url = "https://www.reddit.com/r/leagueoflegends"
 
 //Models
 var post = require('./models/post');
-//var update = require ('./models/updatelist');
-
-
+var update = require ('./models/updatelist');
+/*
+var newupdate = new post ({
+	update_time: new date(),
+	posts: [fontpage]
+});
+*/
 //Routes
 post.methods(['get', 'put', 'post', 'delete']);
 post.register(router, '/posts');
@@ -54,8 +58,9 @@ download(url, function(data) {
         time: $("time.live-timestamp").eq(i).text(),
         comments: $("a.comments.may-blank").eq(i).text()
       });
-        console.log(frontpage);
+       // console.log(frontpage);
         frontpage.save();
+        fs.writeFile( "filename.txt", JSON.stringify(frontpage.title), "utf8");
         /*
         var addhistory = new update ({
         	update_time: new date(),
@@ -64,7 +69,7 @@ download(url, function(data) {
         console.log(addhistory);
         */
       });
-    //fs.writeFileSync('update.json', util.inspect(frontpage), 'utf-8');
+    
   }
   else {
     console.log("error");  
