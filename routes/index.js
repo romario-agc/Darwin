@@ -5,14 +5,14 @@ var mongoose = require('mongoose');
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-var util = require('util')
+var util = require('util');
 
 
-//  Utility function that downloads a URL and invokes callback with the data. 
+//  Utility function that downloads a URL and invokes callback with the data.
 function download(url, callback) {
   https.get(url, function(res) {
     var data = "";
-    res.on('data', function (chunk) {
+    res.on('data', function(chunk) {
       data += chunk;
     });
     res.on("end", function() {
@@ -28,35 +28,41 @@ function download(url, callback) {
 var db = mongoose.connection;
 
 // Source url
-var url = "https://www.reddit.com/r/leagueoflegends"
+var url = "https://www.reddit.com/r/leagueoflegends";
 
 //Importing Schemas
 var post = require('./models/post');
-var updatelist = require ('./models/updatelist');
-
-//Declaring models
-var newupdate = new updatelist;
+var updatelist = require('./models/updatelist');
+var r = 11;
 
 
 //Routes
 post.methods(['get', 'put', 'post', 'delete']);
-post.register(router, '/posts');
+post.register(router, '/');
 
 updatelist.methods(['get', 'put', 'post', 'delete']);
 updatelist.register(router, '/updatelist');
 
+router.get('/history', function(req, res) {
+  //Response to request with post database
+  post.find({},function(err,post){
+    if (err)
+    res.send(err);
+    res.json(post);
+  });
+});
+
+
 //Pulling data from url
 download(url, function(data) {
   if (data) {
-
     //Loads html into cheerio
     var $ = cheerio.load(data);
 
-    // Parse's html in loop for specified data 
-    $("a.title.may-blank").each(function(i, e) {  
-
+    // Parse's html in loop for specified data
+    $("a.title.may-blank").each(function(i, e) {
       //Save data to model as an individual post
-      var singlepost = new post ({       
+      var singlepost = new post({
         rank: $("span.rank").eq(i).text(),
         score: $("div.score.unvoted").eq(i).text(),
         title: $(e).html(),
@@ -64,40 +70,27 @@ download(url, function(data) {
         time: $("time.live-timestamp").eq(i).text(),
         comments: $("a.comments.may-blank").eq(i).text()
       });
-       	console.log(singlepost);
+      console.log(singlepost);
 
-        //Appends post to JSON and txt file
-        fs.appendFile( "frontpage.JSON", singlepost, "utf8");
-        fs.appendFile( "frontpage.txt", singlepost, "utf8");
-
-        //Save model to Database
-        singlepost.save(function(err, singlepost) {
-          if (err) throw err;
-        });
-    });    
-
-    /*
-        newupdate = ({
-          update_time: new date(),
-          posts: frontpage
-        });
-        console.log(addhistory);
-
-        frontpage.save(function(err) {
-          if (err) throw err;
-          console.log('Font page for on');
-        });
-        */
-       
-
+      //Save model to Database and saving ID
+      singlepost.save(function (err) {
+        if (err) return handleError(err);
+        // saved!
+        //spid = singlepost.id;
+        //console.log(spid);
+      });
+      /*
+              var newupdate = new updatelist({
+                update_time: new Date(),
+                posts: singlepost.id
+              });
+          */
+    });
   }
   else {
-    console.log("error");  
-  };
-
+    console.log("error");
+  }
 });
-
 
 //Return router
 module.exports = router;
-
