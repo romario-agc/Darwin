@@ -5,6 +5,7 @@ var mongoose=restful.mongoose;
 
 //Schema
 var postschema  = new mongoose.Schema({
+		date: String,
         rank: Number,
         score: Number,
         title: String,
