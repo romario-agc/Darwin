@@ -40,22 +40,7 @@ app.use('/api', require('./routes/api'));
 //Connect to MongoDB
 mongoose.connect('mongodb://localhost/darwinapp');
 mongoose.connection.once('open',function(){
-/*
-// define model for a single post in update
-var singlepost = mongoose.model('singlepost', {
-  	title: "",
-  	link: "",
-  	rank: "",
-  	source: "",
-  	time: "",
- });
-// define model for history of full page updates
-var updatehistory = mongoose.model('updatehistory', {
-  	time: "", 
-  	update: "",
- });
 
-*/
 /*
 //request for single post data
  app.get('/api/post1', function(req, res) {
