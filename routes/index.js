@@ -31,8 +31,8 @@ var db = mongoose.connection;
 var url = "https://www.reddit.com/r/leagueoflegends";
 
 //Importing Schemas
-var post = require('./models/post');
-var updatelist = require('./models/updatelist');
+var post = require('../models/post');
+var updatelist = require('../models/updatelist');
 var r = 11;
 
 
