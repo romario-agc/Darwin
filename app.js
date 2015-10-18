@@ -4,6 +4,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     _ = require('lodash'),
+    colors = require('colors'),
     app = express();
 
 // Add Middleware necessarry for REST API's
@@ -25,9 +26,8 @@ app.use(function(req, res, next) {
   //next();
 //});
 
-app.use('/home', function(req, res, next) {
-  res.send('Welcome to funnel');
-  next();
+app.get('/', function(req, res) {
+  res.sendfile("./public/index.html");
 });
 
 app.use('/posts', require('./routes/index'));
@@ -43,6 +43,7 @@ mongoose.connection.once('open', function(err) {
           res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
       });
   */
-  console.log('Listening on port 3000...');
+  var datetime = new Date();
+  console.log(datetime + colors.bold.magenta(' Server running on port 3000'));
   app.listen(3000);
 });

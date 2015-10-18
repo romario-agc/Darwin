@@ -1,18 +1,33 @@
 <!doctype html>
-<html lang="en">
-	<h1>Funnel</h1>	
-	<body>
+<html ng-app>
+	<head lang="en">
+		<meta charset="UTF-8">
+		<h1>Funnel</h1>
+		<h4>/r/leagueoflegends</h4>
+
+	</head>
+	<body >
+		<div>
+			<h3>{{hello}}</h3>
+			<input type="text" ng-model="hello" placeholder="What's up?"/>
+		</div>
+		<button>Update</button>
 		<div>
 			{{score}} points
 		</div>
-		<div> 	
+		<div>
+			Title
 			<a href= "{{link}}">{{title}}</a>
    		</div>
     	<div>
+    		Time
 			{{time}}
 		</div>
 		<div>
+			Number of Comments
 			{{comments}}
 		</div>
+		  <!-- Angular Material Dependencies -->
+			<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
     </body>
 </html>

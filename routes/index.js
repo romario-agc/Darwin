@@ -5,6 +5,7 @@ var https = require("https"),
   express = require('express'),
   router = express.Router(),
   fs = require('fs'),
+  colors = require('colors'),
   util = require('util');
 
 
@@ -33,12 +34,16 @@ var post = require('../models/post'),
   updatelist = require('../models/updatelist');
 
 
+// Time
+var datetime = new Date();
+
+
 // Routes
 router.get('/history', function(req, res) {
   //Pulling data from url
   download(url, function(data) {
     if (data) {
-
+      console.log(datetime + colors.cyan(" New Reddit update request"));
       //Loads html into cheerio
       var $ = cheerio.load(data);
 
@@ -53,9 +58,10 @@ router.get('/history', function(req, res) {
           time: $("time.live-timestamp").eq(i).text(),
           comments: $("a.comments.may-blank").eq(i).text()
         });
-        console.log(singlepost);
+        //Saves to "new" collection
         singlepost.save();
       });
+      console.log(datetime + colors.green(" Update successful"));
     } else {
       console.log("error");
     }
@@ -63,9 +69,13 @@ router.get('/history', function(req, res) {
     post.find({}, function(err, doc) {
       if (err) throw err;
       res.json(doc);
+      console.log(datetime + colors.green(" Response sent"));
+      //Deletes previous collection
+      post.remove({});
+        console.log(datetime + colors.blue(" Database cleared"));
     });
 
-    //Saves to "old" database
+    //Saves to "old" collection
     /*
     post.find({}, function(err, doc) {
       if (err) throw err;
@@ -76,10 +86,7 @@ router.get('/history', function(req, res) {
       history.save();
     });
     */
-    //Deletes previous collection
-    post.remove({}, function(err, doc) {
-      if (err) throw err;
-    });
+
   });
 });
 
