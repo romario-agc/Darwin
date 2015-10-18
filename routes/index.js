@@ -1,14 +1,14 @@
-//Dependencies
+// Dependencies
 var https = require("https"),
-    cheerio = require("cheerio"),
-    mongoose = require('mongoose'),
-    express = require('express'),
-    router = express.Router(),
-    fs = require('fs'),
-    util = require('util');
+  cheerio = require("cheerio"),
+  mongoose = require('mongoose'),
+  express = require('express'),
+  router = express.Router(),
+  fs = require('fs'),
+  util = require('util');
 
 
-//  Utility function that downloads a URL and invokes callback with the data.
+// Utility function that downloads a URL and invokes callback with the data.
 function download(url, callback) {
   https.get(url, function(res) {
     var data = "";
@@ -28,13 +28,13 @@ function download(url, callback) {
 var url = "https://www.reddit.com/r/leagueoflegends";
 
 
-//Importing Schemas
+// Importing Schemas
 var post = require('../models/post'),
   updatelist = require('../models/updatelist');
 
 
-//Routes
-router.get('/history', function(req, res){
+// Routes
+router.get('/history', function(req, res) {
   //Pulling data from url
   download(url, function(data) {
     if (data) {
@@ -56,26 +56,33 @@ router.get('/history', function(req, res){
         console.log(singlepost);
         singlepost.save();
       });
-      //Send JSON of posts collection
-      post.find({}, function(err, doc){
-         if (err) throw err;
-          res.json(doc);
-      });
-
-    }
-    else {
+    } else {
       console.log("error");
     }
-
-    //Deletes previous collection
-    post.remove({}, function(err, doc){
-       if (err) throw err;
+    //Prints JSON of posts collection
+    post.find({}, function(err, doc) {
+      if (err) throw err;
+      res.json(doc);
     });
-  
-  });
 
+    //Saves to "old" database
+    /*
+    post.find({}, function(err, doc) {
+      if (err) throw err;
+      var history = new updatelist({
+        update_time: new Date(),
+        //posts: post.findOne({},functio)
+      });
+      history.save();
+    });
+    */
+    //Deletes previous collection
+    post.remove({}, function(err, doc) {
+      if (err) throw err;
+    });
+  });
 });
 
 
-//Return router
+// Return router
 module.exports = router;

@@ -1,17 +1,17 @@
 //Dependencies
 var restful = require('node-restful');
-var mongoose=restful.mongoose;
+var mongoose = restful.mongoose;
 
 
 //Schema
-var postschema  = new mongoose.Schema({
-		date: String,
-        rank: Number,
-        score: Number,
-        title: String,
-        link: String,
-        time: String,
-        comments: String
+var postschema = new mongoose.Schema({
+  date: String,
+  rank: Number,
+  score: Number,
+  title: String,
+  link: String,
+  time: String,
+  comments: String
 });
 
 
