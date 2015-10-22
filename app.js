@@ -44,8 +44,6 @@ mongoose.connection.once('open', function(err) {
 
   app.post('/newurl', function(req, res) {
 
-
-
     //accepts url of site
     var newurl= new url ({url: req.body.url});
     newurl.save();
