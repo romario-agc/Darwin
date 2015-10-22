@@ -25,30 +25,41 @@ function download(url, callback) {
 }
 
 
-// Source url
-var url = "https://www.reddit.com/r/leagueoflegends";
-
-
 // Importing Schemas
 var post = require('../models/post'),
+  url = require('../models/url'),
   updatelist = require('../models/updatelist');
 
+// Source url
 
+var newurl = "https://www.reddit.com/r/leagueoflegends";
+
+var temp = "";
+url.find({},'url',function(err,docs){
+  if (err) throw err;
+  temp=(docs[0]);
+  console.log(temp.url);
+});
+//var newurl2 = temp.url;
+//console.log(temp);
 // Time
 var datetime = new Date();
 
 
 // Routes
 router.get('/history', function(req, res) {
+
   //Pulling data from url
-  download(url, function(data) {
+  download(newurl, function(data) {
     if (data) {
-      console.log(datetime + colors.cyan(" New Reddit update request"));
+      console.log(datetime + colors.magenta(" [funnel]") + colors.cyan(" New Reddit update request"));
+
       //Loads html into cheerio
       var $ = cheerio.load(data);
 
       // Parse's html in loop for specified data
       $("a.title.may-blank").each(function(i, e) {
+
         //Save data to model as an individual post
         var singlepost = new post({
           rank: $("span.rank").eq(i).text(),
@@ -58,21 +69,43 @@ router.get('/history', function(req, res) {
           time: $("time.live-timestamp").eq(i).text(),
           comments: $("a.comments.may-blank").eq(i).text()
         });
+
+        //console.log(colors.cyan((singlepost.title)));
+
         //Saves to "new" collection
-        singlepost.save();
+        singlepost.save(function(err){
+          //if (err){
+          //console.log(err);
+          //}
+        });
+
       });
-      console.log(datetime + colors.green(" Update successful"));
+      console.log(datetime + colors.magenta(" [funnel]") + colors.green(" Update successful"));
     } else {
-      console.log("error");
+      console.log(datetime + colors.magenta(" [funnel]") + colors.red(" Something went wrong, can't seem to get data"));
     }
-    //Prints JSON of posts collection
+
+    //Prints JSON of posts collection then clears database
     post.find({}, function(err, doc) {
       if (err) throw err;
+
+      //Sents collection
       res.json(doc);
-      console.log(datetime + colors.green(" Response sent"));
-      //Deletes previous collection
-      post.remove({});
-        console.log(datetime + colors.blue(" Database cleared"));
+      console.log(datetime + colors.magenta(" [funnel]") + colors.green(" Response sent"));
+
+      //Deletes collection
+      post.remove({}, function(err){
+        if (err) throw err;
+        console.log(datetime + colors.magenta(" [funnel]") + colors.white(" Database cleared"));
+      });
+
+      //Deletes  previous url
+      /*
+      url.remove({}, function(err){
+        if (err) throw err;
+        console.log(datetime + colors.magenta(" [funnel]") + colors.white(" URL cleared"));
+      });
+      */
     });
 
     //Saves to "old" collection

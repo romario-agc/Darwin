@@ -12,6 +12,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 
+var datetime = new Date();
+
+var url = require('./models/url');
+
 // CORS Support
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -27,23 +31,34 @@ app.use(function(req, res, next) {
 //});
 
 app.get('/', function(req, res) {
+  console.log(datetime + colors.magenta(" [funnel]") + colors.blue(' Homepage request recieved'));
   res.sendfile("./public/index.html");
 });
 
-app.use('/posts', require('./routes/index'));
-
+app.use('/posts', require('./routes/Update_Controller.js'));
 
 // Connect to MongoDB
 mongoose.connect('mongodb://localhost/funnel');
 mongoose.connection.once('open', function(err) {
   if (err) throw err;
+
+  app.post('/newurl', function(req, res) {
+
+
+
+    //accepts url of site
+    var newurl= new url ({url: req.body.url});
+    newurl.save();
+    console.log(datetime + colors.magenta(" [funnel]") + colors.blue(' New URL post recieved and saved'));
+    res.redirect('/posts/history');
+
+  });
 /*
    // application -------------------------------------------------------------
       app.get('*', function(req, res) {
           res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
       });
   */
-  var datetime = new Date();
-  console.log(datetime + colors.bold.magenta(' Server running on port 3000'));
+  console.log(datetime + colors.magenta(" [funnel]") + colors.bold.magenta(' Server running on port 3000'));
   app.listen(3000);
 });
