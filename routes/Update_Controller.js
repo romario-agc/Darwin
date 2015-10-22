@@ -47,7 +47,7 @@ var datetime = new Date();
 
 
 // Routes
-router.get('/history', function(req, res) {
+router.get('/update', function(req, res) {
 
   //Pulling data from url
   download(newurl, function(data) {
