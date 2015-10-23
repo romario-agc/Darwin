@@ -38,7 +38,7 @@ app.get('/', function(req, res) {
 app.use('/posts', require('./routes/Update_Controller.js'));
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost/funnel');
+mongoose.connect('mongodb://romarioc:NnoirO12*@ds043324.mongolab.com:43324/heroku_k9814jjc');
 mongoose.connection.once('open', function(err) {
   if (err) throw err;
 

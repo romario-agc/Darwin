@@ -36,7 +36,7 @@ var newurl = "https://www.reddit.com/r/leagueoflegends";
 
 var temp = "";
 url.find({},'url',function(err,docs){
-  if (err) throw err;
+  if (err) console.log(err);
   temp=(docs[0]);
   console.log(temp.url);
 });
@@ -65,13 +65,10 @@ router.get('/update', function(req, res) {
           rank: $("span.rank").eq(i).text(),
           score: $("div.score.unvoted").eq(i).text(),
           title: $(e).html(),
-          link: $("a.thumbnail.self.may-blank").attr('href'),
+          link: $("a.comments.may-blank").eq(i).attr('href'),
           time: $("time.live-timestamp").eq(i).text(),
           comments: $("a.comments.may-blank").eq(i).text()
         });
-
-        //console.log(colors.cyan((singlepost.title)));
-
         //Saves to "new" collection
         singlepost.save(function(err){
           //if (err){
@@ -86,14 +83,22 @@ router.get('/update', function(req, res) {
     }
 
     //Prints JSON of posts collection then clears database
-    post.find({}, function(err, doc) {
+    post.find( { $query: {}, $orderby: { rank : 1 } }, function(err, doc) {
       if (err) throw err;
 
-      //Sents collection
+      //Sents collection as response
       res.json(doc);
       console.log(datetime + colors.magenta(" [funnel]") + colors.green(" Response sent"));
 
-      //Deletes collection
+      //Saves history to updatelist collection in database
+      var history = new updatelist({
+        update_time: datetime,
+        posts: doc
+      });
+      history.save();
+      console.log(datetime + colors.magenta(" [funnel]") + colors.green(" Saved to history"));
+
+      //Deletes new post collection from database
       post.remove({}, function(err){
         if (err) throw err;
         console.log(datetime + colors.magenta(" [funnel]") + colors.white(" Database cleared"));
@@ -107,18 +112,6 @@ router.get('/update', function(req, res) {
       });
       */
     });
-
-    //Saves to "old" collection
-    /*
-    post.find({}, function(err, doc) {
-      if (err) throw err;
-      var history = new updatelist({
-        update_time: new Date(),
-        //posts: post.findOne({},functio)
-      });
-      history.save();
-    });
-    */
 
   });
 });
