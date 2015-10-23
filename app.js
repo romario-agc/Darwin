@@ -58,5 +58,5 @@ mongoose.connection.once('open', function(err) {
       });
   */
   console.log(datetime + colors.magenta(" [funnel]") + colors.bold.magenta(' Server running on port 3000'));
-  app.listen(3000);
+  app.listen(process.env.PORT || 3000);
 });
