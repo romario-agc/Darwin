@@ -1,5 +1,3 @@
-require('newrelic');
-
 // Depencencies
 var express = require('express'),
     mongoose = require('mongoose'),
