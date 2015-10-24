@@ -8,89 +8,281 @@
 	{
 		font-size:1.05em !important;
 	}
+
+.card{
+	margin: auto;
+	border-radius: 3px;
+	width: 507px;
+	height: 98px;
+	background-color: #436640;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.32);
+	padding-top: 15px;
+	padding-left: 22px;
+	padding-right: 22px;
+}
+
+.sectiontitle{
+	/* Text style for "Stickied Posts" */
+	width: 164px;
+	height: 19px;
+	color: #313131;
+	font-family: SourceSansPro;
+	font-size: 15px;
+	font-weight: 550;
+	margin: auto;
+}
+
+.spacer{
+	width: 25px;
+	height: 25px;
+}
+.center{
+	margin: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.titletext{
+	width: 925px;
+	height: 57px;
+	color: #fdfdfd;
+	font-family: SourceSansPro;
+	font-size: 12px;
+	font-weight: 230;
+	line-height: 11px;
+}
+	.mdl-cell {
+	  box-sizing: border-box;
+	  background-color: grey ;
+	  height: 200px;
+	  padding-left: 8px;
+	  padding-top: 8px;
+	  color: blue;
+	}
+	.mdl-grid:first-of-type .mdl-cell {
+	  height: 50px;
+	}
+
+	.mdl-card2 {
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-box-orient: vertical;
+	  -webkit-box-direction: normal;
+	  -webkit-flex-direction: column;
+	      -ms-flex-direction: column;
+	          flex-direction: column;
+	  font-size: 16px;
+	  font-weight: 400;
+	  height: 170px;
+	  overflow: hidden;
+	  width: 530px;
+	  z-index: 1;
+	  position: relative;
+	  background: rgb(255,255,255);
+	  border-radius: 3px;
+		padding-left: 15px;
+	}
+
+	.mdl-card3 {
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-box-orient: vertical;
+	  -webkit-box-direction: normal;
+	  -webkit-flex-direction: column;
+	      -ms-flex-direction: column;
+	          flex-direction: column;
+	  font-size: 16px;
+	  font-weight: 400;
+	  height: 170px;
+	  overflow: hidden;
+	  width: 530px;
+	  z-index: 1;
+	  position: relative;
+	  background-color: #436640;
+	  border-radius: 3px;
+		padding-left: 15px;
+	}
+
+	.mdl-card__supporting-text2 {
+	  color: #f8f8f8;
+	  font-size: 13px;
+	  line-height: 18px;
+	  overflow: hidden;
+	  padding: 16px;
+	  width: 90%
+	}
+
+	.demo-card-wide.mdl-card {
+	  width: 512px;
+	  padding:20px;
+	  height: 50px;
+	}
+
+	.demo-card-wide > .mdl-card__title {
+	  color: #fff;
+	  height: 176px;
+	}
+
+	.demo-card-wide > .mdl-card__menu {
+	  color: #fff;
+	}
+
 	</style>
 
-<header class="mdl-layout__header">
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<header class="mdl-layout__header">
 	<div class="mdl-layout__header-row">
 		<!-- Title -->
 		<span class="mdl-layout-title" href="/">funnel</span>
 		<!-- Add spacer, to align navigation to the right -->
 		<div class="mdl-layout-spacer"></div>
 		<!-- Navigation. We hide it in small screens. -->
-		<nav class="mdl-navigation mdl-layout--large-screen-only">
-			<a class="mdl-navigation__link" href="/posts/update">Update Data</a>
-			<a class="mdl-navigation__link" href="/">Settings</a>
+		<nav class="mdl-navigation mdl">
+			<a class="mdl-navigation__link" href="/posts/update"> Data</a>
+			<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" >Update</button>
 		</nav>
 	</div>
-</header>
+		</header>
+
+
 
 </head>
-<body>
 <main class="mdl-layout__content">
-	<div class="page-content">
-		<div class= "mdl-grid">
-<div class="mdl-cell mdl-cell--5-col"></div>
-<div class="mdl-cell mdl-cell--6-col">
-			<h4>{{url}}</h4>
-			<form action="#">
-  			<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    		<input ng-model="url" class="mdl-textfield__input" type="text" id="sample3" />
-    		<label class="mdl-textfield__label" for="sample3">Enter URL of subreddit</label>
-  			</div>
-				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" >Update</button>
-			</form>
+
+<div class= "mdl-grid">
+<div class="spacer"></div>
+<a class="sectiontitle mdl-grid">Stickied Posts</a>
+</div>
+
+<div class= "mdl-grid">
+	<div class="center">
+		<div class="mdl-card3 mdl-shadow--2dp center">
+				<div class="mdl-card__supporting-text2">1537 points</div>
+				<div class="mdl-card__supporting-text2">
+					Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
+				</div>
+				<div class="mdl-card__supporting-text2">
+					<p>
+						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
+					BuckeyeSundae</p>
+				</div>
+				<div class="mdl-card__menu">
+					<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+						<i class="material-icons">share</i>
+					</button>
+				</div>
+			</div>
+</div>
 </div>
 
 
-<div class="mdl-cell mdl-cell--4-col"></div>
-		<div class="mdl-cell mdl-cell--6-col">
-		<style>
-		.demo-card-wide.mdl-card {
-			width: 512px;
-			padding:20px;
-			height: 50px;
 
-		}
+	<div class= "mdl-grid">
+		<div class="center">
+			<div class="mdl-card3 mdl-shadow--2dp center">
+					<div class="mdl-card__supporting-text2">1537 points</div>
+					<div class="mdl-card__supporting-text2">
+						Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
+					</div>
+					<div class="mdl-card__supporting-text2">
+						<p>
+							<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
+					 	BuckeyeSundae</p>
+				 	</div>
+				 	<div class="mdl-card__menu">
+					 	<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+						 	<i class="material-icons">share</i>
+					 	</button>
+				 	</div>
+				</div>
+	</div>
+</div>
 
-		.demo-card-wide > .mdl-card__menu {
-			color: #fff;
-		}
-		</style>
+<div class= "mdl-grid">
+<div class="spacer"></div>
+<a class="sectiontitle mdl-grid">Front page</a>
+</div>
 
-		<div class="demo-card-wide mdl-card mdl-shadow--2dp">
 
+	<div class= "mdl-grid">
+		<div class="center">
+			<div class="mdl-card2 mdl-shadow--2dp center">
+					<div class="mdl-card__supporting-text">1537 points</div>
+					<div class="mdl-card__supporting-text">
+						<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+					</div>
+					<div class="mdl-card__supporting-text">
+						<p>
+							<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
+					 	BuckeyeSundae</p>
+				 	</div>
+				 	<div class="mdl-card__menu">
+					 	<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+						 	<i class="material-icons">share</i>
+					 	</button>
+				 	</div>
+				</div>
+	</div>
+</div>
+
+
+<div class= "mdl-grid">
+	<div class="center">
+		<div class=" mdl-card2 mdl-shadow--2dp center">
 				<div class="mdl-card__supporting-text">1537 points</div>
+				<div class="mdl-card__supporting-text">
+					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+				</div>
+				<div class="mdl-card__supporting-text">
+					<p>
+						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
+					BuckeyeSundae</p>
+				</div>
+				<div class="mdl-card__menu">
+					<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+						<i class="material-icons">share</i>
+					</button>
+				</div>
+			</div>
+</div>
+</div>
 
-			<div class="mdl-card__supporting-text">
-				<b>Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+<div class= "mdl-grid">
+	<div class="center">
+		<div class=" mdl-card2 mdl-shadow--2dp center">
+				<div class="mdl-card__supporting-text">1537 points</div>
+				<div class="mdl-card__supporting-text">
+					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+				</div>
+				<div class="mdl-card__supporting-text">
+					<p>
+						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
+					BuckeyeSundae</p>
+				</div>
+				<div class="mdl-card__menu">
+					<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+						<i class="material-icons">share</i>
+					</button>
+				</div>
 			</div>
-			<div class="mdl-card__supporting-text">
-				<p>
-				<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
-					 BuckeyeSundae</p>
-			</div>
-			<div class="mdl-card__menu">
-				<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-					<i class="material-icons">share</i>
-				</button>
-			</div>
-		</div>
-			</div>
+</div>
+</div>
 
 
-			</div>
-		</div>
 
 </main>
 
 
-</body>
+
+</div>
 
 
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
-			 <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-red.min.css" />
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-red.min.css" />
 			<script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
 		  <!-- Angular Material Dependencies -->

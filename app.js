@@ -45,10 +45,11 @@ mongoose.connection.once('open', function(err) {
   app.post('/newurl', function(req, res) {
 
     //accepts url of site
-    var newurl= new url ({url: req.body.url});
+    var newurl= new url ({url: req.body});
     newurl.save();
+    console.log("post: "+newurl);
     console.log(datetime + colors.magenta(" [funnel]") + colors.blue(' New URL post recieved and saved'));
-    res.redirect('/posts/history');
+    res.redirect('/posts/update');
 
   });
 /*

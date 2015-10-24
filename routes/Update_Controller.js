@@ -37,8 +37,9 @@ var newurl = "https://www.reddit.com/r/leagueoflegends";
 var temp = "";
 url.find({},'url',function(err,docs){
   if (err) console.log(err);
-  temp=(docs[0]);
-  console.log(temp.url);
+  //temp=(docs[0]);
+  //console.log(temp.url);
+  console.log(docs);
 });
 //var newurl2 = temp.url;
 //console.log(temp);

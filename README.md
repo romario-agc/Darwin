@@ -1,6 +1,29 @@
-#Funnel 
-[website](https://obscure-waters-1317.herokuapp.com/?#)
+	<style>
+			.mdl-cell {
+  			box-sizing: border-box;
+  			background-color: #BDBDBD;
+  			height: 200px;
+  			padding-left: 8px;
+  			padding-top: 8px;
+				padding-top: 8px;
+  			color: white;
+			}
+			.mdl-grid:first-of-type .mdl-cell {
+  			height: 50px;
+			}
 
-###Built using MEAN stack
+			.demo-card-wide.mdl-card {
+				width: 512px;
+				padding:20px;
+				height: 50px;
+			}
 
-Real time information timeline for new and relevant news updates and data on specific topics/industries/fields/people on the internet.
+			.demo-card-wide > .mdl-card__title {
+  			color: #fff;
+  			height: 176px;
+  		}
+
+			.demo-card-wide > .mdl-card__menu {
+				color: #fff;
+			}
+			</style>
