@@ -21,20 +21,57 @@
 	padding-right: 22px;
 }
 
-.sectiontitle{
+
+.fpsectiontitle{
 	/* Text style for "Stickied Posts" */
 	width: 164px;
 	height: 19px;
-	color: #313131;
+	color: #3b3b3b;
 	font-family: SourceSansPro;
 	font-size: 15px;
-	font-weight: 550;
+	font-weight: 600;
 	margin: auto;
+	padding-left: 40px;
+	padding-top: 100px;
+	padding-bottom: 20px;
 }
 
-.spacer{
+.stickiesectiontitle{
+	/* Text style for "Stickied Posts" */
+	width: 164px;
+	height: 19px;
+	color: #f8f8f8;
+	font-family: SourceSansPro;
+	font-size: 15px;
+	font-weight: 600;
+	margin: auto;
+	padding-top: 20px;
+}
+
+#top,
+	#bottom {
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 560px;
+		 z-index: -1;
+	}
+
+	#top {
+		top: 0;
+		background-color: #375637;
+	}
+
+.stickiespacer{
+		postion: relative;
+		width: 25px;
+		height: 50px;
+	}
+
+.frontpagespacer{
+	postion: relative;
 	width: 25px;
-	height: 25px;
+	height: 100px;
 }
 .center{
 	margin: auto;
@@ -43,7 +80,7 @@
 }
 
 a:link, a:visited {
-    color: auto;
+    color: inherit;
     text-decoration: none;
     cursor: auto;
 }
@@ -85,14 +122,14 @@ a:link:active, a:visited:active {
 	          flex-direction: column;
 	  font-size: 16px;
 	  font-weight: 400;
-	  height: 140px;
+	  max-height: 120px;
 	  overflow: hidden;
 	  width: 530px;
 	  z-index: 1;
 	  position: relative;
 	  background: rgb(255,255,255);
 	  border-radius: 3px;
-		padding-left: 15px;
+		padding: 25px;
 	}
 
 	.stickiebackground{
@@ -113,23 +150,32 @@ a:link:active, a:visited:active {
 	          flex-direction: column;
 	  font-size: 16px;
 	  font-weight: 400;
-	  height: 140px;
+	  max-height: 120px;
 	  overflow: hidden;
 	  width: 530px;
 	  z-index: 1;
 	  position: relative;
 	  background-color: #436640;
 	  border-radius: 3px;
-		padding-left: 15px;
+		padding: 25px;
 	}
 
-	.mdl-card__supporting-text2 {
+	.mdl-card__supporting-text1 {
 	  color: #f8f8f8;
 	  font-size: 13px;
 	  line-height: 18px;
-	  overflow: hidden;
-	  padding: 16px;
-	  width: 90%
+	  overflow:;
+		padding: 1px;
+	  width: 100%
+	}
+
+	.mdl-card__supporting-text2 {
+	  color: #606060;
+	  font-size: 13px;
+	  line-height: 18px;
+	  overflow:;
+		padding: 1px;
+	  width: 100%
 	}
 
 	.demo-card-wide.mdl-card {
@@ -172,8 +218,7 @@ a:link:active, a:visited:active {
 	  margin: 0;
 	  padding: 0;
 	  border: none;
-	  min-height: 64px;
-	  max-height: 1000px;
+	  height: 59px;
 	  z-index: 3;
 	  background-color: #f8f8f8;
 	  color: #fff;
@@ -185,7 +230,34 @@ a:link:active, a:visited:active {
 	  -webkit-transition-property: max-height, box-shadow;
 	  transition-property: max-height, box-shadow
 	}
-
+	.mdl-layout__header-row2 {
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-box-orient: horizontal;
+	  -webkit-box-direction: normal;
+	  -webkit-flex-direction: row;
+	  -ms-flex-direction: row;
+	  flex-direction: row;
+	  -webkit-flex-wrap: nowrap;
+	  -ms-flex-wrap: nowrap;
+	  flex-wrap: nowrap;
+	  -webkit-flex-shrink: 0;
+	  -ms-flex-negative: 0;
+	  flex-shrink: 0;
+	  box-sizing: border-box;
+	  -webkit-align-self: stretch;
+	  -ms-flex-item-align: stretch;
+	  align-self: stretch;
+	  -webkit-box-align: center;
+	  -webkit-align-items: center;
+	  -ms-flex-align: center;
+	  align-items: center;
+	  height: 59px;
+	  margin: 0;
+	  padding: 0 40px 0 80px
+	}
 	.mdl-layout-title2 {
 	  display: block;
 	  position: relative;
@@ -202,25 +274,26 @@ a:link:active, a:visited:active {
 	  color: #606060;
 		font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
 	  text-decoration: none;
-	  font-weight: 400;
+	  font-weight: 300;
 	  font-size: 15px;
 	  margin: 3;
 		padding-right:25px;
+		padding-top: 5px;
 	}
 
 	.mdl-button2 {
 	  background: transparent;
 	  border: none;
 	  border-radius: 2px;
-	  color: rgb(0,0,0);
+	  color: #f74e27;
 	  position: relative;
 	  height: 30px;
 	  width: 85px;
 	  padding: 2px 2px 6px 2px;
 	  display: inline-block;
 	  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-	  font-size: 12px;
-	  font-weight: 500;
+	  font-size: 11px;
+	  font-weight: 350;
 	  line-height: 1;
 	  letter-spacing: 0;
 	  overflow: hidden;
@@ -236,40 +309,45 @@ a:link:active, a:visited:active {
 
 	</style>
 
-
+<!-- Nav bar-->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 <header class="mdl-layout__header2">
-	<div class="mdl-layout__header-row">
+	<div class="mdl-layout__header-row2">
 		<!-- Title -->
 		<span class="mdl-layout-title2" href="/">funnel</span>
 		<!-- Add spacer, to align navigation to the right -->
 		<div class="mdl-layout-spacer"></div>
 		<!-- Navigation. We hide it in small screens. -->
 		<nav class="mdl-navigation mdl">
-			<a class="mdl-navigation__link2" href="/posts/update"> Data</a>
+			<div class="mdl-navigation__link2"><a href="/posts/update"> Data</a></div>
 			<button class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" >Update</button>
 		</nav>
 	</div>
 		</header>
 </head>
 
-
+<!-- Start of main content-->
 <body style="background-color:#F8F8F8">
 <main class="mdl-layout__content">
 
+<!-- Stickie section title-->
 <div class= "mdl-grid">
-<div class="spacer"></div>
-<a class="sectiontitle mdl-grid">Stickied Posts</a>
+<div class="stickiespacer"></div>
+<a class="stickiesectiontitle">Stickied Posts</a>
 </div>
 
+<!-- Green background of Stickies-->
+<div id="top">top</div>
+
+<!-- Sticky post number 1-->
 <div class= "mdl-grid">
 	<div class="center">
 		<div class="mdl-card3 mdl-shadow--2dp center">
-				<div class="mdl-card__supporting-text2">1537 points</div>
-				<div class="mdl-card__supporting-text2">
+				<div class="mdl-card__supporting-text1">1537 points</div>
+				<div class="mdl-card__supporting-text1">
 					Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
 				</div>
-				<div class="mdl-card__supporting-text2">
+				<div class="mdl-card__supporting-text1">
 					<p>
 						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
 					BuckeyeSundae</p>
@@ -278,15 +356,15 @@ a:link:active, a:visited:active {
 </div>
 </div>
 
-
+<!-- Sticky post number 2-->
 	<div class= "mdl-grid">
 		<div class="center">
 			<div class="mdl-card3 mdl-shadow--2dp center">
-					<div class="mdl-card__supporting-text2">1537 points</div>
-					<div class="mdl-card__supporting-text2">
+					<div class="mdl-card__supporting-text1">1537 points</div>
+					<div class="mdl-card__supporting-text1">
 						Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
 					</div>
-					<div class="mdl-card__supporting-text2">
+					<div class="mdl-card__supporting-text1">
 						<p>
 							<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
 					 	BuckeyeSundae</p>
@@ -295,20 +373,21 @@ a:link:active, a:visited:active {
 	</div>
 </div>
 
+<!-- Front page post number 1-->
 <div class= "mdl-grid">
-<div class="spacer"></div>
-<a class="sectiontitle mdl-grid">Front page</a>
+<div class="frontpagespacer"></div>
+<a class="fpsectiontitle">Front page</a>
 </div>
 
 
 	<div class= "mdl-grid">
 		<div class="center">
 			<div class="mdl-card2 mdl-shadow--2dp center">
-					<div class="mdl-card__supporting-text">1537 points</div>
-					<div class="mdl-card__supporting-text">
+					<div class="mdl-card__supporting-text2">1537 points</div>
+					<div class="mdl-card__supporting-text2">
 						<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
 					</div>
-					<div class="mdl-card__supporting-text">
+					<div class="mdl-card__supporting-text2">
 						<p>
 							<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
 					 	BuckeyeSundae</p>
@@ -317,12 +396,12 @@ a:link:active, a:visited:active {
 	</div>
 </div>
 
-
+<!-- Front page post number 2-->
 <div class= "mdl-grid">
 	<div class="center">
 		<div class=" mdl-card2 mdl-shadow--2dp center">
-				<div class="mdl-card__supporting-text">1537 points</div>
-				<div class="mdl-card__supporting-text">
+				<div class="mdl-card__supporting-text2">1537 points</div>
+				<div class="mdl-card__supporting-text2">
 					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
 				</div>
 				<div class="mdl-card__supporting-text">
@@ -334,11 +413,12 @@ a:link:active, a:visited:active {
 </div>
 </div>
 
+<!-- Front page post number 3-->
 <div class= "mdl-grid">
 	<div class="center">
 		<div class=" mdl-card2 mdl-shadow--2dp center">
-				<div class="mdl-card__supporting-text">1537 points</div>
-				<div class="mdl-card__supporting-text">
+				<div class="mdl-card__supporting-text2">1537 points</div>
+				<div class="mdl-card__supporting-text2">
 					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
 				</div>
 				<div class="mdl-card__supporting-text">
@@ -350,7 +430,39 @@ a:link:active, a:visited:active {
 </div>
 </div>
 
+<!-- Front page post number 4-->
+<div class= "mdl-grid">
+	<div class="center">
+		<div class=" mdl-card2 mdl-shadow--2dp center">
+				<div class="mdl-card__supporting-text2">1537 points</div>
+				<div class="mdl-card__supporting-text2">
+					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+				</div>
+				<div class="mdl-card__supporting-text2">
+					<p>
+						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
+					BuckeyeSundae</p>
+				</div>
+			</div>
+</div>
+</div>
 
+<!-- Front page post number 5-->
+<div class= "mdl-grid">
+	<div class="center">
+		<div class=" mdl-card2 mdl-shadow--2dp center">
+				<div class="mdl-card__supporting-text2">1537 points</div>
+				<div class="mdl-card__supporting-text2">
+					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+				</div>
+				<div class="mdl-card__supporting-text2">
+					<p>
+						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
+					BuckeyeSundae</p>
+				</div>
+			</div>
+		</div>
+</div>
 
 </main>
 
