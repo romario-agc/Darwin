@@ -1,12 +1,12 @@
 <!doctype html>
 <html ng-app>
-<body style="background-color:#F8F8F8">
 <head>
 	<meta charset="UTF-8">
 	<style>
 	html, body, input, select, textarea
 	{
 		font-size:1.05em !important;
+		background-image: url("./public/background.png");
 	}
 
 .card{
@@ -42,6 +42,16 @@
 	padding-bottom: 10px;
 }
 
+a:link, a:visited {
+    color: auto;
+    text-decoration: none;
+    cursor: auto;
+}
+
+a:link:active, a:visited:active {
+    color: inherit;
+}
+
 .titletext{
 	width: 925px;
 	height: 57px;
@@ -75,7 +85,7 @@
 	          flex-direction: column;
 	  font-size: 16px;
 	  font-weight: 400;
-	  height: 170px;
+	  height: 140px;
 	  overflow: hidden;
 	  width: 530px;
 	  z-index: 1;
@@ -83,6 +93,12 @@
 	  background: rgb(255,255,255);
 	  border-radius: 3px;
 		padding-left: 15px;
+	}
+
+	.stickiebackground{
+		width:100px;
+		height:100px;
+		background-color: #436640;
 	}
 
 	.mdl-card3 {
@@ -97,7 +113,7 @@
 	          flex-direction: column;
 	  font-size: 16px;
 	  font-weight: 400;
-	  height: 170px;
+	  height: 140px;
 	  overflow: hidden;
 	  width: 530px;
 	  z-index: 1;
@@ -131,27 +147,114 @@
 	  color: #fff;
 	}
 
+	.mdl-layout__header2 {
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-box-orient: vertical;
+	  -webkit-box-direction: normal;
+	  -webkit-flex-direction: column;
+	  -ms-flex-direction: column;
+	  flex-direction: column;
+	  -webkit-flex-wrap: nowrap;
+	  -ms-flex-wrap: nowrap;
+	  flex-wrap: nowrap;
+	  -webkit-box-pack: start;
+	  -webkit-justify-content: flex-start;
+	  -ms-flex-pack: start;
+	  justify-content: flex-start;
+	  box-sizing: border-box;
+	  -webkit-flex-shrink: 0;
+	  -ms-flex-negative: 0;
+	  flex-shrink: 0;
+	  width: 100%;
+	  margin: 0;
+	  padding: 0;
+	  border: none;
+	  min-height: 64px;
+	  max-height: 1000px;
+	  z-index: 3;
+	  background-color: #f8f8f8;
+	  color: #fff;
+	  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 0px -3px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+	  -webkit-transition-duration: .2s;
+	  transition-duration: .2s;
+	  -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	  -webkit-transition-property: max-height, box-shadow;
+	  transition-property: max-height, box-shadow
+	}
+
+	.mdl-layout-title2 {
+	  display: block;
+	  position: relative;
+	  font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
+	  font-size: 20px;
+	  line-height: 1;
+	  letter-spacing: .02em;
+	  font-weight: 500;
+	  box-sizing: border-box;
+		color: #606060;
+	}
+
+	.mdl-navigation__link2{
+	  color: #606060;
+		font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
+	  text-decoration: none;
+	  font-weight: 400;
+	  font-size: 15px;
+	  margin: 3;
+		padding-right:25px;
+	}
+
+	.mdl-button2 {
+	  background: transparent;
+	  border: none;
+	  border-radius: 2px;
+	  color: rgb(0,0,0);
+	  position: relative;
+	  height: 30px;
+	  width: 85px;
+	  padding: 2px 2px 6px 2px;
+	  display: inline-block;
+	  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+	  font-size: 12px;
+	  font-weight: 500;
+	  line-height: 1;
+	  letter-spacing: 0;
+	  overflow: hidden;
+	  will-change: box-shadow, transform;
+	  -webkit-transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	          transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	  outline: none;
+	  cursor: pointer;
+	  text-decoration: none;
+	  text-align: center;
+	  line-height: 26px;
+	  vertical-align: middle; }
+
 	</style>
 
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-<header class="mdl-layout__header">
+<header class="mdl-layout__header2">
 	<div class="mdl-layout__header-row">
 		<!-- Title -->
-		<span class="mdl-layout-title" href="/">funnel</span>
+		<span class="mdl-layout-title2" href="/">funnel</span>
 		<!-- Add spacer, to align navigation to the right -->
 		<div class="mdl-layout-spacer"></div>
 		<!-- Navigation. We hide it in small screens. -->
 		<nav class="mdl-navigation mdl">
-			<a class="mdl-navigation__link" href="/posts/update"> Data</a>
-			<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" >Update</button>
+			<a class="mdl-navigation__link2" href="/posts/update"> Data</a>
+			<button class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" >Update</button>
 		</nav>
 	</div>
 		</header>
-
-
-
 </head>
+
+
+<body style="background-color:#F8F8F8">
 <main class="mdl-layout__content">
 
 <div class= "mdl-grid">
@@ -171,15 +274,9 @@
 						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
 					BuckeyeSundae</p>
 				</div>
-				<div class="mdl-card__menu">
-					<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-						<i class="material-icons">share</i>
-					</button>
-				</div>
 			</div>
 </div>
 </div>
-
 
 
 	<div class= "mdl-grid">
@@ -193,11 +290,6 @@
 						<p>
 							<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
 					 	BuckeyeSundae</p>
-				 	</div>
-				 	<div class="mdl-card__menu">
-					 	<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-						 	<i class="material-icons">share</i>
-					 	</button>
 				 	</div>
 				</div>
 	</div>
@@ -221,11 +313,6 @@
 							<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
 					 	BuckeyeSundae</p>
 				 	</div>
-				 	<div class="mdl-card__menu">
-					 	<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-						 	<i class="material-icons">share</i>
-					 	</button>
-				 	</div>
 				</div>
 	</div>
 </div>
@@ -243,11 +330,6 @@
 						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
 					BuckeyeSundae</p>
 				</div>
-				<div class="mdl-card__menu">
-					<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-						<i class="material-icons">share</i>
-					</button>
-				</div>
 			</div>
 </div>
 </div>
@@ -264,11 +346,6 @@
 						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
 					BuckeyeSundae</p>
 				</div>
-				<div class="mdl-card__menu">
-					<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-						<i class="material-icons">share</i>
-					</button>
-				</div>
 			</div>
 </div>
 </div>
@@ -280,6 +357,7 @@
 
 
 </div>
+</body>
 
 			<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-red.min.css" />
 			<script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
