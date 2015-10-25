@@ -6,7 +6,7 @@
 	html, body, input, select, textarea
 	{
 		font-size:1.05em !important;
-		background-image: url("./public/background.png");
+		background-color:#F8F8F8
 	}
 
 .card{
@@ -32,8 +32,22 @@
 	font-weight: 600;
 	margin: auto;
 	padding-left: 40px;
-	padding-top: 100px;
-	padding-bottom: 20px;
+	padding-top: 30px;
+	padding-bottom: 15px;
+}
+
+.demotedsectiontitle{
+	/* Text style for "Stickied Posts" */
+	width: 164px;
+	height: 19px;
+	color: #f8f8f8;
+	font-family: SourceSansPro;
+	font-size: 15px;
+	font-weight: 600;
+	margin: auto;
+	padding-left: 40px;
+	padding-bottom: 15px;
+	padding-top: 30px;
 }
 
 .stickiesectiontitle{
@@ -48,19 +62,6 @@
 	padding-top: 20px;
 }
 
-#top,
-	#bottom {
-		position: absolute;
-		left: 0;
-		right: 0;
-		height: 560px;
-		 z-index: -1;
-	}
-
-	#top {
-		top: 0;
-		background-color: #375637;
-	}
 
 .stickiespacer{
 		postion: relative;
@@ -68,11 +69,35 @@
 		height: 50px;
 	}
 
-.frontpagespacer{
-	postion: relative;
-	width: 25px;
-	height: 100px;
+.stickiesec {
+			positon:relative;
+			    background-color: #375637;
+					width: 100%;
+					height: 485px;
+
+	}
+
+.frontp {
+
+		    background-color: #f8f8f8;
+				width: 100%;
+				height: 965px;
+
 }
+
+.demoted {
+			    background-color: #522424;
+					width: 100%;
+					height: 510px;
+}
+
+.base {
+					position:absolute;
+			    background-color: #262626;
+					width: 100%;
+					height: 270px;
+}
+
 .center{
 	margin: auto;
 	padding-top: 10px;
@@ -130,6 +155,8 @@ a:link:active, a:visited:active {
 	  background: rgb(255,255,255);
 	  border-radius: 3px;
 		padding: 25px;
+		box-shadow: 0 2px 7px #E0E0E0;
+		border: 1px solid rgba(0, 0, 0, 0.11);
 	}
 
 	.stickiebackground{
@@ -158,6 +185,30 @@ a:link:active, a:visited:active {
 	  background-color: #436640;
 	  border-radius: 3px;
 		padding: 25px;
+		box-shadow: 0 2px 7px rgba(0, 0, 0, 0.28);
+	}
+
+	.mdl-card4 {
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-box-orient: vertical;
+	  -webkit-box-direction: normal;
+	  -webkit-flex-direction: column;
+	      -ms-flex-direction: column;
+	          flex-direction: column;
+	  font-size: 16px;
+	  font-weight: 400;
+	  max-height: 120px;
+	  overflow: hidden;
+	  width: 530px;
+	  z-index: 1;
+	  position: relative;
+	  background-color: #632c2c;
+	  border-radius: 3px;
+		padding: 25px;
+		box-shadow: 0 2px 7px rgba(0, 0, 0, 0.28);
 	}
 
 	.mdl-card__supporting-text1 {
@@ -177,6 +228,7 @@ a:link:active, a:visited:active {
 		padding: 1px;
 	  width: 100%
 	}
+
 
 	.demo-card-wide.mdl-card {
 	  width: 512px;
@@ -327,29 +379,41 @@ a:link:active, a:visited:active {
 </head>
 
 <!-- Start of main content-->
-<body style="background-color:#F8F8F8">
+<body>
 <main class="mdl-layout__content">
 
 <!-- Stickie section title-->
+<div class = "stickiesec">
 <div class= "mdl-grid">
 <div class="stickiespacer"></div>
 <a class="stickiesectiontitle">Stickied Posts</a>
 </div>
 
 <!-- Green background of Stickies-->
-<div id="top">top</div>
+<script>
+    function PostController($scope){
+      $scope.post = [
+        { rank: '1'},
+        { score: '2123'},
+        { title: 'Derp'},
+        { link: 'www.derp.com'},
+        { time: '12:00PM'},
+        { comments: '50 comments'},
+      ]
+    }
+  </script>
 
 <!-- Sticky post number 1-->
 <div class= "mdl-grid">
 	<div class="center">
-		<div class="mdl-card3 mdl-shadow--2dp center">
+		<div class="mdl-card3" ng-controller="PostController">
 				<div class="mdl-card__supporting-text1">1537 points</div>
 				<div class="mdl-card__supporting-text1">
 					Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
 				</div>
 				<div class="mdl-card__supporting-text1">
 					<p>
-						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
+						<a href="https://www.reddit.com/r/leagueoflegends">{{post.rank}}</a>
 					BuckeyeSundae</p>
 				</div>
 			</div>
@@ -359,7 +423,7 @@ a:link:active, a:visited:active {
 <!-- Sticky post number 2-->
 	<div class= "mdl-grid">
 		<div class="center">
-			<div class="mdl-card3 mdl-shadow--2dp center">
+			<div class="mdl-card3" >
 					<div class="mdl-card__supporting-text1">1537 points</div>
 					<div class="mdl-card__supporting-text1">
 						Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
@@ -372,7 +436,9 @@ a:link:active, a:visited:active {
 				</div>
 	</div>
 </div>
+</div>
 
+<div class= "frontp">
 <!-- Front page post number 1-->
 <div class= "mdl-grid">
 <div class="frontpagespacer"></div>
@@ -382,7 +448,7 @@ a:link:active, a:visited:active {
 
 	<div class= "mdl-grid">
 		<div class="center">
-			<div class="mdl-card2 mdl-shadow--2dp center">
+			<div class="mdl-card2">
 					<div class="mdl-card__supporting-text2">1537 points</div>
 					<div class="mdl-card__supporting-text2">
 						<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
@@ -399,7 +465,7 @@ a:link:active, a:visited:active {
 <!-- Front page post number 2-->
 <div class= "mdl-grid">
 	<div class="center">
-		<div class=" mdl-card2 mdl-shadow--2dp center">
+		<div class=" mdl-card2">
 				<div class="mdl-card__supporting-text2">1537 points</div>
 				<div class="mdl-card__supporting-text2">
 					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
@@ -416,7 +482,7 @@ a:link:active, a:visited:active {
 <!-- Front page post number 3-->
 <div class= "mdl-grid">
 	<div class="center">
-		<div class=" mdl-card2 mdl-shadow--2dp center">
+		<div class=" mdl-card2">
 				<div class="mdl-card__supporting-text2">1537 points</div>
 				<div class="mdl-card__supporting-text2">
 					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
@@ -433,12 +499,34 @@ a:link:active, a:visited:active {
 <!-- Front page post number 4-->
 <div class= "mdl-grid">
 	<div class="center">
-		<div class=" mdl-card2 mdl-shadow--2dp center">
+		<div class=" mdl-card2">
 				<div class="mdl-card__supporting-text2">1537 points</div>
 				<div class="mdl-card__supporting-text2">
 					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
 				</div>
-				<div class="mdl-card__supporting-text2">
+				<div class="mdl-card__supporting-text">
+					<p>
+						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
+					BuckeyeSundae</p>
+				</div>
+			</div>
+</div>
+</div>
+</div>
+
+<!-- demoted page post number 1-->
+<div class="demoted">
+	<div class= "mdl-grid">
+	<a class="demotedsectiontitle">Demoted</a>
+	</div>
+<div class= "mdl-grid">
+	<div class="center">
+		<div class=" mdl-card4">
+				<div class="mdl-card__supporting-text1">1537 points</div>
+				<div class="mdl-card__supporting-text1">
+					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+				</div>
+				<div class="mdl-card__supporting-text1">
 					<p>
 						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
 					BuckeyeSundae</p>
@@ -447,15 +535,15 @@ a:link:active, a:visited:active {
 </div>
 </div>
 
-<!-- Front page post number 5-->
+<!-- demoted post number 2-->
 <div class= "mdl-grid">
 	<div class="center">
-		<div class=" mdl-card2 mdl-shadow--2dp center">
-				<div class="mdl-card__supporting-text2">1537 points</div>
-				<div class="mdl-card__supporting-text2">
+		<div class=" mdl-card4">
+				<div class="mdl-card__supporting-text1">1537 points</div>
+				<div class="mdl-card__supporting-text1">
 					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
 				</div>
-				<div class="mdl-card__supporting-text2">
+				<div class="mdl-card__supporting-text1">
 					<p>
 						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
 					BuckeyeSundae</p>
@@ -468,7 +556,7 @@ a:link:active, a:visited:active {
 
 
 
-</div>
+<!--<div id="footer"></div>-->
 </body>
 
 			<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-red.min.css" />
