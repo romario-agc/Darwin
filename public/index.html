@@ -9,19 +9,6 @@
 		background-color:#F8F8F8
 	}
 
-.card{
-	margin: auto;
-	border-radius: 3px;
-	width: 507px;
-	height: 98px;
-	background-color: #436640;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.32);
-	padding-top: 15px;
-	padding-left: 22px;
-	padding-right: 22px;
-}
-
-
 .fpsectiontitle{
 	/* Text style for "Stickied Posts" */
 	width: 164px;
@@ -70,32 +57,34 @@
 	}
 
 .stickiesec {
-			positon:relative;
+					positon:relative;
 			    background-color: #375637;
 					width: 100%;
-					height: 485px;
+					height: 400px;
 
 	}
 
 .frontp {
-
-		    background-color: #f8f8f8;
+				position: relative;
+		    background-color: #eaeaea;
 				width: 100%;
-				height: 965px;
+				height: 635px;
+				padding-bottom: 50px
 
 }
 
 .demoted {
+					position: relative;
 			    background-color: #522424;
 					width: 100%;
-					height: 510px;
+					height: 410px;
 }
 
 .base {
-					position:absolute;
+					position:relative;
 			    background-color: #262626;
 					width: 100%;
-					height: 270px;
+					height: 250px;
 }
 
 .center{
@@ -135,28 +124,28 @@ a:link:active, a:visited:active {
 	  height: 50px;
 	}
 
-	.mdl-card2 {
-	  display: -webkit-box;
-	  display: -webkit-flex;
-	  display: -ms-flexbox;
-	  display: flex;
-	  -webkit-box-orient: vertical;
-	  -webkit-box-direction: normal;
-	  -webkit-flex-direction: column;
-	      -ms-flex-direction: column;
-	          flex-direction: column;
-	  font-size: 16px;
-	  font-weight: 400;
-	  max-height: 120px;
-	  overflow: hidden;
-	  width: 530px;
-	  z-index: 1;
-	  position: relative;
-	  background: rgb(255,255,255);
-	  border-radius: 3px;
-		padding: 25px;
-		box-shadow: 0 2px 7px #E0E0E0;
-		border: 1px solid rgba(0, 0, 0, 0.11);
+
+	.mdl-frontpagecard {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+						flex-direction: column;
+		font-size: 16px;
+		height: 62px;
+		overflow: hidden;
+		width: 600px;
+		z-index: 1;
+		position: relative;
+		background-color: rgb(255,255,255);
+		border-radius: 3px;
+		padding: 20px;
+		padding-right: 40px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.13);
 	}
 
 	.stickiebackground{
@@ -165,68 +154,129 @@ a:link:active, a:visited:active {
 		background-color: #436640;
 	}
 
-	.mdl-card3 {
-	  display: -webkit-box;
-	  display: -webkit-flex;
-	  display: -ms-flexbox;
-	  display: flex;
-	  -webkit-box-orient: vertical;
-	  -webkit-box-direction: normal;
-	  -webkit-flex-direction: column;
-	      -ms-flex-direction: column;
-	          flex-direction: column;
-	  font-size: 16px;
-	  font-weight: 400;
-	  max-height: 120px;
-	  overflow: hidden;
-	  width: 530px;
-	  z-index: 1;
-	  position: relative;
-	  background-color: #436640;
-	  border-radius: 3px;
-		padding: 25px;
-		box-shadow: 0 2px 7px rgba(0, 0, 0, 0.28);
-	}
 
-	.mdl-card4 {
-	  display: -webkit-box;
-	  display: -webkit-flex;
-	  display: -ms-flexbox;
-	  display: flex;
-	  -webkit-box-orient: vertical;
-	  -webkit-box-direction: normal;
-	  -webkit-flex-direction: column;
-	      -ms-flex-direction: column;
-	          flex-direction: column;
-	  font-size: 16px;
-	  font-weight: 400;
-	  max-height: 120px;
-	  overflow: hidden;
-	  width: 530px;
-	  z-index: 1;
-	  position: relative;
-	  background-color: #632c2c;
-	  border-radius: 3px;
-		padding: 25px;
-		box-shadow: 0 2px 7px rgba(0, 0, 0, 0.28);
+	.mdl-demotedcard {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+						flex-direction: column;
+		height: 65px;
+		overflow: hidden;
+		width: 600px;
+		z-index: 1;
+		position: relative;
+		background-color: #632c2c;
+		border-radius: 3px;
+		padding: 20px;
+		padding-right: 40px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 	}
 
 	.mdl-card__supporting-text1 {
 	  color: #f8f8f8;
 	  font-size: 13px;
-	  line-height: 18px;
-	  overflow:;
-		padding: 1px;
+	  line-height: 14px;
+		padding: 10px;
 	  width: 100%
 	}
 
-	.mdl-card__supporting-text2 {
-	  color: #606060;
-	  font-size: 13px;
-	  line-height: 18px;
-	  overflow:;
-		padding: 1px;
-	  width: 100%
+	.mdl-card__title1 {
+		color: #ffffff;
+		font-size: 13px;
+		font-weight: 300px;
+		padding-top: 3px;
+		padding-left: 70px;
+		padding-bottom: 8px;
+	}
+
+	.mdl-card__supporting1 {
+		color: #f8f8f8;
+		font-size: 10px;
+		font-weight: 100;
+		line-height: 14px;
+		padding-left: 70px;
+		width: 100%
+	}
+
+	.mdl-card__titleblack {
+		color: ##606060;
+		font-size: 13px;
+		font-weight: 400px;
+		padding-top: 3px;
+		padding-left: 70px;
+		padding-bottom: 8px;
+	}
+
+	.mdl-card__supportingblack {
+		color: #909090;
+		font-size: 10px;
+		font-weight: 200;
+		line-height: 14px;
+		padding-left: 70px;
+		width: 100%
+	}
+
+	.stickiecomment{
+		padding-left: 100px;
+		font-weight: 600;
+	}
+
+	.fpcomment{
+		padding-left: 100px;
+		font-weight: 600;
+		color:#008aa3;
+	}
+
+
+
+	.basefont{
+		color:#cccccc;
+		font-size: 12px;
+		font-family: helvetica;
+		font-weight: bold;
+		padding-top: 30px;
+		text-align: right;
+		padding-right: 300px;
+
+	}
+
+	.basesignature{
+		color:#a4a4a4;
+		font-size: 9px;
+		font-family: helvetica;
+		font-weight: lighter;
+		padding-top: 115px;
+		text-align: center;
+
+	}
+
+	.mdl-postcard {
+	  display: -webkit-box;
+	  display: -webkit-flex;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-box-orient: vertical;
+	  -webkit-box-direction: normal;
+	  -webkit-flex-direction: column;
+	      -ms-flex-direction: column;
+	          flex-direction: column;
+
+	  height: 65px;
+	  overflow: hidden;
+	  width: 600px;
+	  z-index: 1;
+	  position: relative;
+	  background-color: #436640;
+	  border-radius: 3px;
+		padding: 20px;
+		padding-right: 40px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
 	}
 
 
@@ -269,19 +319,19 @@ a:link:active, a:visited:active {
 	  width: 100%;
 	  margin: 0;
 	  padding: 0;
-	  border: none;
+	  border: 2px;
 	  height: 59px;
 	  z-index: 3;
-	  background-color: #f8f8f8;
+	  background-color: #2c3741;
 	  color: #fff;
-	  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 0px -3px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+	  box-shadow: 0 2px 0px 0 #3d4751, 0 1px 0px -3px rgba(0, 0, 0, .2), 0 3px 0px 0 #3d4751;
 	  -webkit-transition-duration: .2s;
 	  transition-duration: .2s;
 	  -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 	  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 	  -webkit-transition-property: max-height, box-shadow;
 	  transition-property: max-height, box-shadow
-	}
+		}
 	.mdl-layout__header-row2 {
 	  display: -webkit-box;
 	  display: -webkit-flex;
@@ -319,11 +369,11 @@ a:link:active, a:visited:active {
 	  letter-spacing: .02em;
 	  font-weight: 500;
 	  box-sizing: border-box;
-		color: #606060;
+		color: #f8f8f8;
 	}
 
 	.mdl-navigation__link2{
-	  color: #606060;
+	  color: #f8f8f8;
 		font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
 	  text-decoration: none;
 	  font-weight: 300;
@@ -358,7 +408,11 @@ a:link:active, a:visited:active {
 	  text-align: center;
 	  line-height: 26px;
 	  vertical-align: middle; }
-
+.movement{
+	height:20px;
+	width:20px;
+	color:#234323
+}
 	</style>
 
 <!-- Nav bar-->
@@ -406,15 +460,17 @@ a:link:active, a:visited:active {
 <!-- Sticky post number 1-->
 <div class= "mdl-grid">
 	<div class="center">
-		<div class="mdl-card3" ng-controller="PostController">
-				<div class="mdl-card__supporting-text1">1537 points</div>
-				<div class="mdl-card__supporting-text1">
-					Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
+		<div class="mdl-postcard" ng-controller="PostController">
+				<div class="mdl-card__title1">
+
+					<span>Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</span>
+
 				</div>
-				<div class="mdl-card__supporting-text1">
-					<p>
-						<a href="https://www.reddit.com/r/leagueoflegends">{{post.rank}}</a>
-					BuckeyeSundae</p>
+				<div class="mdl-card__supporting1">
+					<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]></a>
+					<span class="stickiecomment">50 comments</span>
+					<span class="mdl-card__supporting1">/r/leagueoflegends<span>
+					<span class="mdl-card__supporting1">5 hours ago<span>
 				</div>
 			</div>
 </div>
@@ -423,15 +479,15 @@ a:link:active, a:visited:active {
 <!-- Sticky post number 2-->
 	<div class= "mdl-grid">
 		<div class="center">
-			<div class="mdl-card3" >
-					<div class="mdl-card__supporting-text1">1537 points</div>
-					<div class="mdl-card__supporting-text1">
+			<div class="mdl-postcard" >
+					<div class="mdl-card__title1">
 						Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
 					</div>
-					<div class="mdl-card__supporting-text1">
-						<p>
-							<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
-					 	BuckeyeSundae</p>
+					<div class="mdl-card__supporting1">
+							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
+							<span class="stickiecomment">50 comments</span>
+							<span class="mdl-card__supporting1">/r/leagueoflegends<span>
+							<span class="mdl-card__supporting1">5 hours ago<span>
 				 	</div>
 				</div>
 	</div>
@@ -446,34 +502,34 @@ a:link:active, a:visited:active {
 </div>
 
 
-	<div class= "mdl-grid">
-		<div class="center">
-			<div class="mdl-card2">
-					<div class="mdl-card__supporting-text2">1537 points</div>
-					<div class="mdl-card__supporting-text2">
-						<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
-					</div>
-					<div class="mdl-card__supporting-text2">
-						<p>
-							<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
-					 	BuckeyeSundae</p>
-				 	</div>
+<div class= "mdl-grid">
+	<div class="center">
+		<div class="mdl-frontpagecard" ng-controller="PostController">
+				<div class="mdl-card__titleblack">
+					Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
 				</div>
-	</div>
+				<div class="mdl-card__supportingblack">
+				<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
+				<span class="fpcomment">50 comments</span>
+				<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
+				<span class="mdl-card__supportingblack">5 hours ago<span>
+				</div>
+			</div>
+</div>
 </div>
 
 <!-- Front page post number 2-->
 <div class= "mdl-grid">
 	<div class="center">
-		<div class=" mdl-card2">
-				<div class="mdl-card__supporting-text2">1537 points</div>
-				<div class="mdl-card__supporting-text2">
-					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+		<div class="mdl-frontpagecard" ng-controller="PostController">
+				<div class="mdl-card__titleblack">
+					Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
 				</div>
-				<div class="mdl-card__supporting-text">
-					<p>
-						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
-					BuckeyeSundae</p>
+				<div class="mdl-card__supportingblack">
+					<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
+					<span class="fpcomment">50 comments</span>
+					<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
+					<span class="mdl-card__supportingblack">5 hours ago<span>
 				</div>
 			</div>
 </div>
@@ -482,15 +538,15 @@ a:link:active, a:visited:active {
 <!-- Front page post number 3-->
 <div class= "mdl-grid">
 	<div class="center">
-		<div class=" mdl-card2">
-				<div class="mdl-card__supporting-text2">1537 points</div>
-				<div class="mdl-card__supporting-text2">
-					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+		<div class="mdl-frontpagecard" ng-controller="PostController">
+				<div class="mdl-card__titleblack">
+					Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
 				</div>
-				<div class="mdl-card__supporting-text">
-					<p>
-						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
-					BuckeyeSundae</p>
+				<div class="mdl-card__supportingblack">
+					<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
+					<span class="fpcomment">50 comments</span>
+					<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
+					<span class="mdl-card__supportingblack">5 hours ago<span>
 				</div>
 			</div>
 </div>
@@ -499,15 +555,15 @@ a:link:active, a:visited:active {
 <!-- Front page post number 4-->
 <div class= "mdl-grid">
 	<div class="center">
-		<div class=" mdl-card2">
-				<div class="mdl-card__supporting-text2">1537 points</div>
-				<div class="mdl-card__supporting-text2">
-					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+		<div class="mdl-frontpagecard" ng-controller="PostController">
+				<div class="mdl-card__titleblack">
+					Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
 				</div>
-				<div class="mdl-card__supporting-text">
-					<p>
-						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
-					BuckeyeSundae</p>
+				<div class="mdl-card__supportingblack">
+					<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
+					<span class="fpcomment">50 comments</span>
+					<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
+							<span class="mdl-card__supportingblack">5 hours ago<span>
 				</div>
 			</div>
 </div>
@@ -519,37 +575,43 @@ a:link:active, a:visited:active {
 	<div class= "mdl-grid">
 	<a class="demotedsectiontitle">Demoted</a>
 	</div>
-<div class= "mdl-grid">
-	<div class="center">
-		<div class=" mdl-card4">
-				<div class="mdl-card__supporting-text1">1537 points</div>
-				<div class="mdl-card__supporting-text1">
-					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+
+	<div class= "mdl-grid">
+		<div class="center">
+			<div class="mdl-demotedcard" ng-controller="PostController">
+					<div class="mdl-card__title1">
+						Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
+					</div>
+					<div class="mdl-card__supporting1">
+						<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
+						<span class="stickiecomment">50 comments</span>
+						<span class="mdl-card__supporting1">/r/leagueoflegends<span>
+						<span class="mdl-card__supporting1">5 hours ago<span>
+					</div>
 				</div>
-				<div class="mdl-card__supporting-text1">
-					<p>
-						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
-					BuckeyeSundae</p>
-				</div>
-			</div>
-</div>
-</div>
+	</div>
+	</div>
 
 <!-- demoted post number 2-->
 <div class= "mdl-grid">
 	<div class="center">
-		<div class=" mdl-card4">
-				<div class="mdl-card__supporting-text1">1537 points</div>
-				<div class="mdl-card__supporting-text1">
-					<b >Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.</b>
+		<div class="mdl-demotedcard" ng-controller="PostController">
+				<div class="mdl-card__title1">
+					Feeling out of the loop on reddit? Try Upvoted Weekly- The Best of reddit Delivered Weekly To Your Inbox.
 				</div>
-				<div class="mdl-card__supporting-text1">
-					<p>
-						<a href="https://www.reddit.com/r/leagueoflegends">656 comments</a>
-					BuckeyeSundae</p>
+				<div class="mdl-card__supporting1">
+					<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
+					<span class="stickiecomment">50 comments</span>
+					<span class="mdl-card__supporting1">/r/leagueoflegends<span>
+					<span class="mdl-card__supporting1">5 hours ago<span>
 				</div>
 			</div>
-		</div>
+</div>
+</div>
+</div>
+
+<div class="base">
+	<div class="basesignature">PRODUCT OF ROMARIO COFFIE</div>
 </div>
 
 </main>
