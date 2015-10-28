@@ -1,11 +1,11 @@
 // Depencencies
-var express = require('express'),
+var nr = require('newrelic'),
+    express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
     _ = require('lodash'),
     colors = require('colors'),
-    nr = require('newrelic'),
     app = express();
 
 // Add Middleware necessarry for REST API's
