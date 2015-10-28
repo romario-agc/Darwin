@@ -444,16 +444,10 @@ a:link:active, a:visited:active {
 
 <!-- Green background of Stickies-->
 <script>
-    function PostController($scope){
-      $scope.post = [
-        { rank: '1'},
-        { score: '2123'},
-        { title: 'Derp'},
-        { link: 'www.derp.com'},
-        { time: '12:00PM'},
-        { comments: '50 comments'},
-      ]
-    }
+	angular.module('scopeExample', [])
+    .controller('PostController', ['$scope', function($scope) {
+      $scope.title='derp';
+		}]);
   </script>
 
 <!-- Sticky post number 1-->
@@ -461,9 +455,7 @@ a:link:active, a:visited:active {
 	<div class="center">
 		<div class="mdl-postcard" ng-controller="PostController">
 				<div class="mdl-card__title1">
-
 					<span>Feeling out of the loop on reddit? Try Upvoted Weekly- the best of reddit delivered weekly to your inbox.</span>
-
 				</div>
 				<div class="mdl-card__supporting1"
 					<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>

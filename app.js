@@ -5,6 +5,7 @@ var express = require('express'),
     methodOverride = require('method-override'),
     _ = require('lodash'),
     colors = require('colors'),
+    nr = require('newrelic'),
     app = express();
 
 // Add Middleware necessarry for REST API's
