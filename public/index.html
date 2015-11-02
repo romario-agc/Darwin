@@ -54,27 +54,62 @@
 }
 
 #scroll {
-    width: 200px;
-    height: 270px;
+    width: 240px;
+    height: 330px;
     overflow: scroll;
 		margin-top: 10px;
 		font-size: 12px;
 		border-top: 1px solid grey;
 		border-bottom: 1px solid grey;
-		padding: 20px;
+		border-color:#E4E4E4
 }
 
 #livescroll {
-    width: 200px;
-    height: 465px;
+    width: 240px;
+    height: 500px;
     overflow: scroll;
 		margin-top: 10px;
 		font-size: 12px;
 		border-top: 1px solid grey;
 		border-bottom: 1px solid grey;
-		padding: 20px;
+		border-color:#E4E4E4
 }
 
+.activityheader{
+		color: #5a5a5a;
+		font-size: 13px;
+		font-weight: bold;
+		padding-left: 25px;
+		padding-top: 15px;
+		font-family: SourceSansPro;
+}
+
+.updateheader{
+		color: #5a5a5a;
+		font-size: 13px;
+		font-weight: bold;
+		padding-left: 25px;
+		padding-top: 60px;
+		font-family: SourceSansPro;
+}
+
+.liveheader{
+		color: darkred;
+		font-size: 13px;
+		font-weight: bold;
+		text-align: center;
+		padding-top: 60px;
+		font-family: SourceSansPro;
+}
+
+.livetemp{
+	color: black;
+}
+
+.livetemp2{
+	color: black;
+	padding-left: 100px;
+}
 
 .center{
 	margin: auto;
@@ -200,44 +235,75 @@ a:link:active, a:visited:active {
 
 	.livepost{
 		position: relative;
-		margin: 8px;
-		height: 120px;
-		padding: 10px;
-		width:120px;
-		border: 1px solid grey;
-		font-weight: 300;
+		height: 100px;
+		padding: 20px;
+		width:220px;
+		border-bottom: 1px solid grey;
 		text-align: left;
+		color: #2380d7;
+		border-color:#E4E4E4
+	}
+
+	.headertime{
+		color: black;
+		font-weight: lighter;
+		padding-left: 30px;
+	}
+
+	.headerlive{
+		padding-right: 30px;
+	}
+
+	.headerglobal{
+		color: black
 	}
 
 	.updatetopics{
 		position: relative;
-		margin: 8px;
-		height: 60px;
-		padding: 10px;
-		width:120px;
-		border: 1px solid grey;
-		font-weight: 300;
+		height: 18px;
+		padding: 15px;
+		padding-left: 25px;
+		width:220px;
 		text-align: left;
+		font-weight: 300px;
+		background-color: white;
+	}
+
+	.updatetopics2{
+		position: relative;
+		height: 18px;
+		padding: 15px;
+		padding-left: 25px;
+		width:220px;
+		text-align: left;
+		font-weight: 300px;
+		background-color: #f8f8f8;
 	}
 
 	.fpcomment{
 		padding-left: 100px;
 		font-weight: 600;
-
+		color: #008aa3;
 	}
 
 
 	.backtotop{
-		color:#909090;
-		font-size: 14px;
+		font-size: 12px;
+		color: black;
 		font-family: helvetica;
-		padding-left: 70px;
+		text-align: center;
+		padding-top: 14px
+	}
+
+	.ppmlist{
+		font-size: 12px;
+		font-family: helvetica;
+		text-align: left;
+		padding-top: 8px
 	}
 
 	.ppm{
-		color:#909090;
-		font-size: 14px;
-		font-family: helvetica;
+		padding: 10px;
 		padding-left: 40px;
 	}
 
@@ -434,26 +500,84 @@ a:link:active, a:visited:active {
 	<div class="mdl-grid">
 		<div class="mdl-cell--2-col-desktop">
 			<div class="derp">
-					<div class="mdl-card__titlerc">
-						<span>LIVE</span>
-						<span>Global</span>
-						<span>12:01PM</span>
+					<div class="liveheader">
+						<span class="headerlive">Live</span>
+						<span class="headerglobal">Global</span>
+						<span class="headertime">12:01PM</span>
 					</div>
 					<div id="livescroll">
-						<div class="livepost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-						<div class="livepost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-						<div class="livepost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-						<div class="livepost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-						<div class="livepost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-						<div class="livepost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-						<div class="livepost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-						<div class="livepost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-						<div class="livepost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-						<div class="livepost">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-					</div>
-					<div>
-						<a class="backtotop">Back to top</a>
-					</div>
+							<div class="livepost">
+									<div class="livetemp">Twitter</div>
+									Elon Musk says that Apple only hires Tesla's worst engineers
+								<div>
+									<span class="livetemp">2:01PM<span>
+									<span class="livetemp2">Apple<span>
+								</div>
+							</div>
+
+							<div class="livepost">
+									<div class="livetemp">Twitter</div>
+									SpaceX’s Garrett Reisman: CDR on crew Dragon vehicle well underway, scheduled to be completed soon.
+								<div>
+									<span class="livetemp">2:01PM<span>
+									<span class="livetemp2">Apple<span>
+								</div>
+							</div>
+
+							<div class="livepost">
+									<div class="livetemp">Twitter</div>
+									'Steve Jobs' Releases in Select Theaters as First Full Scene Debuts Online
+								<div>
+									<span class="livetemp">2:01PM<span>
+									<span class="livetemp2">Apple<span>
+								</div>
+							</div>
+
+							<div class="livepost">
+									<div class="livetemp">Twitter</div>
+									Setting Bernie Sanders Apart From the Field: A Palpable Sense of 	Conviction
+								<div>
+									<span class="livetemp">2:01PM<span>
+									<span class="livetemp2">Apple<span>
+								</div>
+							</div>
+							<div class="livepost">
+									<div class="livetemp">Twitter</div>
+									Setting Bernie Sanders Apart From the Field: A Palpable Sense of 	Conviction
+								<div>
+									<span class="livetemp">2:01PM<span>
+									<span class="livetemp2">Apple<span>
+								</div>
+							</div>
+
+							<div class="livepost">
+									<div class="livetemp">Twitter</div>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								<div>
+									<span class="livetemp">2:01PM<span>
+									<span class="livetemp2">Apple<span>
+								</div>
+							</div>
+
+							<div class="livepost">
+									<div class="livetemp">Twitter</div>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								<div>
+									<span class="livetemp">2:01PM<span>
+									<span class="livetemp2">Apple<span>
+								</div>
+							</div>
+
+							<div class="livepost">
+									<div class="livetemp">Twitter</div>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+								<div>
+									<span class="livetemp">2:01PM<span>
+									<span class="livetemp2">Apple<span>
+								</div>
+							</div>
+						</div>
+					<div class="backtotop">Back to top</div>
 			</div>
 		</div>
 		<div class=" mdl-cell--6-col-desktop pad ">
@@ -644,24 +768,30 @@ a:link:active, a:visited:active {
 
 		<div class="mdl-cell--3-col-desktop">
 			<div class="derp">
-				<div class="mdl-card__titlerc">
+				<div class="updateheader">
 					Update
 				</div>
 				<div id="scroll">
-					<div class="updatetopics">Lorem ipsum dolor sit amet</div>
-					<div class="updatetopics">Lorem ipsum dolor sit amet</div>
-					<div class="updatetopics">Lorem ipsum dolor sit amet</div>
-					<div class="updatetopics">Lorem ipsum dolor sit amet</div>
-					<div class="updatetopics">Lorem ipsum dolor sit amet</div>
-					<div class="updatetopics">Lorem ipsum dolor sit amet</div>
-					<div class="updatetopics">Lorem ipsum dolor sit amet</div>
+					<div class="updatetopics2">Team Solo Mid</div>
+					<div class="updatetopics">Counter Logic Gaming</div>
+					<div class="updatetopics2">Tesla</div>
+					<div class="updatetopics">SpaceX</div>
+					<div class="updatetopics2">Bernie Sanders</div>
+					<div class="updatetopics">Black Lives Matter</div>
+					<div class="updatetopics2">Apple</div>
+					<div class="updatetopics">Google</div>
+					<div class="updatetopics2">League of Legends</div>
+					<div class="updatetopics">SK Telecom</div>
 				</div>
-				<div class="ppm">League of Legends</div>
-				<div class="ppm">Tesla</div>
-				<div class="ppm">ISIL</div>
-				<div class="ppm">Elon Musk</div>
-				<div class="ppm">Bernie Sanders</div>
-				<div class="ppm">Attack on Titan</div>
+				<div class="activityheader">Activity</div>
+				<divc class="ppm">
+
+					<div class="ppmlist">League of Legends</div>
+					<div class="ppmlist">Tesla</div>
+					<div class="ppmlist">ISIL</div>
+					<div class="ppmlist">Elon Musk</div>
+					<div class="ppmlist">Bernie Sanders</div>
+				</div>
 			</div>
 		</div>
 		<!--
