@@ -8,4 +8,4 @@
           console.log(result);
           vm.mydata = result.data;
          });
-    }
+    });
