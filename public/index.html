@@ -1,59 +1,16 @@
 <!doctype html>
-<html data-ng-app="funnel">
+<html ng-app="updater">
 <head>
 	<meta charset="UTF-8">
 	<style>
 	html, body, input, select, textarea
 	{
 		font-size:1.05em !important;
-		background-color:#F8F8F8;
+		background-color: #eaeaea;
 		overflow: hidden;
 	}
 .containee{
-	width:1270px;
-}
-.fpsectiontitle{
-	/* Text style for "Stickied Posts" */
-	width: 164px;
-	height: 19px;
-	color: #3b3b3b;
-	font-family: SourceSansPro;
-	font-size: 15px;
-	font-weight: 600;
-	padding-top: 30px;
-	padding-bottom: 15px;
-	margin: auto;
-}
-
-.stickiesectiontitle{
-	/* Text style for "Stickied Posts" */
-	width: 164px;
-	height: 19px;
-	color: #f8f8f8;
-	font-family: SourceSansPro;
-	font-size: 15px;
-	font-weight: 600;
-	margin: auto;
-	padding-top: 20px;
-}
-
-
-
-.frontp {
-				position: relative;
-		    background-color: #eaeaea;
-				width: 100%;
-				height: 1400px;
-				padding-bottom: 50px
-
-}
-
-.base {
-					position: absolute;
-			    background-color: #cacaca;
-					width: 100%;
-					height: 60px;
-					bottom: 0;
+	width:1234px;
 }
 
 #scroll {
@@ -141,6 +98,10 @@
 	color: #004890;
 }
 
+.livetitle:hover{
+	text-decoration: underline;
+}
+
 .center{
 	margin: auto;
 }
@@ -180,7 +141,7 @@ a:link:active, a:visited:active {
 				-ms-flex-direction: column;
 						flex-direction: column;
 		font-size: 16px;
-		height: 88px;
+		min-height: 40px;
 		width: 565px;
 		position: relative;
 		background-color: #fafafa;
@@ -190,6 +151,25 @@ a:link:active, a:visited:active {
 		border: 1px solid white;
 		z-index:1;
 		overflow:hidden;
+	}
+
+	.mdl-frontpagecard:hover{
+		background: #F4F4F4;
+		border: 1px solid lightblue;
+
+	}
+
+	.cardcontainer{
+		width: 540px;
+		padding-bottom: 5px;
+		padding-top: 8px;
+		overflow: hidden;
+	}
+
+	.commentcontainer{
+		width: 540px;
+		padding-top: 3px;
+		overflow: hidden;
 	}
 
 .derp{
@@ -225,22 +205,6 @@ a:link:active, a:visited:active {
 	margin-left: 15px;
 	display: inline-block;
 }
-	.mdl-card__supporting-textrc {
-	  color: #606060;
-	  font-size: 13px;
-	  line-height: 14px;
-		padding: 10px;
-	  width: 100%
-	}
-
-	.mdl-card__titlerc {
-		color: #606060;
-		font-size: 13px;
-		font-weight: bold;
-		padding-top: 60px;
-		padding-left: 15px;
-		font-family: SourceSansPro;
-	}
 
 	.mdl-card__supporting1 {
 		color: #f8f8f8;
@@ -256,12 +220,15 @@ a:link:active, a:visited:active {
 		color: black;
 		font-size: 13px;
 		font-weight:500;
-		font-family: SourceSansPro;
-		padding-top: 14px;
+		padding-top: 9px;
 		padding-left: 50px;
 		padding-right: 20px;
-		min-height: 37px;
+		min-height: 40px;
 		overflow: hidden;
+	}
+
+	.mdl-card__titleblack:hover{
+		color: #5D5D5D;
 	}
 
 	.mdl-card__supportingblack {
@@ -275,6 +242,17 @@ a:link:active, a:visited:active {
 		width: 100%
 	}
 
+	.postcardtime {
+		color: #909090;
+		font-size: 10px;
+		font-weight: 200;
+		line-height: 5px;
+		padding-top: 10px;
+		padding-left: 10%;
+		padding-bottom: 13px;
+		width: 100%
+	}
+
 	.livepost{
 		position: relative;
 		min-height: 90px;
@@ -284,6 +262,10 @@ a:link:active, a:visited:active {
 		border-bottom: 1px solid lightgrey;
 		text-align: left;
 		color: #2380d7;
+	}
+
+	.livepost:hover{
+		background-color: #F2F2F2
 	}
 	::-webkit-scrollbar {
 	    -webkit-appearance: none;
@@ -315,6 +297,10 @@ a:link:active, a:visited:active {
 		background-color: white;
 	}
 
+	.updatetopics:hover{
+		text-decoration: underline;
+	}
+
 	.updatetopics2{
 		position: relative;
 		height: 18px;
@@ -326,10 +312,35 @@ a:link:active, a:visited:active {
 		background-color: #f8f8f8;
 	}
 
+	.updatetopics2:hover{
+		text-decoration: underline;
+	}
+
 	.fpcomment{
-		padding-left: 100px;
-		font-weight: 600;
-		color: #008aa3;
+		padding-left: 15%;
+		font-weight: 500;
+		color: #005D7D;
+	}
+
+	.fpcomment:hover{
+		text-decoration: underline;
+	}
+
+	.postimage{
+		width: 566px;
+		height: 400px;
+padding-left: 22px;
+		margin:13px;
+
+		box-shadow: 0 0px 5px rgba(0, 0, 0, 0.18);
+	}
+
+	.postimagetravis{
+		width: 566px;
+		height: 330px;
+padding-left: 22px;
+		margin:13px;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
 	}
 
 
@@ -342,16 +353,33 @@ a:link:active, a:visited:active {
 		padding-bottom: 14px;
 	}
 
+	.backtotop:hover{
+		text-decoration: underline;
+	}
+
 	.ppmlist{
 		font-size: 12px;
 		font-family: helvetica;
 		text-align: left;
-		padding-top: 8px
+		padding-top: 8px;
 	}
 
+	.ppmrate{
+		padding-right: 6px;
+		color: green;
+		font-weight: bolder;
+		font-size: 11px;
+	}
+
+.ppmlist:hover{
+	width: 100%;
+	background-color: #F2F2F2;
+	border-radius: 3px;
+}
+
 	.ppm{
-		padding: 10px;
-		padding-left: 40px;
+		padding-left: 30px;
+		margin: 20px;
 	}
 
 	.basesignature1{
@@ -359,10 +387,19 @@ a:link:active, a:visited:active {
 		font-family: helvetica;
 		position: relative;
 		font-weight: lighter;
-		padding-top:15px;
+		padding-bottom: 3px;
 		text-align: center;
 		bottom: 0;
 
+	}
+
+	a{
+		color: parent;
+		font-weight: inherit;
+	}
+
+	a:hover{
+		text-decoration: underline;
 	}
 
 
@@ -458,6 +495,10 @@ a:link:active, a:visited:active {
 		color: #f8f8f8;
 	}
 
+	.mdl-layout-title2:hover{
+		text-decoration: none;
+	}
+
 	.mdl-navigation__link2{
 	  color: #f8f8f8;
 		font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
@@ -500,8 +541,7 @@ a:link:active, a:visited:active {
 	}
 
 	.pad{
-		padding-left: 94px;
-		padding-right: 10px;
+		padding-left: 76px;
 	}
 }
 
@@ -515,9 +555,10 @@ a:link:active, a:visited:active {
 <!-- Nav bar-->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 <header class="mdl-layout__header2">
+	<div class="containee">
 	<div class="mdl-layout__header-row2">
 		<!-- Title -->
-		<span class="mdl-layout-title2" href="/">funnel</span>
+		<a class="mdl-layout-title2" href="/">funnel</a>
 		<!-- Add spacer, to align navigation to the right -->
 		<div class="mdl-layout-spacer"></div>
 		<!-- Navigation. We hide it in small screens. -->
@@ -527,6 +568,7 @@ a:link:active, a:visited:active {
 			<button  class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" >Update</button>
 		</nav>
 	</div>
+</div>
 		</header>
 </head>
 
@@ -627,33 +669,41 @@ a:link:active, a:visited:active {
 					<div class="backtotop">Back to top</div>
 			</div>
 		</div>
-		<div class=" mdl-cell--6-col-desktop pad ">
+		<div class=" mdl-cell--6-col-desktop pad">
 		<!-- Sticky post number 1-->
-				<div class="mdl-frontpagecard" ng-controller="PostController">
-						<div class="mdl-card__titleblack" ng-model="title">
-							<span>Feeling out of the loop on reddit? Try Upvoted Weekly- the best of reddit delivered weekly to your inbox.</span>
+				<div class="mdl-frontpagecard">
+					<div class="cardcontainer">
+						<div class="mdl-card__titleblack"  ng-controller="GoodController1">
+							<a href="https://www.reddit.com/r/leagueoflegends">{{a}} Feeling out of the loop on reddit? Try Upvoted Weekly- the best of reddit delivered weekly to your inbox.</a>
 						</div>
-						<div class="mdl-card__supportingblack"
+						<div class="commentcontainer">
+						<div class="mdl-card__supportingblack ">
 							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 							<span class="fpcomment">50 comments</span>
 							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-							<span class="mdl-card__supportingblack">5 hours ago<span>
+							<span class="postcardtime">5 hours ago<span>
 						</div>
+					</div>
+					</div>
 					</div>
 
 
 
 		<!-- Sticky post number 2-->
 					<div class="mdl-frontpagecard" >
+						<div class="cardcontainer">
 							<div class="mdl-card__titleblack">
-								Monday Megathread! Ask questions and share knowledge; newcomer questions encouraged!
+								<a href="https://www.reddit.com/r/leagueoflegends">Monday Megathread! Ask questions and share knowledge; newcomer questions encouraged!</a>
 							</div>
+							<div class="commentcontainer">
 							<div class="mdl-card__supportingblack">
 									<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 									<span class="fpcomment">50 comments</span>
 									<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-									<span class="mdl-card__supportingblack">5 hours ago<span>
+									<span class="postcardtime">5 hours ago<span>
+							</div>
 						 	</div>
+						</div>
 						</div>
 
 
@@ -662,14 +712,16 @@ a:link:active, a:visited:active {
 
 		<!-- Front page post number 1-->
 				<div class="mdl-frontpagecard" ng-controller="PostController">
+					<div class="cardcontainer">
 						<div class="mdl-card__titleblack">
-							While we wait for Sandbox Mode from Rito, here is how to practice those tricy flash-walls with a ~10 sec cooldown
+							<a href="https://www.reddit.com/r/leagueoflegends">While we wait for Sandbox Mode from Rito, here is how to practice those tricy flash-walls with a ~10 sec cooldown</a>
 						</div>
 						<div class="mdl-card__supportingblack">
 						<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 						<span class="fpcomment">50 comments</span>
 						<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-						<span class="mdl-card__supportingblack">5 hours ago<span>
+						<span class="postcardtime">5 hours ago<span>
+						</div>
 						</div>
 					</div>
 
@@ -677,169 +729,191 @@ a:link:active, a:visited:active {
 
 		<!-- Front page post number 2-->
 				<div class="mdl-frontpagecard" ng-controller="PostController">
+					<div class="cardcontainer">
 						<div class="mdl-card__titleblack">
-							Can't Make it to Worlds? ESL is hosting a viewing party in Cologne- With the legendary Joe Miller and Deman!
+							<a href="https://www.reddit.com/r/leagueoflegends">Can't Make it to Worlds? ESL is hosting a viewing party in Cologne- With the legendary Joe Miller and Deman!</a>
 						</div>
 						<div class="mdl-card__supportingblack">
 							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 							<span class="fpcomment">42 comments</span>
 							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-							<span class="mdl-card__supportingblack">5 hours ago<span>
+							<span class="postcardtime">5 hours ago<span>
+						</div>
 						</div>
 					</div>
 
 
 		<!-- Front page post number 3-->
 				<div class="mdl-frontpagecard" ng-controller="PostController">
+					<div class="cardcontainer">
 						<div class="mdl-card__titleblack">
-							[Inven] Inven reacts to Deilor's interview with Travis, "I thought we had a really good chance against SKT"
+							<a href="https://www.reddit.com/r/leagueoflegends">[Inven] Inven reacts to Deilor's interview with Travis, "I thought we had a really good chance against SKT"</a>
 						</div>
 						<div class="mdl-card__supportingblack">
 							<a href="https://www.reddit.com/r/leagueoflegends"> KoreanExplanation</a>
 							<span class="fpcomment">1853 comments</span>
 							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-							<span class="mdl-card__supportingblack">5 hours ago<span>
+							<span class="postcardtime">5 hours ago<span>
+						</div>
+						<img src="http://static1.gamespot.com/uploads/screen_kubrick/1490/14900166/2955970-brussels_deilor_20151025.jpg" class="postimagetravis">
 						</div>
 					</div>
 
 
 		<!-- Front page post number 4-->
 				<div class="mdl-frontpagecard" ng-controller="PostController">
+					<div class="cardcontainer">
 						<div class="mdl-card__titleblack">
-							Redeemed Riven should be able to pull her hoodie up and down just like Nighthunter Rengar.
+							<a href="https://www.reddit.com/r/leagueoflegends">Redeemed Riven should be able to pull her hoodie up and down just like Nighthunter Rengar.</a>
 						</div>
 						<div class="mdl-card__supportingblack">
 							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 							<span class="fpcomment">16 comments</span>
 							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-									<span class="mdl-card__supportingblack">5 hours ago<span>
+									<span class="postcardtime">5 hours ago<span>
+						</div>
 						</div>
 					</div>
 
 
 		<!-- Front page post number 5-->
 				<div class="mdl-frontpagecard" ng-controller="PostController">
+					<div class="cardcontainer">
 						<div class="mdl-card__titleblack">
-							Huge Sports Illustrated story on League-eSports: 'How competitive gaming became a flourishing sport'
+							<a href="https://www.reddit.com/r/leagueoflegends">Huge Sports Illustrated story on League-eSports: 'How competitive gaming became a flourishing sport'</a>
 						</div>
 						<div class="mdl-card__supportingblack">
 							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 							<span class="fpcomment">250 comments</span>
 							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-									<span class="mdl-card__supportingblack">5 hours ago<span>
+									<span class="postcardtime">5 hours ago<span>
+						</div>
 						</div>
 					</div>
 
 		<!-- Front page post number 6-->
 				<div class="mdl-frontpagecard" ng-controller="PostController">
+					<div class="cardcontainer">
 						<div class="mdl-card__titleblack">
-							SKT and KOO does the coin toss to determine red/blue sides for finals! [Subtitled]
+							<a href="https://www.reddit.com/r/leagueoflegends">SKT and KOO does the coin toss to determine red/blue sides for finals! [Subtitled]</a>
 						</div>
 						<div class="mdl-card__supportingblack">
 							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 							<span class="fpcomment">140 comments</span>
 							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-									<span class="mdl-card__supportingblack">5 hours ago<span>
+									<span class="postcardtime">5 hours ago<span>
+						</div>
 						</div>
 					</div>
 
 		<!-- Front page post number 7-->
 
 				<div class="mdl-frontpagecard" ng-controller="PostController">
+					<div class="cardcontainer">
 						<div class="mdl-card__titleblack">
-							Dash Interview - From Acting to Analyst Desk, Balancing Esports and All Chat, and Working With Sjokz.
+							<a href="https://www.reddit.com/r/leagueoflegends">Dash Interview - From Acting to Analyst Desk, Balancing Esports and All Chat, and Working With Sjokz.</a>
 						</div>
 						<div class="mdl-card__supportingblack">
 							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 							<span class="fpcomment">230 comments</span>
 							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-									<span class="mdl-card__supportingblack">5 hours ago<span>
+									<span class="postcardtime">5 hours ago<span>
+						</div>
 						</div>
 					</div>
 
 					<!-- Front page post number 8-->
 							<div class="mdl-frontpagecard" ng-controller="PostController">
+								<div class="cardcontainer">
 									<div class="mdl-card__titleblack">
-										Redeemed Riven should be able to pull her hoodie up and down just like Nighthunter Rengar.
+										<a href="https://www.reddit.com/r/leagueoflegends">Redeemed Riven should be able to pull her hoodie up and down just like Nighthunter Rengar.</a>
 									</div>
 									<div class="mdl-card__supportingblack">
 										<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 										<span class="fpcomment">16 comments</span>
 										<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-												<span class="mdl-card__supportingblack">5 hours ago<span>
+												<span class="postcardtime">5 hours ago<span>
+									</div>
+									<img src="https://i.ytimg.com/vi/qtwVlTzGJ8c/maxresdefault.jpg" class="postimage">
 									</div>
 								</div>
 
 
 					<!-- Front page post number 9-->
 							<div class="mdl-frontpagecard" ng-controller="PostController">
+								<div class="cardcontainer">
 									<div class="mdl-card__titleblack">
-										Huge Sports Illustrated story on League-eSports: 'How competitive gaming became a flourishing sport'
+										<a href="https://www.reddit.com/r/leagueoflegends">Huge Sports Illustrated story on League-eSports: 'How competitive gaming became a flourishing sport'</a>
 									</div>
 									<div class="mdl-card__supportingblack">
 										<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 										<span class="fpcomment">250 comments</span>
 										<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-												<span class="mdl-card__supportingblack">5 hours ago<span>
+												<span class="postcardtime">5 hours ago<span>
+									</div>
 									</div>
 								</div>
 
 					<!-- Front page post number 10-->
 							<div class="mdl-frontpagecard" ng-controller="PostController">
+								<div class="cardcontainer">
 									<div class="mdl-card__titleblack">
-										SKT and KOO does the coin toss to determine red/blue sides for finals! [Subtitled]
+										<a href="https://www.reddit.com/r/leagueoflegends">SKT and KOO does the coin toss to determine red/blue sides for finals! [Subtitled]</a>
 									</div>
 									<div class="mdl-card__supportingblack">
 										<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 										<span class="fpcomment">140 comments</span>
 										<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-												<span class="mdl-card__supportingblack">5 hours ago<span>
+												<span class="postcardtime">5 hours ago<span>
+									</div>
 									</div>
 								</div>
 
-					<!-- Front page post number 11-->
-
+							<!-- Front page post number 11-->
 							<div class="mdl-frontpagecard" ng-controller="PostController">
+								<div class="cardcontainer">
 									<div class="mdl-card__titleblack">
-										Dash Interview - From Acting to Analyst Desk, Balancing Esports and All Chat, and Working With Sjokz.
+										<a href="https://www.reddit.com/r/leagueoflegends">Dash Interview - From Acting to Analyst Desk, Balancing Esports and All Chat, and Working With Sjokz.</a>
 									</div>
 									<div class="mdl-card__supportingblack">
 										<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
 										<span class="fpcomment">230 comments</span>
 										<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-												<span class="mdl-card__supportingblack">5 hours ago<span>
+												<span class="postcardtime">5 hours ago<span>
 									</div>
 								</div>
+								</div>
+
 								<div class="basesignature1">Product of Romario Coffie</div>
 			</div>
 
+			<!-- Front page post number 11-->
 		<div class="mdl-cell--3-col-desktop">
 			<div class="derp">
-				<div class="updateheader">Updates</div>
+				<div class="updateheader">Updates - Favorites</div>
 				<div id="scroll">
-					<div class="updatetopics2"><span>Team Solo Mid</span></div>
-					<div class="updatetopics">Counter Logic Gaming</div>
-					<div class="updatetopics2">Tesla</div>
-					<div class="updatetopics">SpaceX</div>
-					<div class="updatetopics2">Bernie Sanders</div>
-					<div class="updatetopics">Black Lives Matter</div>
-					<div class="updatetopics2">Apple</div>
-					<div class="updatetopics">Google</div>
-					<div class="updatetopics2">League of Legends</div>
-					<div class="updatetopics">SK Telecom</div>
+					<div class="updatetopics2"><span><a href="/">Team Solo Mid</a></span></div></a>
+					<div class="updatetopics"><a href="/">Counter Logic Gaming</a></div>
+					<div class="updatetopics2"><a href="/">Tesla</a></div>
+					<div class="updatetopics"><a href="/">SpaceX</a></div>
+					<div class="updatetopics2"><a href="/">Bernie Sanders</a></div>
+					<div class="updatetopics"><a href="/">Black Lives Matter</a></div>
+					<div class="updatetopics2"><a href="/">Apple</a></div>
+					<div class="updatetopics"><a href="/">Google</a></div>
+					<div class="updatetopics2"><a href="/">League of Legends</a></div>
+					<div class="updatetopics"><a href="/">SK Telecom</a></div>
 				</div>
 				<div class="activityheader">Activity</div>
 				<divc class="ppm">
-					<div class="ppmlist">League of Legends</div>
-					<div class="ppmlist">Tesla</div>
-					<div class="ppmlist">ISIL</div>
-					<div class="ppmlist">Elon Musk</div>
-					<div class="ppmlist">Bernie Sanders</div>
-					<div class="ppmlist">One Punch Man</div>
-					<div class="ppmlist">Worlds 2015</div>
-					<div class="ppmlist">Jamaica</div>
-					<div class="ppmlist">Silicon Valley</div>
-					<div class="ppmlist">GOP</div>
+					<div class="ppmlist"><span class="ppmrate">101 ppm</span>League of Legends</div>
+					<div class="ppmlist"><span class="ppmrate">96 ppm</span>Tesla</div>
+					<div class="ppmlist"><span class="ppmrate">78 ppm</span>ISIL</div>
+					<div class="ppmlist"><span class="ppmrate">72 ppm</span>Elon Musk</div>
+					<div class="ppmlist"><span class="ppmrate">64 ppm</span>Bernie Sanders</div>
+					<div class="ppmlist"><span class="ppmrate">63 ppm</span>One Punch Man</div>
+					<div class="ppmlist"><span class="ppmrate">60 ppm</span>Worlds 2015</div>
+					<div class="ppmlist"><span class="ppmrate">57 ppm</span>Jamaica</div>
+					<div class="ppmlist"><span class="ppmrate">31 ppm</span>Silicon Valley</div>
 				</div>
 			</div>
 		</div>
