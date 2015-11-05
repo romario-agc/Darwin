@@ -1,5 +1,21 @@
 <!doctype html>
-<html ng-app="updater">
+<html ng-app="funnel" ng-controller="maincontroller" ng-model="names">
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script>
+	var app = angular.module('funnel', []);
+
+	app.controller('maincontroller', function($scope, $http) {
+
+		$scope.loadData = function () {
+			$http.get("https://obscure-waters-1317.herokuapp.com/posts/update")
+			.success(function (data) {$scope.names = data;});
+		}
+
+	//initial load
+	$scope.loadData();
+
+	});
+</script>
 <head>
 	<meta charset="UTF-8">
 	<style>
@@ -141,7 +157,7 @@ a:link:active, a:visited:active {
 				-ms-flex-direction: column;
 						flex-direction: column;
 		font-size: 16px;
-		min-height: 40px;
+		min-height: 20px;
 		width: 565px;
 		position: relative;
 		background-color: #fafafa;
@@ -221,11 +237,11 @@ a:link:active, a:visited:active {
 		color: black;
 		font-size: 13px;
 		font-weight:500;
-		padding-top: 9px;
-		padding-left: 50px;
-		padding-right: 20px;
-		min-height: 40px;
+		margin-top: 5px;
+		margin-left: 50px;
+		min-height: 20px;
 		overflow: hidden;
+		vertical-align: middle;
 	}
 
 	.mdl-card__titleblack:hover{
@@ -318,7 +334,7 @@ a:link:active, a:visited:active {
 	}
 
 	.fpcomment{
-		padding-left: 15%;
+		padding-left: 12%;
 		font-weight: 500;
 		color: #005D7D;
 	}
@@ -573,7 +589,7 @@ video{
 		<nav class="mdl-navigation mdl">
 			<div id="tt1" class="mdl-navigation__link2"><a href="/posts/update"> Data</a></div>
 			<div class="mdl-tooltip" for="tt1">Make sure to get JSON viewer </br>chome extension</div>
-			<button  class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" >Update</button>
+			<button  class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="loadData()">Update</button>
 		</nav>
 	</div>
 </div>
@@ -669,64 +685,69 @@ video{
 					<div class="backtotop">Back to top</div>
 			</div>
 		</div>
+
+
 		<div class=" mdl-cell--6-col-desktop pad">
+
+			
 		<!-- Sticky post number 1-->
 				<div class="mdl-frontpagecard">
 					<div class="cardcontainer">
-						<div class="mdl-card__titleblack"  ng-controller="GoodController1">
-							<a href="https://www.reddit.com/r/leagueoflegends">{{a}} Feeling out of the loop on reddit? Try Upvoted Weekly- the best of reddit delivered weekly to your inbox.</a>
+						<div class="mdl-card__titleblack">
+							<a ng-href="{{ names[0].link }}">{{ names[0].title }}</a>
 						</div>
 						<div class="commentcontainer">
 						<div class="mdl-card__supportingblack ">
-							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
-							<span class="fpcomment">50 comments</span>
-							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-							<span class="postcardtime">5 hours ago<span>
-						</div>
-					</div>
-					</div>
-					</div>
-
-
-
-		<!-- Sticky post number 2-->
-					<div class="mdl-frontpagecard" >
-						<div class="cardcontainer">
-							<div class="mdl-card__titleblack">
-								<a href="https://www.reddit.com/r/leagueoflegends">Monday Megathread! Ask questions and share knowledge; newcomer questions encouraged!</a>
-							</div>
-							<div class="commentcontainer">
-							<div class="mdl-card__supportingblack">
-									<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
-									<span class="fpcomment">50 comments</span>
-									<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-									<span class="postcardtime">5 hours ago<span>
-							</div>
-						 	</div>
+							<span><a ng-href="{{ names[0].link }}">BuckeyeSundae[M]</a></span>
+							<span class="fpcomment"><a ng-href="{{ names[0].link }}">{{ names[0].comments }}</a></span>
+							<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+							<span class="postcardtime">{{ names[0].time }}</span>
 						</div>
 						</div>
+					</div>
+				</div>
 
 
 
-
-
-		<!-- Front page post number 1-->
-				<div class="mdl-frontpagecard" ng-controller="PostController">
+				<div class="mdl-frontpagecard">
 					<div class="cardcontainer">
 						<div class="mdl-card__titleblack">
-							<a href="https://www.reddit.com/r/leagueoflegends">While we wait for Sandbox Mode from Rito, here is how to practice those tricy flash-walls with a ~10 sec cooldown</a>
+							<a ng-href="{{ names[1].link }}">{{ names[1].title }}</a>
 						</div>
-						<div class="mdl-card__supportingblack">
-						<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
-						<span class="fpcomment">50 comments</span>
-						<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-						<span class="postcardtime">5 hours ago<span>
+						<div class="commentcontainer">
+						<div class="mdl-card__supportingblack ">
+							<span><a ng-href="{{ names[1].link }}">BuckeyeSundae[M]</a></span>
+							<span class="fpcomment"><a ng-href="{{ names[1].link }}">{{ names[1].comments }}</a></span>
+							<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+							<span class="postcardtime">{{ names[1].time }}</span>
 						</div>
 						</div>
 					</div>
+				</div>
 
 
-					<div class="mdl-frontpagecard" ng-controller="PostController">
+
+
+
+				<!-- frontpage post number 1-->
+						<div class="mdl-frontpagecard">
+							<div class="cardcontainer">
+								<div class="mdl-card__titleblack">
+									<a ng-href="{{ names[3].link }}">{{ names[3].title }}</a>
+								</div>
+								<div class="commentcontainer">
+								<div class="mdl-card__supportingblack ">
+									<span><a ng-href="{{ names[3].link }}">BuckeyeSundae[M]</a></span>
+									<span class="fpcomment"><a ng-href="{{ names[3].link }}">{{ names[3].comments }}</a></span>
+									<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+									<span class="postcardtime">{{ names[3].time }}</span>
+								</div>
+								</div>
+							</div>
+						</div>
+
+<!-- video card
+					<div class="mdl-frontpagecard">
 						<div class="cardcontainer">
 							<div class="mdl-card__titleblack">
 								<a href="https://www.reddit.com/r/leagueoflegends">NEW CHAMP SELECT - Break out your best champs in your favorite roles. With new champ select, everyone is on the same page before the draft even begins.</a>
@@ -739,91 +760,407 @@ video{
 										<span class="postcardtime">5 hours ago<span>
 							</div>
 							</div>
-							<iframe class="postimage" src="https://www.youtube.com/embed/Qe4hMva5R3c?autoplay=1" frameborder="0" allowfullscreen></iframe>
+							<iframe class="postimage" src="https://www.youtube.com/embed/Qe4hMva5R3c" frameborder="0" allowfullscreen></iframe>
 
 							</div>
 						</div>
+					-->
 
-		<!-- Front page post number 2-->
-				<div class="mdl-frontpagecard" ng-controller="PostController">
-					<div class="cardcontainer">
-						<div class="mdl-card__titleblack">
-							<a href="https://www.reddit.com/r/leagueoflegends">Can't Make it to Worlds? ESL is hosting a viewing party in Cologne- With the legendary Joe Miller and Deman!</a>
-						</div>
-						<div class="mdl-card__supportingblack">
-							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
-							<span class="fpcomment">42 comments</span>
-							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-							<span class="postcardtime">5 hours ago<span>
-						</div>
-						</div>
-					</div>
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[4].link }}">{{ names[4].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[4].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[4].link }}">{{ names[4].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[4].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[5].link }}">{{ names[5].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[5].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[5].link }}">{{ names[5].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[5].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[6].link }}">{{ names[6].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[6].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[6].link }}">{{ names[6].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[6].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[7].link }}">{{ names[7].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[7].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[7].link }}">{{ names[7].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[7].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[8].link }}">{{ names[8].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[8].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[8].link }}">{{ names[8].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[8].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[9].link }}">{{ names[9].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[9].link }}">BuckeyeSundae[9]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[9].link }}">{{ names[9].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[9].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[10].link }}">{{ names[10].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[10].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[9].link }}">{{ names[10].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[10].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[11].link }}">{{ names[11].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[11].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[11].link }}">{{ names[11].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[11].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[12].link }}">{{ names[12].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[12].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[12].link }}">{{ names[12].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[12].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[13].link }}">{{ names[13].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[13].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[13].link }}">{{ names[13].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[13].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[14].link }}">{{ names[14].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[14].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[14].link }}">{{ names[14].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[14].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[15].link }}">{{ names[15].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[15].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[15].link }}">{{ names[15].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[15].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[16].link }}">{{ names[16].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[16].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[16].link }}">{{ names[16].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[16].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[17].link }}">{{ names[17].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[17].link }}">BuckeyeSundae[17]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[17].link }}">{{ names[17].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[17].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[18].link }}">{{ names[18].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[18].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[18].link }}">{{ names[18].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[18].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[19].link }}">{{ names[19].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[19].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[19].link }}">{{ names[19].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[19].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[20].link }}">{{ names[20].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[20].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[20].link }}">{{ names[20].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[20].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[21].link }}">{{ names[21].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[21].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[21].link }}">{{ names[21].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[21].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[22].link }}">{{ names[22].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[22].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[22].link }}">{{ names[22].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[22].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[23].link }}">{{ names[23].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[23].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[23].link }}">{{ names[23].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[23].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[24].link }}">{{ names[24].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[24].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[24].link }}">{{ names[24].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[24].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[25].link }}">{{ names[25].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[25].link }}">BuckeyeSundae[M]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[25].link }}">{{ names[25].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[25].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- front page post number 2-->
+							<div class="mdl-frontpagecard">
+								<div class="cardcontainer">
+									<div class="mdl-card__titleblack">
+										<a ng-href="{{ names[26].link }}">{{ names[26].title }}</a>
+									</div>
+									<div class="commentcontainer">
+									<div class="mdl-card__supportingblack ">
+										<span><a ng-href="{{ names[26].link }}">BuckeyeSundae[26]</a></span>
+										<span class="fpcomment"><a ng-href="{{ names[26].link }}">{{ names[26].comments }}</a></span>
+										<span class="mdl-card__supportingblack">/r/leagueoflegends</span>
+										<span class="postcardtime">{{ names[26].time }}</span>
+									</div>
+									</div>
+								</div>
+							</div>
 
 
-		<!-- Front page post number 4-->
-				<div class="mdl-frontpagecard" ng-controller="PostController">
-					<div class="cardcontainer">
-						<div class="mdl-card__titleblack">
-							<a href="https://www.reddit.com/r/leagueoflegends">Redeemed Riven should be able to pull her hoodie up and down just like Nighthunter Rengar.</a>
-						</div>
-						<div class="mdl-card__supportingblack">
-							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
-							<span class="fpcomment">16 comments</span>
-							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-									<span class="postcardtime">5 hours ago<span>
-						</div>
-						</div>
-					</div>
+<!-- vpicture card
 
-
-		<!-- Front page post number 5-->
-				<div class="mdl-frontpagecard" ng-controller="PostController">
-					<div class="cardcontainer">
-						<div class="mdl-card__titleblack">
-							<a href="https://www.reddit.com/r/leagueoflegends">Huge Sports Illustrated story on League-eSports: 'How competitive gaming became a flourishing sport'</a>
-						</div>
-						<div class="mdl-card__supportingblack">
-							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
-							<span class="fpcomment">250 comments</span>
-							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-									<span class="postcardtime">5 hours ago<span>
-						</div>
-						</div>
-					</div>
-
-		<!-- Front page post number 6-->
-				<div class="mdl-frontpagecard" ng-controller="PostController">
-					<div class="cardcontainer">
-						<div class="mdl-card__titleblack">
-							<a href="https://www.reddit.com/r/leagueoflegends">SKT and KOO does the coin toss to determine red/blue sides for finals! [Subtitled]</a>
-						</div>
-						<div class="mdl-card__supportingblack">
-							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
-							<span class="fpcomment">140 comments</span>
-							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-									<span class="postcardtime">5 hours ago<span>
-						</div>
-						</div>
-					</div>
-
-		<!-- Front page post number 7-->
-
-				<div class="mdl-frontpagecard" ng-controller="PostController">
-					<div class="cardcontainer">
-						<div class="mdl-card__titleblack">
-							<a href="https://www.reddit.com/r/leagueoflegends">Dash Interview - From Acting to Analyst Desk, Balancing Esports and All Chat, and Working With Sjokz.</a>
-						</div>
-						<div class="mdl-card__supportingblack">
-							<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
-							<span class="fpcomment">230 comments</span>
-							<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-									<span class="postcardtime">5 hours ago<span>
-						</div>
-						</div>
-					</div>
-
-					<!-- Front page post number 3-->
-							<div class="mdl-frontpagecard" ng-controller="PostController">
+							<div class="mdl-frontpagecard">
 								<div class="cardcontainer">
 									<div class="mdl-card__titleblack">
 										<a href="https://www.reddit.com/r/leagueoflegends">[Inven] Inven reacts to Deilor's interview with Travis, "I thought we had a really good chance against SKT"</a>
@@ -837,52 +1174,7 @@ video{
 									<img src="http://static1.gamespot.com/uploads/screen_kubrick/1490/14900166/2955970-brussels_deilor_20151025.jpg" class="postimagetravis">
 									</div>
 								</div>
-
-
-					<!-- Front page post number 9-->
-							<div class="mdl-frontpagecard" ng-controller="PostController">
-								<div class="cardcontainer">
-									<div class="mdl-card__titleblack">
-										<a href="https://www.reddit.com/r/leagueoflegends">Huge Sports Illustrated story on League-eSports: 'How competitive gaming became a flourishing sport'</a>
-									</div>
-									<div class="mdl-card__supportingblack">
-										<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
-										<span class="fpcomment">250 comments</span>
-										<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-												<span class="postcardtime">5 hours ago<span>
-									</div>
-									</div>
-								</div>
-
-					<!-- Front page post number 10-->
-							<div class="mdl-frontpagecard" ng-controller="PostController">
-								<div class="cardcontainer">
-									<div class="mdl-card__titleblack">
-										<a href="https://www.reddit.com/r/leagueoflegends">SKT and KOO does the coin toss to determine red/blue sides for finals! [Subtitled]</a>
-									</div>
-									<div class="mdl-card__supportingblack">
-										<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
-										<span class="fpcomment">140 comments</span>
-										<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-												<span class="postcardtime">5 hours ago<span>
-									</div>
-									</div>
-								</div>
-
-							<!-- Front page post number 11-->
-							<div class="mdl-frontpagecard" ng-controller="PostController">
-								<div class="cardcontainer">
-									<div class="mdl-card__titleblack">
-										<a href="https://www.reddit.com/r/leagueoflegends">Dash Interview - From Acting to Analyst Desk, Balancing Esports and All Chat, and Working With Sjokz.</a>
-									</div>
-									<div class="mdl-card__supportingblack">
-										<a href="https://www.reddit.com/r/leagueoflegends">BuckeyeSundae[M]</a>
-										<span class="fpcomment">230 comments</span>
-										<span class="mdl-card__supportingblack">/r/leagueoflegends<span>
-												<span class="postcardtime">5 hours ago<span>
-									</div>
-								</div>
-								</div>
+-->
 
 								<div class="basesignature1">Product of Romario Coffie</div>
 			</div>
@@ -944,6 +1236,6 @@ video{
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'></link>
 	<!-- Angular Material Dependencies -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.5/angular.min.js"></script>
+
 
 </html>

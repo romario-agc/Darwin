@@ -1,11 +1,8 @@
-   app.controller('maincontroller', function($http) {
+   app.controller('maincontroller', function($scope, $http) {
 
-   var vm = this;
-    vm.mydata = [];
-
-    $http.get('/posts/update')
-        .then(function(result) {
-          console.log(result);
-          vm.mydata = result.data;
-         });
+    $http.get('/posts/update').success(function(data) {
+        if (err) throw err;
+        console.log(data);
+        $scope.myupdate = data;
+        });
     });
