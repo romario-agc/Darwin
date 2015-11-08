@@ -196,6 +196,9 @@ a:link:active, a:visited:active {
 		border: 1px solid white;
 		z-index:1;
 		overflow:hidden;
+    transition-property: background border;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
 	}
 
 	.mdl-frontpagecard:hover{
@@ -308,6 +311,9 @@ a:link:active, a:visited:active {
 		border-bottom: 1px solid lightgrey;
 		text-align: left;
 		color: #2380d7;
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
 	}
 
 	.livepost:hover{
@@ -559,7 +565,14 @@ a:link:active, a:visited:active {
 	  margin: 3;
 		padding-right:25px;
 		padding-top: 5px;
+    transition-property: color;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
 	}
+
+  .mdl-navigation__link2:hover{
+    color: #C9C9C9;
+  }
 
 	.mdl-button2 {
 	  background: transparent;
@@ -658,10 +671,9 @@ video{
 		<div class="mdl-layout-spacer"></div>
 		<!-- Navigation. We hide it in small screens. -->
 		<nav class="mdl-navigation mdl">
-			<div class="mdl-tooltip" for="tt1">Make sure to get JSON viewer </br>chome extension</div>
-      <div id="tt1" class="mdl-navigation__link2" tabindex="0"> Dashboard</div>
-      <div id="tt1" class="mdl-navigation__link2" tabindex="0"> Settings</div>
-      <div id="tt1" class="mdl-navigation__link2" tabindex="0"> Profile</div>
+      <div class="mdl-navigation__link2" tabindex="0"> Dashboard</div>
+      <div class="mdl-navigation__link2" tabindex="0"> Settings</div>
+      <div class="mdl-navigation__link2" tabindex="0"> Profile</div>
 			<button  class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style='background-color: #F4F4F4;
       color: #434343; font-weight:bolder' ng-click="loadData()">Update</button>
 		</nav>
