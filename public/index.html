@@ -7,6 +7,9 @@
 <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
 <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script>
 <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="../node_modules/ngprogress/build/ngProgress.js"></script>
+<link rel="stylesheet" href="/Users/next/Desktop/funnel/node_modules/ngprogress/ngProgress.css">
+
 <script>
 $(function() {
 
@@ -33,7 +36,6 @@ app.controller('maincontroller', function($scope, $http) {
     $http.get("https://obscure-waters-1317.herokuapp.com/posts/update")
     .success(function (data) {$scope.names = data;});
   };
-
   //Initial load
   $scope.loadData();
 
@@ -60,34 +62,19 @@ app.controller('maincontroller', function($scope, $http) {
 
 #scroll {
     width: 260px;
-    height:45%;
-    overflow: hidden;
+    height:82%;
+    overflow: auto;
 		margin-top: 10px;
 		font-size: 12px;
 		border-top: 1px solid grey;
 		border-bottom: 1px solid grey;
 		border-color:#E4E4E4;
-
 }
 
 #scroll:hover {
     overflow: auto;
 }
 
-#livescroll {
-    width: 260px;
-    height: 100%;
-    overflow: hidden;
-		margin-top: 10px;
-		font-size: 12px;
-		border-top: 1px solid grey;
-		border-bottom: 1px solid grey;
-		border-color:#E4E4E4
-}
-
-#livescroll:hover {
-    overflow: auto;
-}
 
 .activityheader{
 		color: #5a5a5a;
@@ -199,6 +186,7 @@ a:link:active, a:visited:active {
     transition-property: background border width height box-shadow;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
+    cursor: pointer;
 	}
 
 	.mdl-frontpagecard:hover{
@@ -244,6 +232,29 @@ a:link:active, a:visited:active {
 		top:0;
 		overflow: hidden;
 		height:100vh
+}
+
+.derp2{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+					flex-direction: column;
+		border-radius: 3px;
+		border: 1px solid grey;
+
+		width: 248px;
+		background-color: #fafafa;
+		border: 1px solid rgba(0, 0, 0, 0.11);
+		box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
+		overflow: auto;
+		min-height:auto;
+    margin-top: 14px;
+    margin-left: 10px;
 }
 
 #circle1 {
@@ -342,14 +353,18 @@ a:link:active, a:visited:active {
 		height: 18px;
 		padding: 15px;
 		padding-left: 25px;
-		max-width: width:185px;
 		text-align: left;
 		font-weight: 300px;
 		background-color: white;
+    transition-property: background border width height box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
 	}
 
 	.updatetopics:hover{
 		text-decoration: underline;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
 	}
 
 	.updatetopics2{
@@ -361,11 +376,39 @@ a:link:active, a:visited:active {
 		text-align: left;
 		font-weight: 300px;
 		background-color: #f8f8f8;
+    transition-property: background border width height box-shadow;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    cursor: pointer;
 	}
 
 	.updatetopics2:hover{
 		text-decoration: underline;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
 	}
+
+  .checkbox{
+    margin-right: 15px;
+    cursor: pointer;
+  }
+
+  .settingsicon{
+    display: inline-block;
+    background: transparent url("//f.thumbs.redditmedia.com/1IPNOzOypvRATYiM.png") no-repeat;
+    text-indent: -9999px;
+    width: auto;
+    height: 66px;
+    vertical-align: middle;
+    text-indent: -9999px;
+    margin-right: 1em;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    cursor: pointer;
+
+  }
 
 	.fpcomment{
 		padding-left: 12%;
@@ -409,31 +452,7 @@ a:link:active, a:visited:active {
 
 	.backtotop:hover{
 		text-decoration: underline;
-	}
-
-	.ppmlist{
-		font-size: 12px;
-		font-family: helvetica;
-		text-align: left;
-		padding-top: 8px;
-	}
-
-	.ppmrate{
-		padding-right: 6px;
-		color: green;
-		font-weight: bolder;
-		font-size: 11px;
-	}
-
-.ppmlist:hover{
-	width: 100%;
-	background-color: #F2F2F2;
-	border-radius: 3px;
-}
-
-	.ppm{
-		padding-left: 30px;
-		margin: 20px;
+    cursor: pointer;
 	}
 
 	.basesignature1{
@@ -567,6 +586,7 @@ a:link:active, a:visited:active {
     transition-property: color;
     transition-duration: 0.15s;
     transition-timing-function: linear;
+    cursor: pointer;
 	}
 
   .mdl-navigation__link2:hover{
@@ -604,9 +624,6 @@ a:link:active, a:visited:active {
 	color:#234323
 	}
 
-	.pad{
-		padding-left: 76px;
-	}
 }
 
 .search{
@@ -627,7 +644,7 @@ video{
   padding-left: 15px;
   padding-top: 7px;
   font-size: 12px;
-  color: #eeeeee;
+  color: inherit;
 
 }
 
@@ -648,6 +665,17 @@ video{
           overflow: hidden;
           border-radius: 2px;
           box-shadow: 0 0px 5px rgba(0, 0, 0, 0.18);
+          cursor: pointer;
+          transition-property: background border width height box-shadow;
+          transition-duration: 0.2s;
+          transition-timing-function: ease-in-out;
+          color: #eeeeee;
+
+}
+
+.searchbackground:hover{
+  background-color: #F5F5F5;
+  color: #434343;
 }
 
 .mdl-button--accent.mdl-button--accent.mdl-button--raised{
@@ -664,7 +692,7 @@ video{
 		<!-- Title -->
 		<a class="mdl-layout-title2" href="/">funnel</a>
     <div class="searchbackground">
-    <span class="search mdl-js-ripple-effect">What are you looking for?</span>
+    <span class="search mdl-js-ripple-effect">Need anything specific?</span>
     </div>
 		<!-- Add spacer, to align navigation to the right -->
 		<div class="mdl-layout-spacer"></div>
@@ -683,95 +711,48 @@ video{
 <!-- Start of main content-->
 <body>
 <main class="mdl-layout__content">
+  <script>
+
+$(document).ready(function(){
+    $("#hide").click(function(){
+        $("p").hide();
+    });
+    $("#show").click(function(){
+        $("p").show();
+    });
+});
+
+  </script>
 
 <!-- Stickie section title-->
 <div class= "frontp">
 	<div class="mdl-grid containee">
-		<div class="mdl-cell--2-col-desktop">
-			<div class="derp">
-					<div class="liveheader">
-						<span class="headerlive">Live</span>
-						<span class="headerglobal">Global</span>
-						<span class="headertime">12:01PM</span>
-					</div>
-					<div id="livescroll">
-							<div class="livepost">
-									<div class="livetemp">Twitter</div>
-									<div class="livetitle">Elon Musk says that Apple only hires Tesla's worst engineers.</div>
-								<div>
-									<span class="livetime">2:01PM<span>
-									<span class="livetopic">Apple<span>
-								</div>
-							</div>
+		<div class=" mdl-cell--2-col-desktop">
+      <div style="position:fixed">
+      <div class="derp2">
+        <div class="mdl-card__titleblack" style="margin:10px;  font-size:13px; padding-left:10px; padding-top:5px;">Subjects <!--<button id="hide">Hide</button><button id="show">show</button>--></div>
+        <div style="padding-left:10px; border-top: 1px solid lightgrey"  >
+        <p style="margin:10px; display:none;">Tesla Motors<span  style="padding-left:5px; font-size:10px;">edit</span></p>
+        <p style="margin:10px; display:none;">Tesla Motors<span  style="padding-left:5px; font-size:10px;">edit</span></p>
+        <p style="margin:10px; display:none;">Tesla Motors<span  style="padding-left:5px; font-size:10px;">edit</span></p>
+        <p style="margin:10px; display:none;">Tesla Motors<span  style="padding-left:5px; font-size:10px;">edit</span></p>
+        <p style="margin:10px;display:none;">Tesla Motors<span  style="padding-left:5px; font-size:10px;">edit</span></p>
+      </div>
 
-							<div class="livepost">
-									<div class="livetemp">Twitter</div>
-									<div class="livetitle">SpaceX’s Garrett Reisman: CDR on crew Dragon vehicle well underway, scheduled to be completed soon.</div>
-								<div>
-									<span class="livetime">2:01PM<span>
-									<span class="livetopic">Apple<span>
-								</div>
-							</div>
+    </div>
 
-							<div class="livepost">
-									<div class="livetemp">Twitter</div>
-									<div class="livetitle">'Steve Jobs' Releases in Select Theaters as First Full Scene Debuts Online.</div>
-								<div>
-									<span class="livetime">2:01PM<span>
-									<span class="livetopic">Apple<span>
-								</div>
-							</div>
-
-							<div class="livepost">
-									<div class="livetemp">Twitter</div>
-									<div class="livetitle">Setting Bernie Sanders apart from the field: a palpable sense of conviction.</div>
-								<div>
-									<span class="livetime">2:01PM<span>
-									<span class="livetopic">Apple<span>
-								</div>
-							</div>
-							<div class="livepost">
-									<div class="livetemp">/r/worldnews</div>
-									<div class="livetitle">In a recent German survey, 44 percent of respondents said they partially, or wholly believe the media regularly lies to the people.</div>
-								<div>
-									<span class="livetime">2:01PM<span>
-									<span class="livetopic">World News<span>
-								</div>
-							</div>
-
-							<div class="livepost">
-									<div class="livetemp">Twitter</div>
-									<div class="livetitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-								<div>
-									<span class="livetime">2:01PM<span>
-									<span class="livetopic">Apple<span>
-								</div>
-							</div>
-
-							<div class="livepost">
-									<div class="livetemp">Macrumors</div>
-									<div class="livetitle">New Apple TV: Tips, Tricks, Siri Remote Shortcuts and Useful Settings</div>
-								<div>
-									<span class="livetime">2:01PM<span>
-									<span class="livetopic">Apple<span>
-								</div>
-							</div>
-
-							<div class="livepost">
-									<div class="livetemp">Twitter</div>
-									<div class="livetitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</div>
-								<div>
-									<span class="livetime">2:01PM<span>
-									<span class="livetopic">Apple<span>
-								</div>
-							</div>
-						</div>
-					<div class="backtotop">Back to top</div>
-			</div>
-		</div>
+    <div class="derp2">
+      <div class="mdl-card__titleblack" style="margin:10px;  font-size:13px; padding-left:10px; padding-top:5px;">What's going on?</div>
+  </div>
+  <div class="derp2">
+    <div class="mdl-card__titleblack" style="margin:10px;  font-size:13px; padding-left:10px; padding-top:5px;">Live Events</div>
+</div>
+</div>
+    </div>
 
 
-		<div class=" mdl-cell--6-col-desktop pad">
+
+		<div class=" mdl-cell--6-col-desktop" style="margin-left: 76px;" >
 
 
 		<!-- Sticky post number 1-->
@@ -1269,28 +1250,21 @@ video{
 			<div class="derp" id="toolbox">
 				<div class="updateheader">Updates - Favorites</div>
 				<div id="scroll">
-					<div class="updatetopics2"><span><a href="/">Team Solo Mid</a></span></div></a>
-					<div class="updatetopics"><a href="/">Counter Logic Gaming</a></div>
-					<div class="updatetopics2"><a href="/">Tesla</a></div>
-					<div class="updatetopics"><a href="/">SpaceX</a></div>
-					<div class="updatetopics2"><a href="/">Bernie Sanders</a></div>
-					<div class="updatetopics"><a href="/">Black Lives Matter</a></div>
-					<div class="updatetopics2"><a href="/">Apple</a></div>
-					<div class="updatetopics"><a href="/">Google</a></div>
-					<div class="updatetopics2"><a href="/">League of Legends</a></div>
-					<div class="updatetopics"><a href="/">SK Telecom</a></div>
-				</div>
-				<div class="activityheader">Activity</div>
-				<divc class="ppm">
-					<div class="ppmlist"><span class="ppmrate">101 ppm</span>League of Legends</div>
-					<div class="ppmlist"><span class="ppmrate">96 ppm</span>Tesla</div>
-					<div class="ppmlist"><span class="ppmrate">78 ppm</span>ISIL</div>
-					<div class="ppmlist"><span class="ppmrate">72 ppm</span>Elon Musk</div>
-					<div class="ppmlist"><span class="ppmrate">64 ppm</span>Bernie Sanders</div>
-					<div class="ppmlist"><span class="ppmrate">63 ppm</span>One Punch Man</div>
-					<div class="ppmlist"><span class="ppmrate">60 ppm</span>Worlds 2015</div>
-					<div class="ppmlist"><span class="ppmrate">57 ppm</span>Jamaica</div>
-					<div class="ppmlist"><span class="ppmrate">31 ppm</span>Silicon Valley</div>
+					<div class="updatetopics2"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">Team Solo Mid</a></span></div></a>
+					<div class="updatetopics"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">Counter Logic Gaming</a></div>
+					<div class="updatetopics2"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">Tesla</a></div>
+					<div class="updatetopics"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">SpaceX</a></div>
+					<div class="updatetopics2"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">Bernie Sanders</a></div>
+					<div class="updatetopics"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">Black Lives Matter</a></div>
+					<div class="updatetopics2"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">Apple</a></div>
+					<div class="updatetopics"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">Google</a></div>
+					<div class="updatetopics2"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">League of Legends</a></div>
+					<div class="updatetopics"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">SK Telecom</a></div>
+          <div class="updatetopics2"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><span><a href="/">Team Solo Mid</a></span></div></a>
+					<div class="updatetopics"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">Counter Logic Gaming</a></div>
+					<div class="updatetopics2"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">Tesla</a></div>
+					<div class="updatetopics"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">SpaceX</a></div>
+					<div class="updatetopics2"><span class="settingsicon"></span><span><input type="checkbox" class="checkbox" checked /><a href="/">Bernie Sanders</a></div>
 				</div>
 			</div>
 		</div>

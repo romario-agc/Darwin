@@ -9476,6 +9476,18 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
     padding: 0; }
 
 .mdl-cell {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  margin: 0 auto 0 auto;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   box-sizing: border-box; }
 
 .mdl-cell--top {
