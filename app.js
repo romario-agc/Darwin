@@ -33,10 +33,10 @@ app.use(function(req, res, next) {
 
 app.get('/', function(req, res) {
   console.log(datetime + colors.magenta(" [funnel]") + colors.blue(' Homepage request recieved'));
-  res.sendfile("./public/index.html");
+  res.sendfile("public/index.html");
 });
 
-app.use('/posts', require('./routes/Update_Controller.js'));
+app.use('/posts', require('./routes/Update_Route.js'));
 
 // Connect to MongoDB
 mongoose.connect('mongodb://romarioc:NnoirO12*@ds043324.mongolab.com:43324/heroku_k9814jjc');

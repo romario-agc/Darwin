@@ -1,21 +1,46 @@
 <!doctype html>
 <html ng-app="funnel" ng-controller="maincontroller" ng-model="names">
+
+	<!-- Angular Material Dependencies -->
 <script src= "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js"></script>
+<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 <script>
-	var app = angular.module('funnel', []);
+$(function() {
 
-	app.controller('maincontroller', function($scope, $http) {
+  var toolbox = $('#toolbox'),
+      height = toolbox.height(),
+      scrollHeight = toolbox.get(0).scrollHeight;
 
-		$scope.loadData = function () {
-			$http.get("https://obscure-waters-1317.herokuapp.com/posts/update")
-			.success(function (data) {$scope.names = data;});
-		}
+  toolbox.bind('mousewheel', function(e, d) {
+    if((this.scrollTop === (scrollHeight - height) && d < 0) || (this.scrollTop === 0 && d > 0)) {
+      e.preventDefault();
+    }
+  });
 
-	//initial load
-	$scope.loadData();
-
-	});
+});
 </script>
+<script>
+//Dependencies
+var app = angular.module('funnel', ['angular-loading-bar', 'ngAnimate']);
+
+app.controller('maincontroller', function($scope, $http) {
+
+  //Function that loads  data from url
+  $scope.loadData = function () {
+    $http.get("https://obscure-waters-1317.herokuapp.com/posts/update")
+    .success(function (data) {$scope.names = data;});
+  };
+
+  //Initial load
+  $scope.loadData();
+
+});
+
+</script>
+
 <head>
 	<meta charset="UTF-8">
 	<style>
@@ -28,6 +53,10 @@
 .containee{
 	width:1234px;
 }
+
+#toolbox {
+
+  }
 
 #scroll {
     width: 260px;
@@ -500,8 +529,10 @@ a:link:active, a:visited:active {
 	  -ms-flex-align: center;
 	  align-items: center;
 	  height: 50px;
+    width: 1110px;
 	  margin: 0;
-	  padding: 0 40px 0 80px
+    margin-left: auto;
+    margin-right: auto;
 	}
 	.mdl-layout-title2 {
 	  display: block;
@@ -509,6 +540,7 @@ a:link:active, a:visited:active {
 	  font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
 	  font-size: 20px;
 	  line-height: 1;
+    text-align: left;
 	  letter-spacing: .02em;
 	  font-weight: 500;
 	  box-sizing: border-box;
@@ -574,25 +606,66 @@ a:link:active, a:visited:active {
 video{
 	all:default;
 }
+
+.mdl-navigation{
+  padding-right: 60px;
+}
+
+.search{
+  padding-left: 15px;
+  padding-top: 7px;
+  font-size: 12px;
+  color: #eeeeee;
+
+}
+
+.searchbackground{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+          background-color: #404e5c;
+          margin-left: 45px;
+          width: 355px;
+          height: 33px;
+          overflow: hidden;
+          border-radius: 2px;
+          box-shadow: 0 0px 5px rgba(0, 0, 0, 0.18);
+}
+
+.mdl-button--accent.mdl-button--accent.mdl-button--raised{
+  background-color:#F4F4F4;
+  color: #eeeeee;
+}
+
 	</style>
 
 <!-- Nav bar-->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 <header class="mdl-layout__header2">
-	<div class="containee">
 	<div class="mdl-layout__header-row2">
 		<!-- Title -->
 		<a class="mdl-layout-title2" href="/">funnel</a>
+    <div class="searchbackground">
+    <span class="search mdl-js-ripple-effect">What are you looking for?</span>
+    </div>
 		<!-- Add spacer, to align navigation to the right -->
 		<div class="mdl-layout-spacer"></div>
 		<!-- Navigation. We hide it in small screens. -->
 		<nav class="mdl-navigation mdl">
-			<div id="tt1" class="mdl-navigation__link2"><a href="/posts/update"> Data</a></div>
 			<div class="mdl-tooltip" for="tt1">Make sure to get JSON viewer </br>chome extension</div>
-			<button  class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="loadData()">Update</button>
+      <div id="tt1" class="mdl-navigation__link2" tabindex="0"> Dashboard</div>
+      <div id="tt1" class="mdl-navigation__link2" tabindex="0"> Settings</div>
+      <div id="tt1" class="mdl-navigation__link2" tabindex="0"> Profile</div>
+			<button  class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style='background-color: #F4F4F4;
+      color: #434343; font-weight:bolder' ng-click="loadData()">Update</button>
 		</nav>
 	</div>
-</div>
 		</header>
 </head>
 
@@ -602,7 +675,7 @@ video{
 
 <!-- Stickie section title-->
 <div class= "frontp">
-	<div class="mdl-grid  containee">
+	<div class="mdl-grid containee">
 		<div class="mdl-cell--2-col-desktop">
 			<div class="derp">
 					<div class="liveheader">
@@ -693,6 +766,7 @@ video{
 		<!-- Sticky post number 1-->
 				<div class="mdl-frontpagecard">
 					<div class="cardcontainer">
+
 						<div class="mdl-card__titleblack">
 							<a ng-href="{{ names[0].link }}">{{ names[0].title }}</a>
 						</div>
@@ -1181,7 +1255,7 @@ video{
 
 			<!-- Front page post number 11-->
 		<div class="mdl-cell--3-col-desktop">
-			<div class="derp">
+			<div class="derp" id="toolbox">
 				<div class="updateheader">Updates - Favorites</div>
 				<div id="scroll">
 					<div class="updatetopics2"><span><a href="/">Team Solo Mid</a></span></div></a>
@@ -1231,11 +1305,10 @@ video{
 		ga('create', 'UA-69395919-1', 'auto');
 		ga('send', 'pageview');
 	</script>
+
 	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-red.min.css" />
 	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"></link>
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'></link>
-	<!-- Angular Material Dependencies -->
-
 
 </html>
