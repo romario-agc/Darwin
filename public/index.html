@@ -196,14 +196,16 @@ a:link:active, a:visited:active {
 		border: 1px solid white;
 		z-index:1;
 		overflow:hidden;
-    transition-property: background border;
-    transition-duration: 0.15s;
+    transition-property: background border width height box-shadow;
+    transition-duration: 0.2s;
     transition-timing-function: linear;
 	}
 
 	.mdl-frontpagecard:hover{
 		background: #F4F4F4;
-		border: 1px solid lightblue;
+    height: +4;
+    width: 570px;
+		box-shadow: 0 5px 8px rgba(0, 0, 0, 0.13);
 
 	}
 
@@ -276,9 +278,6 @@ a:link:active, a:visited:active {
 		vertical-align: middle;
 	}
 
-	.mdl-card__titleblack:hover{
-		color: #5D5D5D;
-	}
 
 	.mdl-card__supportingblack {
 		color: #909090;
