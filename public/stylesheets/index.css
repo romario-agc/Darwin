@@ -1,126 +1,135 @@
-html, body, input, select, textarea
-{
-  font-size:1.05em !important;
+body, html, input,
+select, textarea {
+  font-size : 1.05em !important;
 }
 
-.card{
-margin: auto;
-border-radius: 3px;
-width: 507px;
-height: 98px;
-background-color: #436640;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.32);
-padding-top: 15px;
-padding-left: 22px;
-padding-right: 22px;
+.card {
+  width            : 507px;
+  height           : 98px;
+  margin           : auto;
+  padding-top      : 15px;
+  padding-right    : 22px;
+  padding-left     : 22px;
+  border-radius    : 3px;
+  box-shadow       : 0 2px 4px rgba(0, 0, 0, 0.32);
+  background-color : #436640;
 }
 
-.sectiontitle{
-/* Text style for "Stickied Posts" */
-width: 164px;
-height: 19px;
-color: #313131;
-font-family: SourceSansPro;
-font-size: 15px;
-font-weight: 550;
-margin: auto;
+.sectiontitle {
+  width       : 164px;
+  height      : 19px;
+  margin      : auto;
+  color       : #313131;
+  font-family : SourceSansPro;
+  font-size   : 15px;
+  font-weight : 550;
+  
 }
 
-.spacer{
-width: 25px;
-height: 25px;
+.spacer {
+  width  : 25px;
+  height : 25px;
+         : ;
 }
-.center{
-margin: auto;
-padding-top: 10px;
-padding-bottom: 10px;
+.center {
+  margin         : auto;
+  padding-top    : 10px;
+  padding-bottom : 10px;
+                 : ;
+                 : ;
 }
 
-.titletext{
-width: 925px;
-height: 57px;
-color: #fdfdfd;
-font-family: SourceSansPro;
-font-size: 12px;
-font-weight: 230;
-line-height: 11px;
+.titletext {
+  width       : 925px;
+  height      : 57px;
+  color       : #fdfdfd;
+  line-height : 11px;
+  font-family : SourceSansPro;
+  font-size   : 12px;
+  font-weight : 230;
+              : ;
+              : ;
+              : ;
+              : ;
+              : ;
+              : ;
 }
 .mdl-cell {
-  box-sizing: border-box;
-  background-color: grey ;
-  height: 200px;
-  padding-left: 8px;
-  padding-top: 8px;
-  color: blue;
+  height           : 200px;
+  padding-top      : 8px;
+  padding-left     : 8px;
+  color            : blue;
+  background-color : grey;
+  box-sizing       : border-box;
 }
 .mdl-grid:first-of-type .mdl-cell {
-  height: 50px;
+  height : 50px;
 }
 
 .mdl-card2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-size: 16px;
-  font-weight: 400;
-  height: 170px;
-  overflow: hidden;
-  width: 530px;
-  z-index: 1;
-  position: relative;
-  background: rgb(255,255,255);
-  border-radius: 3px;
-  padding-left: 15px;
+  z-index                : 1;
+  display                : -webkit-box;
+  display                : -ms-flexbox;
+  display                : flex;
+  display                : -webkit-flex;
+  position               : relative;
+  width                  : 530px;
+  height                 : 170px;
+  padding-left           : 15px;
+  border-radius          : 3px;
+  font-size              : 16px;
+  font-weight            : 400;
+  background             : rgb(255,255,255);
+  -webkit-box-orient     : vertical;
+  -webkit-box-direction  : normal;
+  -webkit-flex-direction : column;
+  overflow               : hidden;
+  -ms-flex-direction     : column;
+  flex-direction         : column;
 }
 
 .mdl-card3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-size: 16px;
-  font-weight: 400;
-  height: 170px;
-  overflow: hidden;
-  width: 530px;
-  z-index: 1;
-  position: relative;
-  background-color: #436640;
-  border-radius: 3px;
-  padding-left: 15px;
+  z-index                : 1;
+  display                : -webkit-box;
+  display                : -ms-flexbox;
+  display                : flex;
+  display                : -webkit-flex;
+  position               : relative;
+  width                  : 530px;
+  height                 : 170px;
+  padding-left           : 15px;
+  border-radius          : 3px;
+  font-size              : 16px;
+  font-weight            : 400;
+  background-color       : #436640;
+  -webkit-box-orient     : vertical;
+  -webkit-box-direction  : normal;
+  -webkit-flex-direction : column;
+  overflow               : hidden;
+  -ms-flex-direction     : column;
+  flex-direction         : column;
 }
 
 .mdl-card__supporting-text2 {
-  color: #f8f8f8;
-  font-size: 13px;
-  line-height: 18px;
-  overflow: hidden;
-  padding: 16px;
-  width: 90%
+  width       : 90%;
+  padding     : 16px;
+  color       : #f8f8f8;
+  line-height : 18px;
+  font-size   : 13px;
+  overflow    : hidden;
 }
 
 .demo-card-wide.mdl-card {
-  width: 512px;
-  padding:20px;
-  height: 50px;
+  width   : 512px;
+  height  : 50px;
+  padding : 20px;
 }
 
 .demo-card-wide > .mdl-card__title {
-  color: #fff;
-  height: 176px;
+  height : 176px;
+  color  : #fff;
 }
 
 .demo-card-wide > .mdl-card__menu {
-  color: #fff;
+  color : #fff;
 }
