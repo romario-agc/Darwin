@@ -185,8 +185,8 @@
       position: relative;
       background-color: #ffffff;
       border-radius: 2px;
-      box-shadow: 0 0.75px 1px rgba(199, 195, 195, 0.34);
-      margin: 7px;
+      box-shadow: 0 1.25px 1px rgba(199, 195, 195, 0.34);
+      margin: 9px;
       border: 1px solid;
       border-color: #e4e3e3;
       z-index: 1;
@@ -214,7 +214,7 @@
       width: 540px;
       padding-top: 3px;
       overflow: hidden;
-      padding-left: 10px;
+      margin-left: 15px;
     }
 
     .derp {
@@ -289,12 +289,52 @@
       width: 100%;
     }
 
+    .deft{
+border-bottom-color: rgb(136, 153, 166);
+border-bottom-left-radius: 5px;
+border-bottom-right-radius: 5px;
+border-bottom-style: none;
+border-bottom-width: 0px;
+border-image-outset: 0px;
+border-image-repeat: stretch;
+border-image-slice: 100%;
+border-image-source: none;
+border-image-width: 1;
+border-left-color: rgb(136, 153, 166);
+border-left-style: none;
+border-left-width: 0px;
+border-right-color: rgb(136, 153, 166);
+border-right-style: none;
+border-right-width: 0px;
+border-top-color: rgb(136, 153, 166);
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+border-top-style: none;
+border-top-width: 0px;
+color: rgb(136, 153, 166);
+cursor: auto;
+display: inline-block;
+float: left;
+font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: 14px;
+height: 48px;
+width: 48px;
+line-height: 18px;
+list-style-image: none;
+list-style-position: outside;
+list-style-type: none;
+margin-left: -58px;
+margin-top: 3px;
+text-align: start;
+z-index: 12;
+    }
+
     .mdl-card__titleblack {
       color: 		#333333;
       font-size: 15px;
       font-weight: 300;
       margin-top: 5px;
-      margin-left: 60px;
+      margin-left: 68px;
       min-height: 20px;
       overflow: hidden;
       vertical-align: middle;
@@ -306,7 +346,7 @@
       font-weight: 200;
       line-height: 5px;
       padding-top: 10px;
-      padding-left: 50px;
+      margin-left: 53px;
       padding-bottom: 13px;
       width: 100%
     }
@@ -340,7 +380,7 @@
       background-color: #F2F2F2
     }
 
-    
+
 
     .headertime {
       color: black;
@@ -779,6 +819,16 @@
     align-items: center;
   }
 
+.sourceimage{
+  display:inline-block;
+  float:left;
+  width: 35px;
+  height: 35px;
+  margin-left:15px;
+  margin-top:5px;
+  border: 1px solid lightgrey;
+  border-radius:2px;
+}
 
 
   </style>
@@ -846,7 +896,7 @@
       <div class="mdl-grid containee">
 
         <div class=" mdl-cell--2-col-desktop" >
-          <div style="position:fixed">
+          <div style="position:fixed;">
             <div class="derp2">
               <div class="mdl-card__titleblack" style="margin:10px;  font-size:13px; padding-left:10px; padding-top:5px;">Subjects
                 <!--<button id="hide">Hide</button><button id="show">show</button>-->
@@ -891,16 +941,19 @@
           <!-- Sticky post number 1-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
-
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[0].time }}</span>
+                </div>
                 <a ng-href="{{ names[0].link }}">{{ names[0].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[0].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[0].link }}">{{ names[0].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[0].time }}</span>
+
                 </div>
               </div>
             </div>
@@ -910,36 +963,66 @@
 
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[1].time }}</span>
+                </div>
                 <a ng-href="{{ names[1].link }}">{{ names[1].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[1].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[1].link }}">{{ names[1].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[1].time }}</span>
+
+
                 </div>
               </div>
             </div>
           </div>
 
 
+          <!-- frontpage post number 1-->
+          <div class="mdl-frontpagecard">
+            <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
+              <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[2].time }}</span>
+                </div>
+                <a ng-href="{{ names[2].link }}">{{ names[2].title }}</a>
+              </div>
+              <div class="commentcontainer">
+                <div class="mdl-card__supportingblack ">
+                  <span><a ng-href="{{ names[2].link }}">BuckeyeSundae[M]</a></span>
+                  <span class="fpcomment"><a ng-href="{{ names[2].link }}">{{ names[2].comments }}</a></span>
 
+
+                </div>
+              </div>
+            </div>
+          </div>
 
 
           <!-- frontpage post number 1-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[3].time }}</span>
+                </div>
                 <a ng-href="{{ names[3].link }}">{{ names[3].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[3].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[3].link }}">{{ names[3].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[3].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -968,15 +1051,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[4].time }}</span>
+                </div>
                 <a ng-href="{{ names[4].link }}">{{ names[4].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[4].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[4].link }}">{{ names[4].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[4].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -985,15 +1073,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[5].time }}</span>
+                </div>
                 <a ng-href="{{ names[5].link }}">{{ names[5].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[5].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[5].link }}">{{ names[5].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[5].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1002,15 +1095,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[6].time }}</span>
+                </div>
                 <a ng-href="{{ names[6].link }}">{{ names[6].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[6].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[6].link }}">{{ names[6].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[6].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1019,15 +1117,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[7].time }}</span>
+                </div>
                 <a ng-href="{{ names[7].link }}">{{ names[7].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[7].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[7].link }}">{{ names[7].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[7].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1036,15 +1139,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[8].time }}</span>
+                </div>
                 <a ng-href="{{ names[8].link }}">{{ names[8].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[8].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[8].link }}">{{ names[8].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[8].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1053,15 +1161,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[9].time }}</span>
+                </div>
                 <a ng-href="{{ names[9].link }}">{{ names[9].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[9].link }}">BuckeyeSundae[9]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[9].link }}">{{ names[9].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[9].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1070,15 +1183,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[10].time }}</span>
+                </div>
                 <a ng-href="{{ names[10].link }}">{{ names[10].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[10].link }}">BuckeyeSundae[M]</a></span>
-                  <span class="fpcomment"><a ng-href="{{ names[9].link }}">{{ names[10].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[10].time }}</span>
+                  <span class="fpcomment"><a ng-href="{{ names[10].link }}">{{ names[10].comments }}</a></span>
+
+
                 </div>
               </div>
             </div>
@@ -1087,15 +1205,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[11].time }}</span>
+                </div>
                 <a ng-href="{{ names[11].link }}">{{ names[11].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[11].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[11].link }}">{{ names[11].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[11].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1104,15 +1227,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[12].time }}</span>
+                </div>
                 <a ng-href="{{ names[12].link }}">{{ names[12].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[12].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[12].link }}">{{ names[12].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[12].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1121,15 +1249,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[13].time }}</span>
+                </div>
                 <a ng-href="{{ names[13].link }}">{{ names[13].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[13].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[13].link }}">{{ names[13].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[13].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1138,15 +1271,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[14].time }}</span>
+                </div>
                 <a ng-href="{{ names[14].link }}">{{ names[14].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[14].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[14].link }}">{{ names[14].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[14].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1155,15 +1293,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[15].time }}</span>
+                </div>
                 <a ng-href="{{ names[15].link }}">{{ names[15].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[15].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[15].link }}">{{ names[15].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[15].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1172,15 +1315,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[16].time }}</span>
+                </div>
                 <a ng-href="{{ names[16].link }}">{{ names[16].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[16].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[16].link }}">{{ names[16].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[16].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1189,15 +1337,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[17].time }}</span>
+                </div>
                 <a ng-href="{{ names[17].link }}">{{ names[17].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[17].link }}">BuckeyeSundae[17]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[17].link }}">{{ names[17].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[17].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1206,15 +1359,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[18].time }}</span>
+                </div>
                 <a ng-href="{{ names[18].link }}">{{ names[18].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[18].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[18].link }}">{{ names[18].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[18].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1223,15 +1381,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[19].time }}</span>
+                </div>
                 <a ng-href="{{ names[19].link }}">{{ names[19].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[19].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[19].link }}">{{ names[19].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[19].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1240,15 +1403,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[20].time }}</span>
+                </div>
                 <a ng-href="{{ names[20].link }}">{{ names[20].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[20].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[20].link }}">{{ names[20].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[20].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1257,15 +1425,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[21].time }}</span>
+                </div>
                 <a ng-href="{{ names[21].link }}">{{ names[21].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[21].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[21].link }}">{{ names[21].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[21].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1274,15 +1447,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[22].time }}</span>
+                </div>
                 <a ng-href="{{ names[22].link }}">{{ names[22].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[22].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[22].link }}">{{ names[22].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[22].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1291,15 +1469,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[23].time }}</span>
+                </div>
                 <a ng-href="{{ names[23].link }}">{{ names[23].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[23].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[23].link }}">{{ names[23].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[23].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1308,15 +1491,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[23].time }}</span>
+                </div>
                 <a ng-href="{{ names[24].link }}">{{ names[24].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[24].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[24].link }}">{{ names[24].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[24].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1325,15 +1513,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[25].time }}</span>
+                </div>
                 <a ng-href="{{ names[25].link }}">{{ names[25].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[25].link }}">BuckeyeSundae[M]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[25].link }}">{{ names[25].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[25].time }}</span>
+
+
                 </div>
               </div>
             </div>
@@ -1342,15 +1535,20 @@
           <!-- front page post number 2-->
           <div class="mdl-frontpagecard">
             <div class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <div class="mdl-card__titleblack">
+                <div style="font-size:12px; font-weight:normal; color:#606060">
+                  <span style="padding-bottom:25px;">/r/leagueoflegends</span>
+                  <span style="margin-left:5px; font-size: 9px">{{ names[26].time }}</span>
+                </div>
                 <a ng-href="{{ names[26].link }}">{{ names[26].title }}</a>
               </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <span><a ng-href="{{ names[26].link }}">BuckeyeSundae[26]</a></span>
                   <span class="fpcomment"><a ng-href="{{ names[26].link }}">{{ names[26].comments }}</a></span>
-                  <span class="mdl-card__supportingblack">/r/leagueoflegends</span>
-                  <span class="postcardtime">{{ names[26].time }}</span>
+
+
                 </div>
               </div>
             </div>
