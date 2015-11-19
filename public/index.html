@@ -142,46 +142,6 @@
       cursor: default;
     }
 
-    .liveheader {
-      color: darkred;
-      font-size: 13px;
-      font-weight: bold;
-      text-align: center;
-      padding-top: 60px;
-      font-family: SourceSansPro;
-    }
-
-    .livetemp {
-      color: black;
-      font-weight: lighter;
-      font-size: 11px;
-      text-align: left;
-    }
-
-    .livetime {
-      color: black;
-      text-align: left;
-      font-weight: lighter;
-      font-size: 11px;
-    }
-
-    .livetopic {
-      color: black;
-      padding-left: 100px;
-      font-weight: lighter;
-      font-size: 11px;
-    }
-
-    .livetitle {
-      padding-top: 5px;
-      padding-bottom: 5px;
-      font-weight: 570;
-      color: #004890;
-    }
-
-    .livetitle:hover {
-      text-decoration: underline;
-    }
 
     .center {
       margin: auto;
@@ -278,10 +238,11 @@
       width: 260px;
       height: 100%;
       top: 0;
-      background-color: #F4F4F4;
+      background-color:#f5f5f5;
       border: 1px solid rgba(0, 0, 0, 0.11);
       overflow: hidden;
       right: 0;
+      box-shadow:  0 2px 2px rgba(0, 0, 0, 0.08);
     }
 
     .derp2 {
@@ -445,19 +406,17 @@
       padding-left: 25px;
       text-align: left;
       font-weight: 300px;
-      background-color: #F4F4F4;
+      background-color: #f5f5f5;
       transition-property: background border width height box-shadow;
-      transition-duration: 0.15s;
+      transition-duration: 0.05s;
       transition-timing-function: linear;
       cursor: pointer;
       width: 220px;
-      border-bottom: 1px solid #e6e6e6;
+      border-bottom: 1px solid #dedede;
     }
 
     .updatetopics:hover {
-      text-decoration: underline;
-      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
-      background-color: #e6e6e6;
+      background-color: #e2e2e2;
     }
 
     .updatetopics2 {
@@ -673,7 +632,7 @@
       margin-left: auto;
       margin-right: auto;
       background-color: white;
-      color: rgb(250, 87, 5);
+      color:#005D7D;
     }
 
     .mdl-layout-title2 {
@@ -694,11 +653,11 @@
     }
 
     .mdl-navigation__link2 {
-      color: rgb(111, 111, 111);
+      color: grey;
       font-family: "helvetica", "Trebuchet MS", "Arial", sans-serif;
       text-decoration: none;
-      font-size: 12px;
-      font-weight: bolder;
+      font-size: 11px;
+      font-weight: 500;
       margin: 3;
       padding-right: 25px;
       padding-top: 5px;
@@ -893,7 +852,7 @@
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <header class="mdl-layout__header2 shadow">
-    <div style="background-color: rgb(250, 87, 5); height:2px; width:100%"></div>
+    <div style="background-color:#005D7D; height:2px; width:100%"></div>
     <div class="mdl-layout__header-row2">
       <!-- Title -->
       <a class="mdl-layout-title2" href="/">DARWIN</a>
@@ -904,10 +863,10 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl">
-        <div class="mdl-navigation__link2" style="color:rgb(250, 87, 5)" tabindex="0"> Dashboard</div>
+        <div class="mdl-navigation__link2" style="color:#005D7D" tabindex="0"> Dashboard</div>
         <div class="mdl-navigation__link2" tabindex="0"> Settings</div>
         <div class="mdl-navigation__link2" tabindex="0"> Profile</div>
-        <button class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style='background-color: rgb(250, 87, 5);
+        <button class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style='background-color:#005D7D;
       color: white; font-weight:bolder; box-shadow: 0 0 0 0' ng-click="loadMainData() ">Update</button>
       </nav>
     </div>
