@@ -196,7 +196,7 @@
 
     a:link:active,
     a:visited:active {
-      color: inherit;
+      color: lightgrey;
     }
 
     .titletext {
@@ -244,7 +244,7 @@
     .mdl-frontpagecard:hover {
       background: #fafafa;
       border: 1px solid;
-      border-color: rgba(250, 87, 5, 0.31);
+      border-color: lightgrey;
     }
 
     .cardcontainer {
@@ -450,6 +450,7 @@
       transition-duration: 0.15s;
       transition-timing-function: linear;
       cursor: pointer;
+      width: 220px;
       border-bottom: 1px solid #e6e6e6;
     }
 
@@ -475,7 +476,6 @@
     }
 
     .updatetopics2:hover {
-      text-decoration: underline;
       box-shadow: 0 2px 3px rgba(0, 0, 0, 0.03);
     }
 
@@ -538,7 +538,14 @@
       margin-top: 15px;
       display: block;
       overflow: hidden;
-      border: 1px solid lightgrey;
+      border: 1px solid rgba(154, 154, 154, 0.77);
+      transition-property: opacity;
+      transition-duration: 0.1s;
+      transition-timing-function: linear;
+    }
+
+    .imagediv:hover{
+      opacity: 0.9
     }
 
     .imageclass {
@@ -574,8 +581,8 @@
     }
 
     a {
-      color: parent;
       font-weight: inherit;
+      display:inline-block;
     }
 
     a:hover {
@@ -687,10 +694,11 @@
     }
 
     .mdl-navigation__link2 {
-      color: rgb(250, 87, 5);
-      font-family: "Futura", "Trebuchet MS", "Arial", sans-serif;
+      color: rgb(111, 111, 111);
+      font-family: "helvetica", "Trebuchet MS", "Arial", sans-serif;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 12px;
+      font-weight: bolder;
       margin: 3;
       padding-right: 25px;
       padding-top: 5px;
@@ -876,6 +884,7 @@
     border: 1px solid lightgrey;
     border-radius: 2px;
   }
+
   </style>
 
 </head>
@@ -931,7 +940,7 @@
         <div class="mdl-grid containee">
 
           <div class=" mdl-cell--2-col-desktop">
-            <div style="position:fixed;">
+            <div style="">
               <div class="derp2">
                 <div class="mdl-card__titleblack" style="margin:10px;  font-size:13px; padding-left:10px; padding-top:5px;">Favourites
                   <!--<button id="hide">Hide</button><button id="show">show</button>-->
@@ -1014,99 +1023,23 @@
           <!-- Subjects-->
           <div class="mdl-cell--3-col-desktop">
             <div class="derp" id="toolbox">
-              <div class="updateheader">Subject Updates</div>
+              <div class="updateheader">
+                <span>Updates</span>
+                <div style="display:inline-block; height:20px; width:20px; background-color:#923e3e; border-radius:50%;float:right; margin-right:30px; overflow:hidden "></div>
+              </div>
               <div id="scroll">
-                <div class="updatetopics">
-                  <span>
-                    <a href="/">Team Solo Mid</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                    <a href="/">Xer0</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                    <a href="/">Jamaica</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                      <a ng-click="loadleagueData()" style="color:darkblue">League of Legends</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                      <a href="/">Google</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                      <a ng-click="loadteslaData()" style="color:darkblue">Tesla Motors</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                      <a href="/">Bernie Sanders</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                      <a href="/">Apple</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                      <a ng-click="loadSpaceXData()" style="color:darkblue">Space X</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                      <a href="/">Elon Musk</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                      <a href="/">Late Night Show</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                      <a href="/">One Punch Man</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                      <a href="/">Limitless</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-                      <a href="/">SKT Faker</a>
-                  </span>
-                </div>
-
-                <div class="updatetopics">
-                  <span>
-
-                    <a href="/">Silicon Valley</a>
-
-                  </span>
-                </div>
+                <a ng-click="loadleagueData()" class="updatetopics" style="text-decoration: none">
+                  <div style="display:inline-block; height:14px; margin-top:3px; width:20px; background-color:#008aa3; border-radius:2px;float:left; margin-right:15px; overflow:hidden "></div>
+                  <span style="color:black">League of Legends<span>
+                </a>
+                <a ng-click="loadteslaData()" class="updatetopics" style="text-decoration: none">
+                  <div style="display:inline-block; height:14px; margin-top:3px; width:20px; background-color:#008aa3; border-radius:2px;float:left; margin-right:15px; overflow:hidden "></div>
+                  <span style="color:black">Tesla Motors<span>
+                </a>
+                <a ng-click="loadSpaceXData()" class="updatetopics" style="text-decoration: none">
+                  <div style="display:inline-block; height:14px; margin-top:3px; width:20px; background-color:#008aa3; border-radius:2px;float:left; margin-right:15px; overflow:hidden "></div>
+                  <span style="color:black">Space X<span>
+                </a>
               </div>
             </div>
           </div>
