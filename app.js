@@ -31,10 +31,8 @@ app.use(function(req, res, next) {
   //next();
 //});
 
-app.get('/', function(req, res) {
-  console.log(datetime + colors.magenta(" [funnel]") + colors.blue(' Homepage request recieved'));
-  res.sendfile("public/index.html");
-});
+
+app.use(express.static(__dirname+'/public'));
 
 app.use('/posts', require('./routes/Update_Route.js'));
 
