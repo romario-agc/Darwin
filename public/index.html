@@ -114,7 +114,7 @@
                   </div>
                   <a ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
                 </div>
-                <div class="imagediv" ng-hide="!names.data.children[count].data.preview.images[0].source.url">
+                <div class="imagediv" ng-hide="!names.data.children[count].data.preview.images[0].source.url ">
                   <a ng-href="{{ names.data.children[count].data.url}}">
                     <img ng-src="{{names.data.children[count].data.preview.images[0].source.url}}" class="imageclass">
                   </a>
@@ -126,13 +126,13 @@
                   </div>
                 </div>
 
-                <!--
-            **video**
-          </div>
-          <iframe class="postimage" src="https://www.youtube.com/embed/Qe4hMva5R3c" frameborder="0" allowfullscreen></iframe>
 
-          </div>
-          -->
+
+                <!-- video
+                <video   ng-hide="!names.data.children[count].data.secure_media.oembed.url" autoplay="autoplay" preload="auto" ng-click="video()">
+                  <source ng-src="{{ names.data.children[count].data.secure_media.oembed.url }}" type="video/mp4" />
+                </video>
+                -->
               </div>
             </div>
           </div>
@@ -211,5 +211,7 @@
 
 <!-- Google Fonts-->
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'></link>
+
+
 
 </html>

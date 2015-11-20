@@ -38,6 +38,7 @@ app.controller('maincontroller', function($scope, $http) {
   $scope.loadMainData();
 
 
+
 });
 
 app.directive('loading', ['$http', function($http) {
