@@ -20,8 +20,7 @@
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl">
         <div class="mdl-navigation__link2" style="color:#005D7D" tabindex="0"> Dashboard</div>
-        <div class="mdl-navigation__link2" tabindex="0"> Settings</div>
-        <div class="mdl-navigation__link2" tabindex="0"> Profile</div>
+        <div class="mdl-navigation__link2" tabindex="0"> Romario Coffie</div>
         <button class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style='background-color:#005D7D;
       color: white; font-weight:bolder; box-shadow: 0 0 0 0' ng-click="loadMainData() ">Update</button>
       </nav>
@@ -63,7 +62,7 @@
                   <div class="updateheadernumber">16</div>
                 </div>
                 <div id="scroll">
-                <a ng-click="loadleagueData()" class="updatetopics" style="text-decoration: none">
+                <a ng-click="loadleagueData()" class="updatetopics" style="text-decoration: none;">
                   <div class="updatenumber">7</div>
                   <span style="color:black;font-weight:normal">League of Legends<span>
                 </a>
@@ -81,6 +80,7 @@
               <div class="derp2">
                 <div class="mdl-card__titleblack" style="margin:10px;  font-size:12px; padding-left:10px; padding-top:5px;">What's going on?</div>
               </div>
+
               <div class="derp2">
                 <div class="mdl-card__titleblack" style="margin:10px;  font-size:12px; padding-left:10px; padding-top:5px;">Live Events</div>
                 <a ng-click="loadteslaData()" class="updatetopics" style="text-decoration: none">
@@ -97,7 +97,6 @@
           </div>
 
 
-
           <div class=" mdl-cell--6-col-desktop " style="margin-left: 76px;">
 
             <!-- Loadering icon-->
@@ -107,12 +106,15 @@
             <div class="mdl-frontpagecard" ng-repeat="count in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27]">
               <div class="cardcontainer">
                 <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
+                <img class="arrowdown" src="arrowdown.png"/>
                 <div class="mdl-card__titleblack">
-                  <div style="font-size:10px; font-weight:bolder; color:#909090; margin-bottom:5px;">
-                    <span style="">subreddit: {{ names.data.children[count].data.subreddit }}</span>
-                    <span style="  margin-left:5px;font-size: 10px;">upvotes: {{ names.data.children[count].data.ups }}</span>
+                  <div class="cardsourcecontainer">
+
+                    <span style="color:#034860; font-weight:600; font-size:11px">/r/{{ names.data.children[count].data.subreddit }}</span>
+                    <div style="">upvotes: {{ names.data.children[count].data.ups }}</div>
+
                   </div>
-                  <a ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
+                  <a class="cardtitle" ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
                 </div>
                 <div class="imagediv" ng-hide="!names.data.children[count].data.preview.images[0].source.url ">
                   <a ng-href="{{ names.data.children[count].data.url}}">
@@ -121,8 +123,11 @@
                 </div>
                 <div class="commentcontainer">
                   <div class="mdl-card__supportingblack ">
-                    <div style="display:inline;"><a ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">Author: {{ names.data.children[count].data.author }}</a></div>
+                    <img class="usericon" src="user.png"/>
+                    <div style="display:inline;"><a ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.author }}</a></div>
+                    <img class="commenticon" src="comment.png"/>
                     <span class="fpcomment"><a ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.num_comments }} comments</a></span>
+                    <img class="moreicon" src="moreicon.png"/>
                   </div>
                 </div>
 
