@@ -258,8 +258,8 @@ html,
 
   .cardtitle{
       margin-top: 12px;
-      margin-left: -35px;
-      padding-left: 60px
+      width: 520px;
+      padding-left: 22px
   }
 
   .mdl-card__titleblack {
@@ -417,6 +417,14 @@ html,
     opacity:0.6;
     width:20px;
     height:20px;
+    opacity: 0.8
+  }
+
+  .upvoteicon{
+    display:inline;
+    opacity:0.6;
+    width:10px;
+    height:10px;
     opacity: 0.8
   }
 

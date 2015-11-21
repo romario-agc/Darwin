@@ -109,8 +109,11 @@
                 <img class="arrowdown" src="arrowdown.png"/>
                 <div class="mdl-card__titleblack">
                   <div class="cardsourcecontainer">
-                    <div style="color:#034860; font-weight:600; font-size:11px; margin-top:5px;">/r/{{ names.data.children[count].data.subreddit }}</div>
-                    <div style="margin-top:5px;">upvotes: {{ names.data.children[count].data.ups }}</div>
+                    <div style="color:#034860; font-weight:600; font-size:11px; margin-top:10px;">/r/{{ names.data.children[count].data.subreddit }}</div>
+                    <div style="margin-top:-3px; font-weight:600">
+                      <img class="upvoteicon" src="upvote.png"/>
+                      {{ names.data.children[count].data.ups }}
+                    </div>
                   </div>
                   <a class="cardtitle" ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
                 </div>
