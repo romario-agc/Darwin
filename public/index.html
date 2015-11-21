@@ -109,10 +109,8 @@
                 <img class="arrowdown" src="arrowdown.png"/>
                 <div class="mdl-card__titleblack">
                   <div class="cardsourcecontainer">
-
-                    <span style="color:#034860; font-weight:600; font-size:11px">/r/{{ names.data.children[count].data.subreddit }}</span>
-                    <div style="">upvotes: {{ names.data.children[count].data.ups }}</div>
-
+                    <div style="color:#034860; font-weight:600; font-size:11px; margin-top:5px;">/r/{{ names.data.children[count].data.subreddit }}</div>
+                    <div style="margin-top:5px;">upvotes: {{ names.data.children[count].data.ups }}</div>
                   </div>
                   <a class="cardtitle" ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
                 </div>
@@ -123,10 +121,14 @@
                 </div>
                 <div class="commentcontainer">
                   <div class="mdl-card__supportingblack ">
-                    <img class="usericon" src="user.png"/>
-                    <div style="display:inline;"><a ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.author }}</a></div>
-                    <img class="commenticon" src="comment.png"/>
-                    <span class="fpcomment"><a ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.num_comments }} comments</a></span>
+                    <div class="authorname">
+                      <img class="usericon" src="user.png"/>
+                      <a style="font-weight: 600; "ng-href="https://www.reddit.com/user/{{ names.data.children[count].data.author }}">{{ names.data.children[count].data.author }}</a>
+                    </div>
+                    <div class="fpcomment">
+                      <img class="commenticon" src="comment.png"/>
+                      <a style="margin-left:3px; font-weight: 600; "ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.num_comments }} comments</a>
+                    </div>
                     <img class="moreicon" src="moreicon.png"/>
                   </div>
                 </div>
