@@ -25,20 +25,7 @@
       color: white; font-weight:bolder; box-shadow: 0 0 0 0' ng-click="loadMainData() ">Update</button>
       </nav>
     </div>
-    <div class="subject">
-      <div class="titlefeedcontainer">
-        <div class="feedtitle">Global</div>
-        <span class="feedtitlesources">Sources</span>
-        <span class="feedtitlesourcesnames">Reddit</span>
-        <span class="feedtitlesourcesnames">Surrender@20</span>
-        <span class="feedtitlesourcesnames">Op.gg</span>
-        <span class="feedtitlesourcesnames">Lolesports</span>
-        <span class="feedtitlesourcesnames">leagueoflegends.com</span>
-        <span class="feedtitlesourcesnames">replay.gg</span>
-        <span class="feedtitlesourcesnames">twitch.tv</span>
-        <span class="feedtitlesourcesnames">more</span>
-      </div>
-    </div>
+
 
 
   </header>
@@ -54,33 +41,36 @@
         <div class="mdl-grid containee">
 
           <div class=" mdl-cell--2-col-desktop">
-            <div style="position:fixed">
-              <div class="derp2" id="toolbox">
+            <div style="position:fixed; margin-top:-3px;" ng-controller="SubjectTitle">
 
+              <div class="currenttopicbox">
+                <div class="mdl-card__titleblack" style="margin:10px;  font-size:12px; padding-left:10px; padding-top:5px;" ng-model="Subject">
+                  {{Subject.title}}
+                    <img class="currenttopicimage" src="rightarrow.png" alt="">
+                </div>
+              </div>
+
+              <div class="derp2" id="toolbox">
                 <div class="updateheader" >
                   <span style="margin-top:15px;">Favourites</span>
                   <div class="updateheadernumber">16</div>
-
                 </div>
                 <div id="scroll">
-                <a ng-click="loadleagueData()" class="updatetopics" style="text-decoration: none;">
+                <a ng-click="loadleagueData(); updateModel('League of Legends')" class="updatetopics" style="text-decoration: none;">
                   <div class="updatenumber">7</div>
                   <span style="color:black;font-weight:normal">League of Legends<span>
                 </a>
-                <a ng-click="loadteslaData()" class="updatetopics" style="text-decoration: none">
+                <a ng-click="loadteslaData(); updateModel('Tesla Motors')" class="updatetopics" style="text-decoration: none">
                   <div class="updatenumber">5</div>
                   <span style="color:black;font-weight:normal">Tesla Motors<span>
                 </a>
-                <a ng-click="loadSpaceXData()" class="updatetopics" style="text-decoration: none">
+                <a ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
                   <div class="updatenumber">4</div>
                   <span style="color:black;font-weight:normal">Space X<span>
                 </a>
               </div>
               </div>
 
-              <div class="derp2">
-                <div class="mdl-card__titleblack" style="margin:10px;  font-size:12px; padding-left:10px; padding-top:5px; ">What's going on?</div>
-              </div>
 
               <div class="derp2">
                 <div class="mdl-card__titleblack" style="margin:10px;  font-size:12px; padding-left:10px; padding-top:5px;">Live Events</div>

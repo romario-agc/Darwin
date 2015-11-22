@@ -5,6 +5,8 @@ app.controller('maincontroller', function($scope, $http) {
 
   //Function that loads  data from url
   $scope.loadMainData = function() {
+    $scope.url = null;
+
     $http.get("https://www.reddit.com/r/leagueoflegends+teslamotors+spacex.json")
       .success(function(data) {
         $scope.names = data;
@@ -60,3 +62,17 @@ app.directive('loading', ['$http', function($http) {
   };
 
 }]);
+
+app.controller('SubjectTitle', ['$scope', function($scope) {
+      $scope.Subject = {
+        title: 'Global',
+        sources: 4,
+      };
+
+      $scope.updateModel = function(name) {
+        $scope.Subject= {
+          title: name,
+          sources: 4,
+        };
+      };
+    }]);
