@@ -256,12 +256,6 @@ html,
     margin-bottom:5px;
   }
 
-  .cardtitle{
-      margin-top: 12px;
-      width: 520px;
-      padding-left: 22px
-  }
-
   .mdl-card__titleblack {
     color: black;
     font-size: 15px;
@@ -324,11 +318,16 @@ html,
     transition-timing-function: linear;
     cursor: pointer;
     width: 220px;
-    border-bottom: 1px solid #ededed;
   }
 
   .updatetopics:hover {
     background-color: #f4f4f4;
+  }
+
+  .linedivider{
+    width:auto;
+    height: 1px;
+    background-color:lightgrey;
   }
 
   .updateheader {
@@ -395,6 +394,13 @@ html,
     cursor: pointer;
   }
 
+  .cardtitle{
+      display: inline-block;
+      margin-top: 8px;
+      width: 520px;
+      padding-left: 22px
+  }
+
   .fpcomment {
     margin-left: 30px;
     font-weight: 600;
@@ -421,7 +427,7 @@ html,
   }
 
   .upvoteicon{
-    display:inline;
+    display:inline-block;
     opacity:0.6;
     width:10px;
     height:10px;
