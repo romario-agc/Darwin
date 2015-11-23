@@ -70,7 +70,7 @@ html,
     flex-direction: column;
     font-size: 16px;
     min-height: 20px;
-    width: 565px;
+    width: 535px;
     position: relative;
     background-color: #ffffff;
     border-radius: 3px;
@@ -87,7 +87,7 @@ html,
   }
 
   .cardcontainer {
-    width: auto;
+    width: inherit;
     padding-bottom: 5px;
     padding-top: 8px;
     overflow: hidden;
@@ -116,6 +116,7 @@ html,
     flex-direction: column;
     border-radius: 2px;
     border: 1px solid grey;
+    margin-left: 66px;
     margin-top: 12px;
     position: fixed;
     width: 360px;
@@ -323,6 +324,10 @@ html,
     background-color: #f4f4f4;
   }
 
+  .updatetopics:active{
+    background-color: #ffffff;
+  }
+
   .linedivider{
     width:auto;
     height: 1px;
@@ -396,7 +401,7 @@ html,
   .cardtitle{
       display: inline-block;
       margin-top: 8px;
-      width: 520px;
+      width: 490px;
       padding-left: 22px
   }
 
@@ -454,6 +459,15 @@ html,
     opacity: 0.4;
   }
 
+  .activityicon{
+    display:inline;
+    float: left;
+
+    margin-right: 10px;
+    width:20px;
+    height:20px;
+  }
+
   .usericon{
     display:inline;
     margin-right:5px;
@@ -461,6 +475,13 @@ html,
     opacity:0.6;
     width:17px;
     height:17px;
+  }
+
+  .homeicon{
+    display:inline;
+    margin-right:5px;
+    width:25px;
+    height:25px;
   }
 
   .profilepic{
@@ -494,7 +515,7 @@ html,
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 545px;
+    width: 520px;
     max-height: 270px;
     margin-left: 20px;
     margin-bottom: 2px;
@@ -593,7 +614,7 @@ html,
     z-index: 3;
     background-color:  white;
     color: #fff;
-    box-shadow:rgba(0, 0, 0, 0.25) 0 0.75px 2px ;
+    box-shadow:rgba(0, 0, 0, 0.10) 0 1px 0px ;
     transition-property: max-height, box-shadow;
     transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
@@ -641,7 +662,7 @@ html,
   .mdl-layout-title2 {
     display: block;
     position: relative;
-    font-family: "tahoma", "Trebuchet MS", "Arial", sans-serif;
+    font-family: "arial", "Trebuchet MS", "Arial", sans-serif;
     font-size: 20px;
     line-height: 1;
     text-align: left;
@@ -649,6 +670,7 @@ html,
     font-weight: 500;
     box-sizing: border-box;
     color: rgb(250, 87, 5);
+    margin-left: 15px;
   }
 
   .mdl-layout-title2:hover {
@@ -659,8 +681,8 @@ html,
     color: grey;
     font-family: "helvetica neue", "Trebuchet MS", "Arial", sans-serif;
     text-decoration: none;
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 600;
     margin: 3;
     padding-right: 25px;
     width: auto;
@@ -720,13 +742,10 @@ video {
 .mdl-navigation {
   padding-right: 60px;
 }
-.search {
-  padding-left: 15px;
-  padding-top: 6px;
-  font-size: 12px;
-  color: inherit;
-}
-.searchbackground {
+
+form input[type='text'] {
+  padding: 3px;
+  padding-left: 10px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -736,23 +755,29 @@ video {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #f5f5f5;
-  margin-left: 45px;
-  width: 355px;
-  height: 30px;
+  background-color: #ffffff;
+  margin-left: 35px;
+  font-family: helvetica;
+  font-size: 12px !important;
+  color: rgb(87, 86, 86) !important;
+  width: 495px;
+  height: 44px;
   overflow: hidden;
-  border-radius: 2px;
-  border: 1px solid;
-  border-color: #e4e3e3;
+  border: none;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-color: #f1f1f1;
   cursor: pointer;
   transition-property: background border width height box-shadow;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
-  color: #6b6969;
+  outline: none;
+
 }
-.searchbackground:hover {
-  background-color: #ffffff;
+input[type=text]:focus {
+  background-color: #f5f5f5;
 }
+
 .mdl-button--accent.mdl-button--accent.mdl-button--raised {
   background-color: #F4F4F4;
   color: #eeeeee;
@@ -850,6 +875,10 @@ video {
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
   cursor: pointer;
+}
+
+.currenttopicbox:active{
+  background-color: #ffffff
 }
 
 .currenttopicimage{

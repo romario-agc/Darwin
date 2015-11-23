@@ -12,14 +12,18 @@
     <div class="mdl-layout__header-row2">
       <!-- Title -->
       <a class="mdl-layout-title2" href="/">DARWIN</a>
-      <div class="searchbackground">
-        <span class="search mdl-js-ripple-effect">Search For Something</span>
-      </div>
+
+        <form>
+        <input type="text" placeholder="Search Darwin">
+        </form>
+
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl">
-        <div class="mdl-navigation__link2" style="color:#005D7D" tabindex="0"> Dashboard</div>
+        <a ng-click="loadMainData() " class="mdl-navigation__link2" style="color:#005D7D" tabindex="0">
+          <img class="profilepic" src="home.png"/>Home
+        </a>
         <div class="mdl-navigation__link2" tabindex="0"> <img class="profilepic" src="profilepic.jpg"/>Romario</div>
         <button class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style='background-color:#005D7D;
       color: white; font-weight:bolder; box-shadow: 0 0 0 0' ng-click="loadMainData() ">Update</button>
@@ -89,13 +93,13 @@
           </div>
 
 
-          <div class=" mdl-cell--6-col-desktop " style="margin-left: 76px;">
+          <div class=" mdl-cell--5-col-desktop " style="margin-left: 76px;">
 
             <!-- Loadering icon-->
             <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="display:none"></div>
 
             <!-- Post card -->
-            <div class="mdl-frontpagecard" ng-repeat="count in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27]">
+            <div class="mdl-frontpagecard" ng-repeat="count in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]">
               <div class="cardcontainer">
 
                 <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
@@ -143,6 +147,7 @@
           <div class="mdl-cell--3-col-desktop">
             <div class="activity" id="toolbox">
               <div class="activityheader">
+                <img class="activityicon" src="activity.png"/>
                 <span>Activity</span>
               </div>
 
