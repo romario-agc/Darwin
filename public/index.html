@@ -2,6 +2,8 @@
 <html ng-app="funnel" ng-controller="maincontroller" ng-model="names">
 <head>
   <meta charset="UTF-8">
+
+
 </head>
 
 <!-- Nav bar-->
@@ -22,11 +24,16 @@
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl">
         <a ng-click="loadMainData() " class="mdl-navigation__link2" style="color:#005D7D" tabindex="0">
-          <img class="profilepic" src="home.png"/>Home
+          <img class="homeicon" src="images/home.png"/>Home
         </a>
-        <div class="mdl-navigation__link2" tabindex="0"> <img class="profilepic" src="profilepic.jpg"/>Romario</div>
-        <button class="mdl-button2  mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style='background-color:#005D7D;
-      color: white; font-weight:bolder; box-shadow: 0 0 0 0' ng-click="loadMainData() ">Update</button>
+        <a ng-click="showtopics = ! showtopics" class="mdl-navigation__link2" tabindex="0">
+          <span >Subjects</span>
+        </a>
+        <a class="mdl-navigation__link2" tabindex="0" ng-click="showprofile = ! showprofile">
+          <img class="profilepic" src="images/profilepic.jpg"/>
+          <span>Romario</span>
+        </a>
+
       </nav>
     </div>
 
@@ -36,23 +43,63 @@
 
 
   <!-- Start of main content-->
-
-  <body>
+  <body ng-controller="SubjectTitle">
     <main class="mdl-layout__content">
-
-      <!-- Stickie section title-->
       <div class="frontp">
+
+        <!-- Profile Drop down menu-->
+        <div class="profilelist" id="toolbox" ng-hide="true">
+          <ul style="list-style-type: none;">
+            <li>View Profile</li>
+            <li>Settings</li>
+            <li>Log out</li>
+          </ul>
+        </div>
+
+        <!-- Subject Drop down menu-->
+        <div class="subjectlist" id="toolbox" style="margin-left:910px; margin-top:5px; position:fixed; z-index:500;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);"  ng-show="showtopics">
+          <div class="updateheader" >
+            <span style="margin-top:15px;">Subjects</span>
+            <a style="text-decoration:none" class="editbutton">Edit</a>
+          </div>
+          <div id="subjectsscroll">
+          <a ng-click="loadleagueData(); updateModel('League of Legends')" class="updatetopics" style="text-decoration: none;">
+            <div class="updatenumber">7</div>
+            <span style="color:black;font-weight:normal">League of Legends<span>
+          </a>
+          <a ng-click="loadteslaData(); updateModel('Tesla Motors')" class="updatetopics" style="text-decoration: none">
+            <div class="updatenumber">5</div>
+            <span style="color:black;font-weight:normal">Tesla Motors<span>
+          </a>
+          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
+            <div class="updatenumber">4</div>
+            <span style="color:black;font-weight:normal">Space X<span>
+          </a>
+          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
+            <div class="updatenumber">4</div>
+            <span style="color:black;font-weight:normal">Space X<span>
+          </a>
+          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
+            <div class="updatenumber">4</div>
+            <span style="color:black;font-weight:normal">Space X<span>
+          </a>
+          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
+            <div class="updatenumber">4</div>
+            <span style="color:black;font-weight:normal">Space X<span>
+          </a>
+        </div>
+        </div>
         <div class="mdl-grid containee">
 
           <div class=" mdl-cell--2-col-desktop">
-            <div style="position:fixed; margin-top:-3px;" ng-controller="SubjectTitle">
+            <div style="position:fixed; margin-top:-3px;" >
 
               <div class="currenttopicbox">
-                <div class="mdl-card__titleblack" style="margin:10px;  font-size:12px; padding-left:10px; padding-top:5px;" ng-model="Subject">
+                <a ng-click="showtopics = ! showtopics" class="mdl-card__titleblack" style="margin:10px; text-decoration:none;  font-size:12px; padding-left:10px; padding-top:5px;" ng-model="Subject">
                   {{Subject.title}}
-                    <img class="currenttopicimage" src="rightarrow.png" alt="">
-                </div>
+                </a>
               </div>
+
 
               <div class="derp2" id="toolbox">
                 <div class="updateheader" >
@@ -103,7 +150,7 @@
               <div class="cardcontainer">
 
                 <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
-                <img class="arrowdown" src="arrowdown.png"/>
+                <img class="arrowdown" src="images/arrowdown.png"/>
                 <div class="mdl-card__titleblack">
                   <div class="cardsourcecontainer">
                     <a style="color:#034860; font-weight:600; font-size:12px; margin-top:15px; text-transform: capitalize;" ng-href="https://www.reddit.com/r/{{ names.data.children[count].data.subreddit }}">{{ names.data.children[count].data.subreddit }}</a>
@@ -118,15 +165,15 @@
                 <div class="commentcontainer">
                   <div class="mdl-card__supportingblack ">
                     <div class="authorname">
-                      <img class="usericon" src="user.png"/>
+                      <img class="usericon" src="images/user.png"/>
                       <a style="font-weight: 600; "ng-href="https://www.reddit.com/user/{{ names.data.children[count].data.author }}">{{ names.data.children[count].data.author }}</a>
                     </div>
                     <div style="margin-top:-3px; display:inline-block; font-weight:600">
-                      <img  class="upvoteicon" src="upvote.png"/>
+                      <img  class="upvoteicon" src="images/upvote.png"/>
                       <span>{{ names.data.children[count].data.ups }}<span>
                     </div>
                     <div class="fpcomment">
-                      <img class="commenticon" src="comment.png"/>
+                      <img class="commenticon" src="images/comment.png"/>
                       <a style="margin-left:3px; font-weight: 600; "ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.num_comments }} comments</a>
                     </div>
                   </div>
@@ -147,7 +194,7 @@
           <div class="mdl-cell--3-col-desktop">
             <div class="activity" id="toolbox">
               <div class="activityheader">
-                <img class="activityicon" src="activity.png"/>
+                <img class="activityicon" src="images/activity.png"/>
                 <span>Activity</span>
               </div>
 
