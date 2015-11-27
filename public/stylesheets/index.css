@@ -123,6 +123,7 @@ animation-delay: 0.5s;
     cursor: pointer;
   }
 
+
   .cardcontainer {
     width: inherit;
     padding-bottom: 5px;
@@ -153,7 +154,7 @@ animation-delay: 0.5s;
     flex-direction: column;
     border-radius: 2px;
     border: 1px solid grey;
-    margin-left: 66px;
+    margin-left: 60px;
     margin-top: 12px;
     position: fixed;
     width: 360px;
@@ -454,9 +455,19 @@ animation-delay: 0.5s;
   }
 
   .linedivider{
+    margin-top: 25px;
+    margin-bottom: 5px;
     width:auto;
     height: 1px;
-    background-color:lightgrey;
+    background-color:rgba(11, 11, 11, 0.065);
+  }
+
+  .bottomlinedivider{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    width:auto;
+    height: 1px;
+    background-color:rgba(11, 11, 11, 0.065);
   }
 
   .updateheader {
@@ -549,7 +560,7 @@ animation-delay: 0.5s;
 
   .cardtitle{
       display: inline-block;
-      margin-top: 8px;
+      margin-top: 12px;
       width: 490px;
       padding-left: 22px
   }

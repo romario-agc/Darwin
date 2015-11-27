@@ -138,7 +138,7 @@
           </div>
 
 
-          <div class=" mdl-cell--5-col-desktop " style="margin-left: 76px; margin-top:-8px">
+          <div class=" mdl-cell--5-col-desktop " style="margin-left: 71px; margin-top:-8px">
 
             <!-- Loadering icon-->
             <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="display:none"></div>
@@ -153,6 +153,7 @@
                   <div class="cardsourcecontainer">
                     <a style="color:#034860; font-weight:600; font-size:12px; margin-top:15px; text-transform: capitalize;" ng-href="https://www.reddit.com/r/{{ names.data.children[count].data.subreddit }}">{{ names.data.children[count].data.subreddit }}</a>
                   </div>
+                  <div class="linedivider"></div>
                   <a class="cardtitle" ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
                 </div>
                 <div class="imagediv" ng-hide="!names.data.children[count].data.preview.images[0].source.url ">
@@ -160,6 +161,7 @@
                     <img ng-src="{{names.data.children[count].data.preview.images[0].source.url}}" class="imageclass">
                   </a>
                 </div>
+                <div class="bottomlinedivider"></div>
                 <div class="commentcontainer">
                   <div class="mdl-card__supportingblack ">
                     <div class="authorname">
