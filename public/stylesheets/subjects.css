@@ -1,0 +1,25 @@
+html,
+  body,
+  input,
+  select,
+  textarea {
+    font-size: 1.05em !important;
+
+  }
+
+  .bodysection{
+    margin: 0 auto;
+    border: 1px solid lightgrey;
+    height: 720px;
+    width:905px;
+    background-color: white;
+    overflow: hidden;
+  }
+
+  .detailssection{
+    float: right;
+    border-left: 1px solid lightgrey;
+    height: 720px;
+    width:70%;
+    background-color: white;
+  }

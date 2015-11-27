@@ -6,9 +6,13 @@ html,
     font-size: 1.05em !important;
     background-color: #ebebeb;
   }
-
+  html
+  {
+    -webkit-tap-highlight-color:transparent;
+  }
   .containee {
     width: 1234px;
+
   }
 
   #toolbox {}
@@ -25,8 +29,8 @@ html,
   }
 
   #subjectsscroll {
-    width: 260px;
-    height:  250px;
+    width: 280px;
+    height:  255px;
     overflow: auto;
     margin-top: 10px;
     font-size: 12px;
@@ -68,7 +72,30 @@ html,
   .mdl-grid:first-of-type .mdl-cell {
     height: 50px;
   }
+  @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+  @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
+  .fade-in {
+	opacity:0.6;  /* make things invisible upon start */
+	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeIn ease-in 1;
+	animation:fadeIn ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s;
+	animation-duration:1s;
+}
+
+.fade-in.one {
+-webkit-animation-delay: 0.5s;
+-moz-animation-delay: 0.5s;
+animation-delay: 0.5s;
+}
   .mdl-frontpagecard {
     display: -webkit-box;
     display: -webkit-flex;
@@ -81,11 +108,10 @@ html,
     flex-direction: column;
     font-size: 16px;
     min-height: 20px;
-    width: 535px;
+    width: 510px;
     position: relative;
     background-color: #ffffff;
     border-radius: 3px;
-
     margin: 11px;
     border: 1px solid;
     border-color: #dadada;
@@ -207,11 +233,12 @@ html,
     -ms-flex-direction: column;
     flex-direction: column;
     border-radius: 3px;
-    border: 1px solid grey;
-    width: 248px;
+    border: 1px solid rgba(77, 77, 77, 0.28) !important;
+    width: 278px;
+    height: 342px;
     font-size: 12px;
     font-family: "helvetica neue", "Trebuchet MS", "Arial", sans-serif;
-    background-color: #ffffff;
+    background-color: #f6f6f6;
     border: 1px solid rgba(0, 0, 0, 0.15);
     overflow: hidden;
     min-height: auto;
@@ -383,7 +410,6 @@ html,
     background-color: #F2F2F2
   }
 
-
   .updatetopics {
     position: relative;
     height: 18px;
@@ -400,6 +426,26 @@ html,
   }
 
   .updatetopics:hover {
+    background-color: #f4f4f4;
+  }
+
+  .subjectlisting {
+    position: relative;
+    height: 18px;
+    padding: 15px;
+    padding-left: 25px;
+    text-align: left;
+    font-weight: 300px;
+    background-color: white;
+    transition-property: background border width height box-shadow;
+    transition-duration: 0.05s;
+    transition-timing-function: linear;
+    cursor: pointer;
+    width: 240px;
+    border-bottom: 1px solid rgb(237, 237, 237)
+  }
+
+  .subjectlisting:hover {
     background-color: #f4f4f4;
   }
 
@@ -458,11 +504,16 @@ html,
     background-color:rgb(93, 170, 113);
   }
 
+  .editbutton:active{
+    background-color:rgb(67, 121, 81);
+  }
+
   .updatenumber{
+
     display:inline-block;
     height:14px;
-    width:20px;
-    background-color:#008aa3;
+    width:17px;
+    background-color:rgb(163, 163, 163);
     border-radius:2px;
     float:right;
     margin-right:18px;
@@ -575,12 +626,7 @@ html,
     height:17px;
   }
 
-  .homeicon{
-    display:inline;
-    margin-right:5px;
-    width:25px;
-    height:25px;
-  }
+
 
   .profilepic{
     display:inline;
@@ -594,10 +640,11 @@ html,
 
   .homeicon{
     display:inline;
+    padding-top:2px;
     border-radius: 50%;
     margin-right:4px;
-    width:25px;
-    height:25px;
+    width:22px;
+    height:22px;
     margin-top: -3px;
   }
 
@@ -622,26 +669,31 @@ html,
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    width: 520px;
-    max-height: 270px;
+    width: 470px;
+    min-height: 170px;
+    max-height: 290px;
     margin-left: 20px;
     margin-bottom: 2px;
     margin-top: 15px;
     display: block;
     overflow: hidden;
-    transition-property: opacity;
-    transition-duration: 0.1s;
-    transition-timing-function: linear;
   }
+
 
 
   .imageclass {
     object-fit: contain;
-    max-width: 95%;
-    max-height: 95%;
-
+    max-width: 100%;
+    max-height: 100%;
     border: 1px solid rgba(154, 154, 154, 0.77);
+    box-shadow: none;
+    transition-property: box-shadow;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+  }
 
+  .imageclass:hover{
+    box-shadow: rgba(0, 0, 0, 0.50392) 0px 2px 4px 0px;
   }
 
   .backtotop {
@@ -719,13 +771,13 @@ html,
     border: 2px;
     min-height: 50px;
     z-index: 3;
-    background-color:  white;
-    color: #fff;
+    background-color:  #363636;
+    color: white;
     box-shadow:rgba(0, 0, 0, 0.10) 0 1px 0px ;
     transition-property: max-height, box-shadow;
     transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
-    -webkit-backdrop-filter: blur(7px);
+
   }
 
 
@@ -762,15 +814,16 @@ html,
     margin: 0;
     margin-left: auto;
     margin-right: auto;
-    background-color: white;
-    color:#005D7D;
+    background-color: #363636;
+    color:white;
   }
 
   .mdl-layout-title2 {
     display: block;
     position: relative;
-    font-family: "arial", "Trebuchet MS", "Arial", sans-serif;
+    font-family: "Dekar", "Trebuchet MS", "Arial", sans-serif;
     font-size: 20px;
+    padding-top: 2px;
     line-height: 1;
     text-align: left;
     letter-spacing: .02em;
@@ -778,6 +831,13 @@ html,
     box-sizing: border-box;
     color: rgb(250, 87, 5);
     margin-left: 15px;
+    transition-property: color background-color  box-shadow text-decoration;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .mdl-layout-title2:hover{
+    color: grey;
   }
 
   .mdl-layout-title2:hover {
@@ -789,7 +849,7 @@ html,
     font-family: "helvetica neue", "Trebuchet MS", "Arial", sans-serif;
     text-decoration: none;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
     min-width: 50px;
     outline: none;
     height: 35px;
@@ -804,9 +864,15 @@ html,
   }
 
   .mdl-navigation__link2:hover {
-    color: rgb(0, 93, 125);
+    color: white;
     text-decoration: none;
-    box-shadow: inset 0 -5px 0 0 rgb(0, 93, 125);
+    background-color: rgba(94, 94, 94, 0.20)
+  }
+
+  .mdl-navigation__link2:active {
+    color: white;
+    text-decoration: none;
+    box-shadow: inset 0 -4px 0 0 white;
   }
 
   .mdl-button2 {
@@ -843,7 +909,7 @@ html,
   }
 }
 .search {
-  padding-left: 50;
+  padding-left: 50px;
   font-weight: 200;
   font-size: 12;
 }
@@ -856,7 +922,7 @@ video {
 
 form input[type='text'] {
   padding: 3px;
-  padding-left: 10px;
+  padding-left: 20px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -866,18 +932,15 @@ form input[type='text'] {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: #ffffff;
+  background-color: #393939;
   margin-left: 35px;
   font-family: helvetica;
   font-size: 12px !important;
-  color: rgb(87, 86, 86) !important;
+  color: lightgrey !important;
   width: 495px;
-  height: 44px;
+  height: 43px;
   overflow: hidden;
   border: none;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-color: #f1f1f1;
   cursor: pointer;
   transition-property: background border width height box-shadow;
   transition-duration: 0.2s;
@@ -886,7 +949,7 @@ form input[type='text'] {
 
 }
 input[type=text]:focus {
-  background-color: #f5f5f5;
+  background-color: #444444;
 }
 
 .mdl-button--accent.mdl-button--accent.mdl-button--raised {
@@ -971,12 +1034,13 @@ input[type=text]:focus {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  border-radius: 3px;
+  border-radius: 2px;
   border: 1px solid grey;
   width: 248px;
   font-size: 12px;
+  color: white;
   font-family: "helvetica neue", "Trebuchet MS", "Arial", sans-serif;
-  background-color: #ffffff;
+  background-color: rgb(54, 54, 54);
   border: 1px solid rgba(0, 0, 0, 0.15);
   overflow: hidden;
   min-height: auto;

@@ -1,19 +1,16 @@
 <!doctype html>
-<html ng-app="funnel" ng-controller="maincontroller" ng-model="names">
+<html ng-app="funnel" ng-controller="maincontroller" ng-model="names" >
 <head>
   <meta charset="UTF-8">
-
-
 </head>
 
 <!-- Nav bar-->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <header class="mdl-layout__header2 shadow">
-    <div style="background-color:#005D7D; height:2px; width:100%"></div>
     <div class="mdl-layout__header-row2">
       <!-- Title -->
-      <a class="mdl-layout-title2" href="/">DARWIN</a>
+      <a class="mdl-layout-title2" href="/">Darwin</a>
 
         <form>
         <input type="text" placeholder="Search Darwin">
@@ -23,7 +20,7 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl">
-        <a ng-click="loadMainData() " class="mdl-navigation__link2" style="color:#005D7D" tabindex="0">
+        <a href="/" ng-click="loadMainData() " class="mdl-navigation__link2" style="white" tabindex="0">
           <img class="homeicon" src="images/home.png"/>Home
         </a>
         <a ng-click="showtopics = ! showtopics" class="mdl-navigation__link2" tabindex="0">
@@ -40,7 +37,7 @@
 
 
   </header>
-
+<div class="derpina"></div>
 
   <!-- Start of main content-->
   <body ng-controller="SubjectTitle">
@@ -57,47 +54,48 @@
         </div>
 
         <!-- Subject Drop down menu-->
-        <div class="subjectlist" id="toolbox" style="margin-left:910px; margin-top:5px; position:fixed; z-index:500;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);"  ng-show="showtopics">
+        <div class="subjectlist" id="toolbox" style="margin-left:900px; margin-top:5px; position:fixed; z-index:500;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);"  ng-show="showtopics">
           <div class="updateheader" >
-            <span style="margin-top:15px;">Subjects</span>
-            <a style="text-decoration:none" class="editbutton">Edit</a>
+            <span style="margin-top:15px; ">Subjects</span>
+            <a href="subjects.html"style="text-decoration:none; color: white" class="editbutton">Edit</a>
           </div>
           <div id="subjectsscroll">
-          <a ng-click="loadleagueData(); updateModel('League of Legends')" class="updatetopics" style="text-decoration: none;">
+          <a ng-click="loadleagueData(); updateModel('League of Legends')" class="subjectlisting" style="text-decoration: none;">
             <div class="updatenumber">7</div>
             <span style="color:black;font-weight:normal">League of Legends<span>
           </a>
-          <a ng-click="loadteslaData(); updateModel('Tesla Motors')" class="updatetopics" style="text-decoration: none">
+          <a ng-click="loadteslaData(); updateModel('Tesla Motors')" class="subjectlisting" style="text-decoration: none">
             <div class="updatenumber">5</div>
             <span style="color:black;font-weight:normal">Tesla Motors<span>
           </a>
-          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
+          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="subjectlisting" style="text-decoration: none">
             <div class="updatenumber">4</div>
             <span style="color:black;font-weight:normal">Space X<span>
           </a>
-          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
+          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="subjectlisting" style="text-decoration: none">
             <div class="updatenumber">4</div>
             <span style="color:black;font-weight:normal">Space X<span>
           </a>
-          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
+          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="subjectlisting" style="text-decoration: none">
             <div class="updatenumber">4</div>
             <span style="color:black;font-weight:normal">Space X<span>
           </a>
-          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
+          <a ng-click="loadSpaceXData(); updateModel('Space X')" class="subjectlisting" style="text-decoration: none">
             <div class="updatenumber">4</div>
             <span style="color:black;font-weight:normal">Space X<span>
           </a>
         </div>
+        <div style="bottom:0; text-align:center; margin-top:10px"> See All</div>
         </div>
         <div class="mdl-grid containee">
 
-          <div class=" mdl-cell--2-col-desktop">
+          <div class=" mdl-cell--2-col-desktop" style="margin-top:-8px">
             <div style="position:fixed; margin-top:-3px;" >
 
               <div class="currenttopicbox">
-                <a ng-click="showtopics = ! showtopics" class="mdl-card__titleblack" style="margin:10px; text-decoration:none;  font-size:12px; padding-left:10px; padding-top:5px;" ng-model="Subject">
+                <div class="mdl-card__titleblack" style="color: white; margin:10px; font-weight:500; text-align:center;  font-size:13px;  " ng-model="Subject">
                   {{Subject.title}}
-                </a>
+                </div>
               </div>
 
 
@@ -131,16 +129,16 @@
                   <span style="color:black; font-weight:normal">Tesla Model X Event<span>
                 </a>
                 </div>
-              <div class="derp2">
-                <div class="basesignature1" style="padding:10px; padding-left:20px; text-align:left;"> Funnel © 2015
-                  <span style="padding-left:20px;">Developed by Romario Coffie</span>
+
+                <div class="basesignature1" style="padding:10px; padding-left:13px; text-align:center; font-weight:500; color:grey"> Funnel © 2015
+                  <span>• Developed by Romario Coffie</span>
                 </div>
-              </div>
+
             </div>
           </div>
 
 
-          <div class=" mdl-cell--5-col-desktop " style="margin-left: 76px;">
+          <div class=" mdl-cell--5-col-desktop " style="margin-left: 76px; margin-top:-8px">
 
             <!-- Loadering icon-->
             <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="display:none"></div>
@@ -191,7 +189,7 @@
           </div>
 
           <!-- Subjects-->
-          <div class="mdl-cell--3-col-desktop">
+          <div class="mdl-cell--3-col-desktop" style="margin-top:-8px; margin-left:-24px">
             <div class="activity" id="toolbox">
               <div class="activityheader">
                 <img class="activityicon" src="images/activity.png"/>

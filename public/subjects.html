@@ -1,0 +1,94 @@
+<!doctype html>
+<html ng-app="funnel" ng-controller="maincontroller" ng-model="names">
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<!-- Nav bar-->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <header class="mdl-layout__header2 shadow">
+    <div class="mdl-layout__header-row2">
+      <!-- Title -->
+      <a class="mdl-layout-title2" href="/">Darwin</a>
+
+        <form>
+        <input type="text" placeholder="Search Darwin">
+        </form>
+
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl">
+        <a href="/" ng-click="loadMainData() " class="mdl-navigation__link2" style="white" tabindex="0">
+          <img  class="homeicon" src="images/home.png"/>Home
+        </a>
+        <a ng-click="showtopics = ! showtopics" class="mdl-navigation__link2" tabindex="0">
+          <span >Subjects</span>
+        </a>
+        <a class="mdl-navigation__link2" tabindex="0" ng-click="showprofile = ! showprofile">
+          <img class="profilepic" src="images/profilepic.jpg"/>
+          <span>Romario</span>
+        </a>
+
+      </nav>
+    </div>
+  </header>
+
+  <!-- Start of main content-->
+  <body ng-controller="SubjectTitle">
+    <main class="mdl-layout__content">
+
+          <div class="bodysection" >
+            derp
+            <div class="detailssection">
+            </div>
+          </div>
+
+    </main>
+  </body>
+</div>
+
+<script>
+  (function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-69395919-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+<!-- Angular Material Dependencies -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js"></script>
+
+<!-- Angular Loading background-colar -->
+<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script>
+
+<!-- JQuery -->
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="../node_modules/ngprogress/build/ngProgress.js"></script>
+
+<!-- Local -->
+<link rel="stylesheet"  type="text/css" href="./stylesheets/index.css"/>
+<link rel="stylesheet"  type="text/css" href="./stylesheets/subjects.css"/>
+<script src="./controllers/maincontroller.js"></script>
+
+<!-- Material Design Lite -->
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-red.min.css" />
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+
+<!-- Google Fonts-->
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'></link>
+
+
+</html>
