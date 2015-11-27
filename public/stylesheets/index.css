@@ -6,56 +6,55 @@ html,
     font-size: 1.05em !important;
     background-color:rgb(26, 26, 26);
 }
-  }
+
 
   @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
   @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
   @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
   .fade-in {
-	opacity:0;  /* make things invisible upon start */
-	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-	-moz-animation:fadeIn ease-in 1;
-	animation:fadeIn ease-in 1;
+	   opacity:0;  /* make things invisible upon start */
+	    -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	     -moz-animation:fadeIn ease-in 1;
+	      animation:fadeIn ease-in 1;
 
-	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-	-moz-animation-fill-mode:forwards;
-	animation-fill-mode:forwards;
+	       -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	        -moz-animation-fill-mode:forwards;
+	         animation-fill-mode:forwards;
 
-	-webkit-animation-duration:1.5s;
-	-moz-animation-duration:1.5s;
-	animation-duration:1.5s;
-}
+	          -webkit-animation-duration:1.5s;
+	           -moz-animation-duration:1.5s;
+	            animation-duration:1.5s;
+    }
 
 .fade-in.one {
--webkit-animation-delay: 0.5s;
--moz-animation-delay: 0.5s;
-animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .title{
-  font-family: "Dekar", "Trebuchet MS", "Arial", sans-serif;
-  font-size: 80px;
+  font-family: "dekar", "Trebuchet MS", "Arial", sans-serif;
+  font-size: 90px;
   vertical-align: middle;
   padding-top: 25%;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
   box-sizing: border-box;
   color: white;
-
 }
 
 .loginbutton{
   height: 40px;
-  padding-left: 15px;
-  padding-right: 15px;
   background: none;
   color: white;
   outline: none;
   border-radius: 3px;
   border: 1px solid white;
   margin-top: 50px;
-  margin-left: 46vw;
+  margin-left: 45vw;
+  padding-left: 10px;
+  padding-right: 10px;
   transition-property: background border width height box-shadow;
   transition-duration: 0.225s;
   transition-timing-function: ease-in-out;

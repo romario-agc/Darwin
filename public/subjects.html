@@ -2,6 +2,31 @@
 <html ng-app="funnel" ng-controller="maincontroller" ng-model="names">
 <head>
   <meta charset="UTF-8">
+
+  <!-- Angular Material Dependencies -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js"></script>
+
+  <!-- Angular Loading background-colar -->
+  <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
+  <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script>
+
+  <!-- JQuery -->
+  <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <script src="../node_modules/ngprogress/build/ngProgress.js"></script>
+
+  <!-- Local -->
+  <link rel="stylesheet"  type="text/css" href="./stylesheets/home.css"/>
+  <link rel="stylesheet"  type="text/css" href="./stylesheets/subjects.css"/>
+  <script src="./controllers/maincontroller.js"></script>
+
+  <!-- Material Design Lite -->
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-red.min.css" />
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
+
+  <!-- Google Fonts-->
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'></link>
+
 </head>
 
 <!-- Nav bar-->
@@ -12,6 +37,7 @@
       <!-- Title -->
       <a class="mdl-layout-title2" href="home.html">Darwin</a>
 
+      <!-- Search bar-->
         <form>
         <input type="text" placeholder="Search Darwin">
         </form>
@@ -66,29 +92,6 @@
   ga('send', 'pageview');
 </script>
 
-<!-- Angular Material Dependencies -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.min.js"></script>
-
-<!-- Angular Loading background-colar -->
-<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' />
-<script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.js'></script>
-
-<!-- JQuery -->
-<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-<script src="../node_modules/ngprogress/build/ngProgress.js"></script>
-
-<!-- Local -->
-<link rel="stylesheet"  type="text/css" href="./stylesheets/home.css"/>
-<link rel="stylesheet"  type="text/css" href="./stylesheets/subjects.css"/>
-<script src="./controllers/maincontroller.js"></script>
-
-<!-- Material Design Lite -->
-<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.blue_grey-red.min.css" />
-<script src="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.min.js"></script>
-
-<!-- Google Fonts-->
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'></link>
 
 
 </html>
