@@ -486,11 +486,11 @@ html,
   .updateheadernumber{
     display:inline-block;
     height:20px;
-    width:20px;
-    background-color:#923e3e;
-    border-radius:50%;
+    min-width:18px;
+    background-color:#b53535;
+    border-radius:2px;
     float:right;
-    margin-right:20px;
+    margin-right:21px;
     overflow:hidden;
     font-size:9px;
     color:white;
