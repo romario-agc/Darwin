@@ -4,7 +4,7 @@ html,
   select,
   textarea {
     font-size: 1.05em !important;
-    background-color:rgb(26, 26, 26);
+    background-color:#343d46;
 }
 
 
@@ -37,7 +37,7 @@ html,
   font-family: "dekar", "Trebuchet MS", "Arial", sans-serif;
   font-size: 90px;
   vertical-align: middle;
-  padding-top: 25%;
+  padding-top: 24%;
   text-align: center;
   font-weight: 600;
   box-sizing: border-box;
@@ -46,15 +46,16 @@ html,
 
 .loginbutton{
   height: 40px;
-  background: none;
-  color: white;
+  background: white;
+  color: black;
+  box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.3);
   outline: none;
-  border-radius: 3px;
-  border: 1px solid white;
+  border-radius: 2px;
+  border: none;
   margin-top: 50px;
   margin-left: 45vw;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 11px;
+  padding-right: 11px;
   transition-property: background border width height box-shadow;
   transition-duration: 0.225s;
   transition-timing-function: ease-in-out;
@@ -63,11 +64,10 @@ html,
 }
 
 .loginbutton:hover{
-  background: white;
-  color: black;
+  box-shadow: 0 7px 10px 2px rgba(0, 0, 0, 0.3);
 }
 
 .loginbutton:active{
-  background: none;
-  color: white;
+  background-color: grey;
+  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.3);
 }
