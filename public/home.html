@@ -45,10 +45,10 @@
         <a href="home.html" ng-click="loadMainData() " class="mdl-navigation__link2" style="white" tabindex="0">
           <img class="homeicon" src="images/home.png"/>Home
         </a>
-        <a ng-click="showtopics = ! showtopics" class="mdl-navigation__link2" tabindex="0">
+        <a ng-click="showsubjects = ! showsubjects; showprofileoptions = false" class="mdl-navigation__link2" tabindex="0">
           Subjects
         </a>
-        <a class="mdl-navigation__link2" tabindex="0" >
+        <a ng-click="showprofileoptions = ! showprofileoptions; showsubjects=false" class="mdl-navigation__link2" tabindex="0" >
           <img class="profilepic" src="images/profilepic.jpg"/>
           <span>Romario</span>
         </a>
@@ -67,16 +67,16 @@
       <div class="frontp">
 
         <!-- Profile Drop down menu-->
-        <div class="profilelist" id="toolbox" ng-hide="true">
+        <div class="profilelist" id="toolbox" ng-show="showprofileoptions">
           <ul style="list-style-type: none;">
             <li>View Profile</li>
             <li>Settings</li>
-            <li>Log out</li>
+            <li><a href="index.html">Log out</a></li>
           </ul>
         </div>
 
         <!-- Subject Drop down menu-->
-        <div class="subjectlist " id="toolbox" style="margin-left:900px; margin-top:5px; position:fixed; z-index:5;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);"  ng-hide="true">
+        <div class="subjectlist " id="toolbox" style="margin-left:900px; margin-top:5px; position:fixed; z-index:5;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);" ng-show="showsubjects">
           <div class="updateheader" >
             <span style="margin-top:15px; ">Subjects</span>
             <a href="subjects.html"style="float:right; margin-right:25px; color: rgba(0, 0, 0, 0.78)" >Edit</a>
@@ -98,7 +98,7 @@
 
               <!-- Current Topic -->
               <div class="currenttopicbox">
-                <div class="mdl-card__titleblack" style="color: white; margin:10px; font-weight:500; text-align:center;  font-size:13px;  " ng-model="Subject">
+                <div class="mdl-card__titleblack" style="color: white; margin:10px; font-weight:500; text-align:center;  font-size:13px;" ng-model="Subject">
                   {{Subject.title}}
                 </div>
               </div>
@@ -110,15 +110,18 @@
                   <div class="updateheadernumber">16</div>
                 </div>
                 <div id="scroll">
-                <a ng-click="loadleagueData(); updateModel('League of Legends')" class="updatetopics" style="text-decoration: none;">
+                <a ng-mouseover="showedit = false" ng-mouseleave="showedit=true" ng-click="loadleagueData(); updateModel('League of Legends')" class="updatetopics" style="text-decoration: none;">
                   <div class="updatenumber">7</div>
+                  <img class="settingsimage" src="images/settings.png"></>
                   <span style="color:black;font-weight:normal">League of Legends<span>
                 </a>
                 <a ng-click="loadteslaData(); updateModel('Tesla Motors')" class="updatetopics" style="text-decoration: none">
+                  <img class="settingsimage" src="images/settings.png"></>
                   <div class="updatenumber">5</div>
                   <span style="color:black;font-weight:normal">Tesla Motors<span>
                 </a>
                 <a ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
+                  <img class="settingsimage" src="images/settings.png"></>
                   <div class="updatenumber">4</div>
                   <span style="color:black;font-weight:normal">Space X<span>
                 </a>

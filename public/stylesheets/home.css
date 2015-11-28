@@ -945,7 +945,7 @@ form input[type='text'] {
   font-family: helvetica;
   font-size: 12px !important;
   color: lightgrey !important;
-  width: 475px;
+  width: 700px;
   height: 27px;
   border-radius: 2px;
   overflow: hidden;
@@ -1077,4 +1077,17 @@ input[type=text]:focus {
   transition-duration: 0.05s;
   transition-timing-function: linear;
   cursor: pointer;
+}
+
+.settingsimage{
+  width: 15px;
+  margin-top: 2px;
+  float: left;
+  margin-right: 9px;
+  margin-left: -3px;
+  height: 15px;
+}
+
+.settingsimage:hover{
+  opacity: 0.5;
 }

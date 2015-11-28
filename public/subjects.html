@@ -64,13 +64,29 @@
   <!-- Start of main content-->
   <body ng-controller="SubjectTitle">
     <main class="mdl-layout__content">
-
-          <div class="bodysection" >
-            derp
-            <div class="detailssection">
+      <div class="totalcontainer" >
+          <div class="subjectsection">
+            <div class="subjectsheader">
+              Subjects
             </div>
+            <div id="subjectlistscroll">
+              <div ng-repeat="count in ['League of Legends', 'Space X' ,'Bernie Sanders','Middle East Conflict','Apple','Tesla Motors',
+              'Elon Musk','Model X','Model 3','Faker','One Punch Man','Dragonball Super', 'Limitless']" class="subjectlisting2">
+                {{count}}
+              </div>
+            </div>
+            <div style="text-align:center; font-size:12px;margin-top:13px;">Back to top</div>
           </div>
-
+          <div class="detailssection">
+            <div class="editsubject">Edit Subject</div>
+            <div class="namesectioncontainer">
+              <form>
+              <input type="name" placeholder="Name">
+              </form>
+            </div>
+            <div class="sourcessection">Sources</div>
+          </div>
+      </div>
     </main>
   </body>
 </div>
@@ -92,6 +108,20 @@
   ga('send', 'pageview');
 </script>
 
+<script>
+  $(function() {
 
+    var toolbox = $('#toolbox'),
+      height = toolbox.height(),
+      scrollHeight = toolbox.get(0).scrollHeight;
+
+    toolbox.bind('mousewheel', function(e, d) {
+      if ((this.scrollTop === (scrollHeight - height) && d < 0) || (this.scrollTop === 0 && d > 0)) {
+        e.preventDefault();
+      }
+    });
+
+  });
+</script>
 
 </html>
