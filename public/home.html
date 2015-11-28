@@ -35,7 +35,7 @@
       <a class="mdl-layout-title2" href="home.html">Darwin</a>
 
         <form>
-        <input type="text" placeholder="Search Darwin">
+        <input type="text" placeholder="Search Darwin" ng-click="searchbarclick = ! searchbarclick">
         </form>
 
       <!-- Add spacer, to align navigation to the right -->
@@ -67,16 +67,17 @@
       <div class="frontp">
 
         <!-- Profile Drop down menu-->
-        <div class="profilelist" id="toolbox" ng-show="showprofileoptions">
-          <ul style="list-style-type: none;">
-            <li>View Profile</li>
-            <li>Settings</li>
-            <li><a href="index.html">Log out</a></li>
-          </ul>
+        <div class="profilelist" id="toolbox" ng-if="showprofileoptions">
+          <div >
+            <div><a class="profileoption" >Your profile</a></div>
+            <div><a class="profileoption" href="subjects.html">Subjects</a></div>
+            <div><a class="profileoption" >Settings</a></div>
+            <div><a class="profileoption" href="index.html">Sign out</a></div>
+          </div>
         </div>
 
         <!-- Subject Drop down menu-->
-        <div class="subjectlist " id="toolbox" style="margin-left:900px; margin-top:5px; position:fixed; z-index:5;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);" ng-show="showsubjects">
+        <div class="subjectlist " id="toolbox" style="margin-left:900px; margin-top:5px; position:fixed; z-index:5;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);" ng-if="showsubjects">
           <div class="updateheader" >
             <span style="margin-top:15px; ">Subjects</span>
             <a href="subjects.html"style="float:right; margin-right:25px; color: rgba(0, 0, 0, 0.78)" >Edit</a>
@@ -86,9 +87,7 @@
             <div class="updatenumber">7</div>
             <span style="color:black;font-weight:normal">{{count *2}}<span>
           </a>
-
           </div>
-          <div style="bottom:0; text-align:center; margin-top:10px"> <a href="index.html">Log out</a></div>
         </div>
 
         <div class="mdl-grid containee">
@@ -110,20 +109,20 @@
                   <div class="updateheadernumber">16</div>
                 </div>
                 <div id="scroll">
-                <a ng-mouseover="showedit = false" ng-mouseleave="showedit=true" ng-click="loadleagueData(); updateModel('League of Legends')" class="updatetopics" style="text-decoration: none;">
+                <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false" ng-mouseleave="showedit=true" ng-click="loadleagueData(); updateModel('League of Legends')" class="updatetopics" style="text-decoration: none;">
                   <div class="updatenumber">7</div>
-                  <img class="settingsimage" src="images/settings.png"></>
+                  <img  ng-if="showimage" class="settingsimage" src="images/settings.png"></>
                   <span style="color:black;font-weight:normal">League of Legends<span>
                 </a>
-                <a ng-click="loadteslaData(); updateModel('Tesla Motors')" class="updatetopics" style="text-decoration: none">
-                  <img class="settingsimage" src="images/settings.png"></>
+                <a ng-mouseover="showimage2 = true" ng-mouseleave="showimage2=false" ng-click="loadteslaData(); updateModel('Tesla Motors')" class="updatetopics" style="text-decoration: none">
+                  <img ng-if="showimage2" class="settingsimage" src="images/settings.png"></>
                   <div class="updatenumber">5</div>
                   <span style="color:black;font-weight:normal">Tesla Motors<span>
                 </a>
-                <a ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
-                  <img class="settingsimage" src="images/settings.png"></>
+                <a ng-mouseover="showimage3 = true" ng-mouseleave="showimage3=false" ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
+                  <img ng-if="showimage3" class="settingsimage" src="images/settings.png"></>
                   <div class="updatenumber">4</div>
-                  <span style="color:black;font-weight:normal">Space X<span>
+                  <span style="color:black;font-weight:normal;">Space X<span>
                 </a>
               </div>
               </div>
