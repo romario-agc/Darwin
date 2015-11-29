@@ -15,6 +15,14 @@ html,
 
   }
 
+  .invisilayer{
+    display: inline-block !important;
+      width: 1210px ;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+  }
+
   #toolbox {}
 
   #scroll {
@@ -24,19 +32,17 @@ html,
     margin-top: 10px;
     font-size: 12px;
     border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
     border-color: #E4E4E4;
   }
 
   #subjectsscroll {
     width: 280px;
-    height:  255px;
+    height:  auto;
     overflow: auto;
     overflow-x: hidden;
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 12px;
     border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
     border-color: #E4E4E4;
   }
 
@@ -160,7 +166,7 @@ html,
     margin-left: 60px;
     margin-top: 12px;
     position: fixed;
-    width: 360px;
+    width: 380px;
     height: 50px;
     background-color:#343d46;
     border: 1px solid rgba(0, 0, 0, 0.11);
@@ -483,11 +489,12 @@ html,
   }
 
   .updateheader {
+      font-family: helvetica !important;
       color: #5a5a5a;
       font-size: 13px;
       font-weight: bold;
       padding-left: 25px;
-      padding-top: 14px;
+      padding-top: 12px;
       vertical-align: bottom;
       font-family: SourceSansPro;
       cursor: default;

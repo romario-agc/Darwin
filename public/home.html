@@ -1,6 +1,7 @@
 <!doctype html>
 <html ng-app="funnel" ng-controller="maincontroller" ng-model="names" >
 <head>
+  
   <meta charset="UTF-8">
   <!-- Angular Material Dependencies -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
@@ -58,39 +59,43 @@
 
 
 
+
+
   </header>
 <div class="derpina"></div>
 
   <!-- Start of main content-->
   <body ng-controller="SubjectTitle">
     <main class="mdl-layout__content">
-      <div class="frontp">
-
-        <!-- Profile Drop down menu-->
-        <div class="profilelist" id="toolbox" ng-if="showprofileoptions">
-          <div >
-            <div><a class="profileoption" >Your profile</a></div>
-            <div><a class="profileoption" href="subjects.html">Subjects</a></div>
-            <div><a class="profileoption" >Settings</a></div>
-            <div><a class="profileoption" href="index.html">Sign out</a></div>
-          </div>
-        </div>
-
-        <!-- Subject Drop down menu-->
-        <div class="subjectlist " id="toolbox" style="margin-left:900px; margin-top:5px; position:fixed; z-index:5;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);" ng-if="showsubjects">
-          <div class="updateheader" >
-            <span style="margin-top:15px; ">Subjects</span>
-            <a href="subjects.html"style="float:right; margin-right:25px; color: rgba(0, 0, 0, 0.78)" >Edit</a>
-          </div>
-          <div id="subjectsscroll">
-          <a ng-repeat="count in [0,1,2,3,5,6,7,8,9]" class="subjectlisting" style="text-decoration: none;">
-            <div class="updatenumber">7</div>
-            <span style="color:black;font-weight:normal">{{count *2}}<span>
-          </a>
-          </div>
-        </div>
-
         <div class="mdl-grid containee">
+
+          <div class="invisilayer">
+
+            <!-- Profile Drop down menu-->
+            <div class="profilelist" id="toolbox" ng-if="showprofileoptions">
+              <div >
+                <div><a class="profileoption" >Your profile</a></div>
+                <div><a class="profileoption" href="subjects.html">Subjects</a></div>
+                <div><a class="profileoption" >Settings</a></div>
+                <div><a class="profileoption" href="index.html">Sign out</a></div>
+              </div>
+            </div>
+
+            <!-- Subject Drop down menu-->
+            <div class="subjectlist " id="toolbox" style="margin-left:900px; margin-top:5px; position:fixed; z-index:5;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);" ng-if="showsubjects">
+              <div class="updateheader" >
+                <span style="margin-top:5px; ">All</span>
+                <a href="subjects.html"style="float:right; margin-right:25px; color: rgba(0, 0, 0, 0.78)" >Edit</a>
+              </div>
+              <div id="subjectsscroll">
+              <a ng-repeat="count in [0,1,2,3,5,6,7,8,9]" class="subjectlisting" style="text-decoration: none;">
+                <div class="updatenumber">7</div>
+                <span style="color:black;font-weight:normal">{{count *2}}<span>
+              </a>
+              </div>
+            </div>
+
+            </div>
 
           <div class=" mdl-cell--2-col-desktop" style="margin-top:-8px">
             <div style="position:fixed; margin-top:-3px;" >
@@ -145,7 +150,7 @@
           </div>
 
 
-          <div class=" mdl-cell--5-col-desktop  fade-in one" style="margin-left: 71px; margin-top:-8px">
+          <div class=" mdl-cell--5-col-desktop" style="margin-left: 71px; margin-top:-8px">
 
             <!-- Loadering icon-->
             <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="display:none"></div>
@@ -212,7 +217,7 @@
 
 
         </div>
-      </div>
+
 </div>
 </main>
 </body>
