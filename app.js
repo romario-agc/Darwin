@@ -8,14 +8,18 @@ var nr = require('newrelic'),
     colors = require('colors'),
     app = express();
 
+
 // Add Middleware necessarry for REST API's
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
 
+
 var datetime = new Date();
 
+
 var url = require('./models/url');
+
 
 // CORS Support
 app.use(function(req, res, next) {
@@ -26,15 +30,23 @@ app.use(function(req, res, next) {
 });
 
 
-//app.use('*', function(req, res, next) {
-  //res.send('404 Page not found');
-  //next();
-//});
-
-
+// Renders front end files
 app.use(express.static(__dirname+'/public'));
 
+
+// Gets data from Cheerio API
 app.use('/posts', require('./routes/Update_Route.js'));
+
+
+// Gets the names of all subjects
+app.use('/getsubjects', function(req, res) {
+  var objects = {
+    "name":['League of Legends', 'Space X' ,'Bernie Sanders','Middle East Conflict','Apple','Tesla Motors',
+            'Elon Musk','Model X','Model 3','Faker','One Punch Man','Dragonball Super', 'Limitless','Attack on Titan']
+            };
+  res.json(objects);
+});
+
 
 // Connect to MongoDB
 mongoose.connect('mongodb://romarioc:NnoirO12*@ds043324.mongolab.com:43324/heroku_k9814jjc');
@@ -51,12 +63,7 @@ mongoose.connection.once('open', function(err) {
     res.redirect('/posts/update');
 
   });
-/*
-   // application -------------------------------------------------------------
-      app.get('*', function(req, res) {
-          res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
-      });
-  */
+
   console.log(datetime + colors.magenta(" [funnel]") + colors.bold.magenta(' Server running on port 3000'));
   app.listen(process.env.PORT || 3000);
 });

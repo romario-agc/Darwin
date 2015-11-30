@@ -39,7 +39,20 @@ app.controller('maincontroller', function($scope, $http) {
   //Initial load
   $scope.loadMainData();
 
+  $scope.loadsubjectnames = function() {
+    $http.get("/getsubjects")
+      .success(function(data) {
+        $scope.subjectsnames = data;
+      });
+  };
 
+  $scope.range = function(count){
+    var ratings = [];
+    for (var i = 0; i < count; i++) {
+      ratings.push(i);
+    }
+    return ratings;
+  };
 
 });
 
