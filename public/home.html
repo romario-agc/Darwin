@@ -1,5 +1,6 @@
 <!doctype html>
-<html ng-app="funnel" ng-controller="maincontroller" ng-model="names"  >
+<html ng-app="funnel" ng-controller="maincontroller" ng-model="names">
+
 <head>
 
   <meta charset="UTF-8">
@@ -16,7 +17,7 @@
   <script src="../node_modules/ngprogress/build/ngProgress.js"></script>
 
   <!-- Local -->
-  <link rel="stylesheet"  type="text/css" href="./stylesheets/home.css"/>
+  <link rel="stylesheet" type="text/css" href="./stylesheets/home.css" />
   <script src="./controllers/maincontroller.js"></script>
 
   <!-- Material Design Lite -->
@@ -35,22 +36,22 @@
       <!-- Title -->
       <a class="mdl-layout-title2" href="home.html">Darwin</a>
 
-        <form>
-        <input  spellcheck="false" autocapitalize="off" type="text" autocorrect="off" placeholder="Search Darwin" ng-click="searchbarclick = ! searchbarclick">
-        </form>
+      <form>
+        <input spellcheck="false" autocapitalize="off" type="text" autocorrect="off" placeholder="Search Darwin" ng-click="searchbarclick = ! searchbarclick">
+      </form>
 
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl">
         <a href="home.html" ng-click="loadMainData() " class="mdl-navigation__link2" style="white" tabindex="0">
-          <img class="homeicon" src="images/home.png"/>Home
+          <img class="homeicon" src="images/home.png" />Home
         </a>
         <a ng-click="showsubjects = ! showsubjects; showprofileoptions = false; loadsubjectnames()" class="mdl-navigation__link2" tabindex="0">
           Subjects
         </a>
-        <a ng-click="showprofileoptions = ! showprofileoptions; showsubjects=false" class="mdl-navigation__link2" tabindex="0" >
-          <img class="profilepic" src="images/profilepic.jpg"/>
+        <a ng-click="showprofileoptions = ! showprofileoptions; showsubjects=false" class="mdl-navigation__link2" tabindex="0">
+          <img class="profilepic" src="images/profilepic.jpg" />
           <span>Romario</span>
         </a>
 
@@ -62,161 +63,170 @@
 
 
   </header>
-<div class="derpina"></div>
+  <div class="derpina"></div>
 
   <!-- Start of main content-->
+
   <body ng-controller="SubjectTitle">
     <main class="mdl-layout__content">
-        <div class="mdl-grid containee">
+      <div class="mdl-grid containee">
 
-          <div class="invisilayer">
+        <div class="invisilayer">
 
 
-            <!-- Profile Drop down menu-->
-            <div class="profilelist" id="toolbox" ng-if="showprofileoptions">
-              <div >
-                <div><a class="profileoption" >Your profile</a></div>
-                <div><a class="profileoption" href="subjects.html">Subjects</a></div>
-                <div><a class="profileoption" >Settings</a></div>
-                <div><a class="profileoption" href="index.html">Sign out</a></div>
-              </div>
-            </div>
-
-            <!-- Subject Drop down menu-->
-            <div class="subjectlist " id="toolbox" style="margin-left:875px; margin-top:5px; position:fixed; z-index:5;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);" ng-if="showsubjects">
-              <div class="updateheader" >
-                <span style="margin-top:5px; ">All</span>
-                <a href="subjects.html" style="float:right; margin-right:25px; color: rgba(0, 0, 0, 0.78)" >Edit</a>
-              </div>
-              <div ng-model="subjectsnames" id="subjectsscroll">
-              <a ng-repeat="count in [1,2,3,4,5,6,7,8,9,10,11,12,13]"   class="subjectlisting" style="text-decoration: none;">
-                <div class="updatenumber">7</div>
-                <span>{{subjectsnames.name[count]}}<span>
-              </a>
-              </div>
-            </div>
-
-            </div>
-
-          <div class=" mdl-cell--2-col-desktop" style="margin-top:-8px">
-            <div style="position:fixed; margin-top:-3px;" >
-
-              <!-- Current Topic -->
-              <div class="currenttopicbox">
-                <div style="color: white; margin:8px; font-weight:400; text-align:center;  font-size:13px;" ng-model="Subject">
-                  {{Subject.title}}
-                </div>
-              </div>
-
-              <!-- Favourites-->
-              <div class="derp2" id="toolbox">
-                <div class="updateheader" >
-                  <span style="margin-top:15px;">Favourites</span>
-                  <div class="updateheadernumber">16</div>
-                </div>
-                <div id="scroll">
-                <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false" ng-mouseleave="showedit=true" ng-click="loadleagueData(); updateModel('League of Legends')" class="updatetopics" style="text-decoration: none;">
-                  <div class="updatenumber">7</div>
-                  <img  ng-if="showimage" class="settingsimage" src="images/settings.png"></>
-                  <span style="color:black;font-weight:normal">League of Legends<span>
-                </a>
-                <a ng-mouseover="showimage2 = true" ng-mouseleave="showimage2=false" ng-click="loadteslaData(); updateModel('Tesla Motors')" class="updatetopics" style="text-decoration: none">
-                  <img ng-if="showimage2" class="settingsimage" src="images/settings.png"></>
-                  <div class="updatenumber">5</div>
-                  <span style="color:black;font-weight:normal">Tesla Motors<span>
-                </a>
-                <a ng-mouseover="showimage3 = true" ng-mouseleave="showimage3=false" ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
-                  <img ng-if="showimage3" class="settingsimage" src="images/settings.png"></>
-                  <div class="updatenumber">4</div>
-                  <span style="color:black;font-weight:normal;">Space X<span>
-                </a>
-              </div>
-              </div>
-
-              <!-- Live Event-->
-              <div class="derp2">
-                <div  style="  font-size:12px; padding:12px; padding-left:20px; font-weight:500; color:grey; font-size:11px;border-bottom:1px solid lightgrey">LIVE EVENTS</div>
-                <a ng-click="loadteslaData()" class="updatetopics" style="text-decoration: none">
-                  <div class="updatenumber">50</div>
-                  <span style="color:black; font-weight:normal">Tesla Model X Event<span>
-                </a>
-                </div>
-
-                <div class="basesignature1" style="padding:10px; padding-left:13px; text-align:center; font-weight:500; color:grey"> Funnel © 2015
-                  <span>• Developed by Romario Coffie</span>
-                </div>
-
+          <!-- Profile Drop down menu-->
+          <div class="profilelist" id="toolbox" ng-if="showprofileoptions">
+            <div>
+              <div><a class="profileoption">Your profile</a></div>
+              <div><a class="profileoption" href="subjects.html">Subjects</a></div>
+              <div><a class="profileoption">Settings</a></div>
+              <div><a class="profileoption" href="index.html">Sign out</a></div>
             </div>
           </div>
 
+          <!-- Subject Drop down menu-->
+          <div class="subjectlist " id="toolbox" style="margin-left:875px; margin-top:5px; position:fixed; z-index:5;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);" ng-if="showsubjects">
+            <div class="updateheader">
+              <span style="margin-top:5px; ">All</span>
+              <a href="subjects.html" style="float:right; margin-right:25px; color: rgba(0, 0, 0, 0.78)">Edit</a>
+            </div>
+            <div ng-model="subjectsnames" id="subjectsscroll">
+              <a ng-repeat="name in subjectsnames" class="subjectlisting" style="text-decoration: none;">
+                <div class="updatenumber">7</div>
+                <span>{{name.name}}<span>
+              </a>
+            </div>
+          </div>
 
-          <div class=" mdl-cell--5-col-desktop" style="margin-left: 41px; margin-top:-8px">
+        </div>
 
-            <!-- Loadering icon-->
-            <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="display:none"></div>
+        <div class=" mdl-cell--2-col-desktop" style="margin-top:-8px">
+          <div style="position:fixed; margin-top:-3px;">
 
-            <!-- Post card -->
-            <div class="mdl-frontpagecard" ng-repeat="count in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]">
-              <div class="hidepostdiv" ng-if="showhidepostdive" >
-                <div ng-click="hidethispost= !hidethispost" class="hidetext">Hide post</div>
+            <!-- Current Topic -->
+            <div class="currenttopicbox">
+              <div style="color: white; margin:8px; font-weight:400; text-align:center;  font-size:13px;" ng-model="Subject">
+                {{Subject.title}}
               </div>
-              <div ng-hide="hidethispost" class="cardcontainer">
-                <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
-                <img class="arrowdown" src="images/arrowdown.png" ng-click="showhidepostdive = ! showhidepostdive"/>
-                  <div class="cardsourcecontainer">
-                    <a style="color:#034860; font-weight:600; font-size:12px; margin-top:15px; text-transform: capitalize;" ng-href="https://www.reddit.com/r/{{ names.data.children[count].data.subreddit }}">{{ names.data.children[count].data.subreddit }}</a>
+            </div>
+
+            <!-- Favourites-->
+            <div class="derp2" id="toolbox">
+              <div class="updateheader">
+                <span style="margin-top:15px;">Favourites</span>
+                <div class="updateheadernumber">16</div>
+              </div>
+              <div id="scroll">
+                <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false" ng-mouseleave="showedit=true" ng-click="loadleagueData(); updateModel('League of Legends')" class="updatetopics" style="text-decoration: none;">
+                  <div class="updatenumber">7</div>
+                  <img ng-if="showimage" class="settingsimage" src="images/settings.png">
+                  </>
+                  <span style="color:black;font-weight:normal">League of Legends
+                    <span>
+                </a>
+                <a ng-mouseover="showimage2 = true" ng-mouseleave="showimage2=false" ng-click="loadteslaData(); updateModel('Tesla Motors')" class="updatetopics" style="text-decoration: none">
+                  <img ng-if="showimage2" class="settingsimage" src="images/settings.png">
+                  </>
+                  <div class="updatenumber">5</div>
+                  <span style="color:black;font-weight:normal">Tesla Motors
+                    <span>
+                </a>
+                <a ng-mouseover="showimage3 = true" ng-mouseleave="showimage3=false" ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
+                  <img ng-if="showimage3" class="settingsimage" src="images/settings.png">
+                  </>
+                  <div class="updatenumber">4</div>
+                  <span style="color:black;font-weight:normal;">Space X
+                    <span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Live Event-->
+            <div class="derp2">
+              <div style="  font-size:12px; padding:12px; padding-left:20px; font-weight:500; color:grey; font-size:11px;border-bottom:1px solid lightgrey">LIVE EVENTS</div>
+              <a ng-click="loadteslaData()" class="updatetopics" style="text-decoration: none">
+                <div class="updatenumber">50</div>
+                <span style="color:black; font-weight:normal">Tesla Model X Event
+                  <span>
+              </a>
+            </div>
+
+            <div class="basesignature1" style="padding:10px; padding-left:13px; text-align:center; font-weight:500; color:grey"> Funnel © 2015
+              <span>• Developed by Romario Coffie</span>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class=" mdl-cell--5-col-desktop" style="margin-left: 41px; margin-top:-8px">
+
+          <!-- Loadering icon-->
+          <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="display:none"></div>
+
+          <!-- Post card -->
+          <div class="mdl-frontpagecard" ng-repeat="count in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]">
+            <div class="hidepostdiv" ng-if="showhidepostdive">
+              <div ng-click="hidethispost= !hidethispost" class="hidetext">Hide post</div>
+            </div>
+            <div ng-hide="hidethispost" class="cardcontainer">
+              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
+              <img class="arrowdown" src="images/arrowdown.png" ng-click="showhidepostdive = ! showhidepostdive" />
+              <div class="cardsourcecontainer">
+                <a style="color:#034860; font-weight:600; font-size:12px; margin-top:15px; text-transform: capitalize;" ng-href="https://www.reddit.com/r/{{ names.data.children[count].data.subreddit }}">{{ names.data.children[count].data.subreddit }}</a>
+              </div>
+              <div class="linedivider"></div>
+              <a class="cardtitle" ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
+              <div class="imagediv" ng-hide="!names.data.children[count].data.preview.images[0].source.url ">
+                <a ng-href="{{ names.data.children[count].data.url}}">
+                  <img ng-src="{{names.data.children[count].data.preview.images[0].source.url}}" class="imageclass">
+                </a>
+              </div>
+              <div class="bottomlinedivider"></div>
+              <div class="commentcontainer">
+                <div class="mdl-card__supportingblack ">
+                  <div class="authorname">
+                    <img class="usericon" src="images/user.png" />
+                    <a style="font-weight: 600; " ng-href="https://www.reddit.com/user/{{ names.data.children[count].data.author }}">{{ names.data.children[count].data.author }}</a>
                   </div>
-                  <div class="linedivider"></div>
-                  <a class="cardtitle" ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
-                <div class="imagediv" ng-hide="!names.data.children[count].data.preview.images[0].source.url ">
-                  <a ng-href="{{ names.data.children[count].data.url}}">
-                    <img ng-src="{{names.data.children[count].data.preview.images[0].source.url}}" class="imageclass">
-                  </a>
-                </div>
-                <div class="bottomlinedivider"></div>
-                <div class="commentcontainer">
-                  <div class="mdl-card__supportingblack ">
-                    <div class="authorname">
-                      <img class="usericon" src="images/user.png"/>
-                      <a style="font-weight: 600; "ng-href="https://www.reddit.com/user/{{ names.data.children[count].data.author }}">{{ names.data.children[count].data.author }}</a>
-                    </div>
-                    <div style="margin-top:-3px; display:inline-block; font-weight:600">
-                      <img  class="upvoteicon" src="images/upvote.png"/>
-                      <span>{{ names.data.children[count].data.ups }}<span>
-                    </div>
-                    <div class="fpcomment">
-                      <img class="commenticon" src="images/comment.png"/>
-                      <a style="margin-left:3px; font-weight: 600; "ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.num_comments }} comments</a>
-                    </div>
+                  <div style="margin-top:-3px; display:inline-block; font-weight:600">
+                    <img class="upvoteicon" src="images/upvote.png" />
+                    <span>{{ names.data.children[count].data.ups }}
+                      <span>
+                  </div>
+                  <div class="fpcomment">
+                    <img class="commenticon" src="images/comment.png" />
+                    <a style="margin-left:3px; font-weight: 600; " ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.num_comments }} comments</a>
                   </div>
                 </div>
+              </div>
 
 
 
-                <!-- video
+              <!-- video
                 <video   ng-hide="!names.data.children[count].data.secure_media.oembed.url" autoplay="autoplay" preload="auto" ng-click="video()">
                   <source ng-src="{{ names.data.children[count].data.secure_media.oembed.url }}" type="video/mp4" />
                 </video>
                 -->
-              </div>
             </div>
           </div>
+        </div>
 
-          <!-- Subjects-->
-          <div class="mdl-cell--3-col-desktop" style="margin-top:-8px; margin-left:-24px">
-            <div class="activity" id="toolbox">
-              <div class="activityheader">
-                <img class="activityicon" src="images/activity.png"/>
-                <span>Activity</span>
-              </div>
-
+        <!-- Subjects-->
+        <div class="mdl-cell--3-col-desktop" style="margin-top:-8px; margin-left:-24px">
+          <div class="activity" id="toolbox">
+            <div class="activityheader">
+              <img class="activityicon" src="images/activity.png" />
+              <span>Activity</span>
             </div>
 
           </div>
-
-
 
         </div>
+
+
+
+      </div>
 
 </div>
 </main>

@@ -83,9 +83,9 @@
             <a href="subjects.html"style="float:right; margin-right:25px; color: rgba(0, 0, 0, 0.78)" >Edit</a>
           </div>
           <div id="subjectsscroll">
-            <a ng-repeat="count in [0,1,2,3,5,6,7,8,9,10,11,12,13]" ng-model="subjectsnames"  class="subjectlisting" style="text-decoration: none;">
+            <a ng-repeat="name in subjectsnames" ng-model="subjectsnames"  class="subjectlisting" style="text-decoration: none;">
               <div class="updatenumber">7</div>
-              <span style="color:black;font-weight:normal">{{subjectsnames.name[count]}}<span>
+              <span style="color:black;font-weight:normal">{{name.name}}<span>
             </a>
           </div>
         </div>
@@ -98,8 +98,8 @@
               Subjects
             </div>
             <div id="subjectlistscroll">
-              <div ng-repeat="count in [0,1,2,3,5,6,7,8,9,10,11,12,13]" ng-model="subjectsnames" class="subjectlisting2">
-                {{subjectsnames.name[count]}}
+              <div ng-repeat="name in subjectsnames" ng-model="subjectsnames" class="subjectlisting2">
+                {{name.name}}
               </div>
             </div>
             <div style="text-align:center; font-size:12px;margin-top:13px;">Back to top</div>

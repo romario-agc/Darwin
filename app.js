@@ -6,6 +6,7 @@ var nr = require('newrelic'),
     methodOverride = require('method-override'),
     _ = require('lodash'),
     colors = require('colors'),
+    datetime = new Date();
     app = express();
 
 
@@ -13,12 +14,6 @@ var nr = require('newrelic'),
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(methodOverride('X-HTTP-Method-Override'));
-
-
-var datetime = new Date();
-
-
-var url = require('./models/url');
 
 
 // CORS Support
@@ -38,31 +33,54 @@ app.use(express.static(__dirname+'/public'));
 app.use('/posts', require('./routes/Update_Route.js'));
 
 
-// Gets the names of all subjects
-app.use('/getsubjects', function(req, res) {
-  var objects = {
-    "name":['League of Legends', 'Space X' ,'Bernie Sanders','Middle East Conflict','Apple','Tesla Motors',
-            'Elon Musk','Model X','Model 3','Faker','One Punch Man','Dragonball Super', 'Limitless','Attack on Titan']
-            };
-  res.json(objects);
-});
-
-
 // Connect to MongoDB
 mongoose.connect('mongodb://romarioc:NnoirO12*@ds043324.mongolab.com:43324/heroku_k9814jjc');
 mongoose.connection.once('open', function(err) {
   if (err) throw err;
 
-  app.post('/newurl', function(req, res) {
+  // Posts new name and url to database
+  app.post('/newpost', function(req, res) {
 
     //accepts url of site
-    var newurl= new url ({url: req.body});
-    newurl.save();
-    console.log("post: "+newurl);
-    console.log(datetime + colors.magenta(" [funnel]") + colors.blue(' New URL post recieved and saved'));
-    res.redirect('/posts/update');
+    var data= [req.body];
+
+    // Import Schema
+    var subject = require('./models/subjectmodel');
+
+    var sub = new subject({
+      name: data[0],
+      url: data[1]
+    });
+
+    sub.save(function(err){
+      if (err) throw err;
+    });
+
+    console.log(datetime + colors.magenta(" [funnel]") + colors.bold.magenta(' New Subject Successfully Added'));
 
   });
+
+
+  // Gets the names of all subjects from database
+  app.use('/getsubjects', function(req, res) {
+
+    // Import Schema
+    var subjects = require('./models/subjectmodel');
+
+    // Find all Subjects.
+    subjects.find({},'subjectlist', function(err, data) {
+        if (err) return console.error(err);
+        var names = [];
+        for(var i = 0; i < data[0].subjectlist.length; i++) {
+          names.push(data[0].subjectlist[i].name);
+        }
+        console.log(data[0].subjectlist);
+        res.json(data[0].subjectlist);
+    });
+
+    console.log(datetime + colors.magenta(" [funnel]") + colors.bold.blue(' Returned list of all subjects'));
+  });
+
 
   console.log(datetime + colors.magenta(" [funnel]") + colors.bold.magenta(' Server running on port 3000'));
   app.listen(process.env.PORT || 3000);
