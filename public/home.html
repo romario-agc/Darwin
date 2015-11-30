@@ -71,6 +71,7 @@
 
           <div class="invisilayer">
 
+
             <!-- Profile Drop down menu-->
             <div class="profilelist" id="toolbox" ng-if="showprofileoptions">
               <div >
@@ -157,17 +158,17 @@
 
             <!-- Post card -->
             <div class="mdl-frontpagecard" ng-repeat="count in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]">
-              <div class="cardcontainer">
-
+              <div class="hidepostdiv" ng-if="showhidepostdive" >
+                <div ng-click="hidethispost= !hidethispost" class="hidetext">Hide post</div>
+              </div>
+              <div ng-hide="hidethispost" class="cardcontainer">
                 <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
-                <img class="arrowdown" src="images/arrowdown.png"/>
-                <div class="mdl-card__titleblack">
+                <img class="arrowdown" src="images/arrowdown.png" ng-click="showhidepostdive = ! showhidepostdive"/>
                   <div class="cardsourcecontainer">
                     <a style="color:#034860; font-weight:600; font-size:12px; margin-top:15px; text-transform: capitalize;" ng-href="https://www.reddit.com/r/{{ names.data.children[count].data.subreddit }}">{{ names.data.children[count].data.subreddit }}</a>
                   </div>
                   <div class="linedivider"></div>
                   <a class="cardtitle" ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
-                </div>
                 <div class="imagediv" ng-hide="!names.data.children[count].data.preview.images[0].source.url ">
                   <a ng-href="{{ names.data.children[count].data.url}}">
                     <img ng-src="{{names.data.children[count].data.preview.images[0].source.url}}" class="imageclass">

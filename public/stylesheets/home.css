@@ -318,6 +318,32 @@ html,
     color:grey;
   }
 
+  .hidepostdiv{
+    width: 80px;
+    background-color: white;
+    border-radius: 2px;
+    border: 1px solid lightgrey;
+    z-index: 5000 !important;
+    position: absolute;
+    margin-left: 420px;
+    margin-top: 30px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.20);
+  }
+
+  .hidetext{
+    margin-top: 9px;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    padding: 3px;
+    margin-bottom: 9px;
+  }
+
+  .hidetext:hover{
+    background-color: #343d46;
+    color: white;
+  }
+
 
   #circle1 {
     border-radius: 50%;
@@ -594,9 +620,11 @@ html,
 
   .cardtitle{
       display: inline-block;
-      margin-top: 12px;
-      width: 490px;
-      padding-left: 22px
+      width: 465px;
+      margin-top: 13px;
+      font-size: 14px;
+      color: black;
+      margin-left: 23px
   }
 
   .fpcomment {
