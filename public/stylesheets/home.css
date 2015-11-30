@@ -218,7 +218,7 @@ html,
     flex-direction: column;
     border-radius: 3px;
     border: 1px solid grey;
-    width: 248px;
+    width: 218px;
     font-size: 12px;
     font-family: "helvetica neue", "Trebuchet MS", "Arial", sans-serif;
     background-color: #ffffff;
@@ -466,7 +466,7 @@ html,
     position: relative;
     height: 18px;
     padding: 15px;
-    padding-left: 25px;
+    padding-left: 23px;
     text-align: left;
     font-weight: 300px;
     background-color: rgb(245, 245, 245, 0.06);
@@ -474,7 +474,7 @@ html,
     transition-duration: 0.05s;
     transition-timing-function: linear;
     cursor: pointer;
-    width: 220px;
+    width: 200px;
   }
 
   .updatetopics:hover {
@@ -579,14 +579,13 @@ html,
   }
 
   .updatenumber{
-
     display:inline-block;
     height:14px;
     width:17px;
     background-color:rgb(163, 163, 163);
     border-radius:2px;
     float:right;
-    margin-right:18px;
+    margin-right:27px;
     overflow:hidden;
     padding-bottom: 5px;
     font-size:9px;
@@ -1119,7 +1118,7 @@ input[type=text]:focus {
   flex-direction: column;
   border-radius: 2px;
   border: 1px solid grey;
-  width: 248px;
+  width: 218px;
   font-size: 12px;
   color: white;
   font-family: "helvetica neue", "Trebuchet MS", "Arial", sans-serif;
