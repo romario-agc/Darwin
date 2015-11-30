@@ -49,10 +49,10 @@
         <a href="home.html" ng-click="loadMainData() " class="mdl-navigation__link2" style="white" tabindex="0">
           <img  class="homeicon" src="images/home.png"/>Home
         </a>
-        <a ng-click="showtopics = ! showtopics" class="mdl-navigation__link2" tabindex="0">
+        <a  ng-click="showsubjects = ! showsubjects; showprofileoptions = false" class="mdl-navigation__link2" tabindex="0">
           <span >Subjects</span>
         </a>
-        <a class="mdl-navigation__link2" tabindex="0" ng-click="showprofile = ! showprofile">
+        <a ng-click="showprofileoptions = ! showprofileoptions; showsubjects=false" class="mdl-navigation__link2" tabindex="0" ng-click="showprofile = ! showprofile">
           <img class="profilepic" src="images/profilepic.jpg"/>
           <span>Romario</span>
         </a>
@@ -64,6 +64,34 @@
   <!-- Start of main content-->
   <body ng-controller="SubjectTitle">
     <main class="mdl-layout__content">
+      <div class="invisilayer">
+
+        <!-- Profile Drop down menu-->
+        <div class="profilelist" id="toolbox" ng-if="showprofileoptions">
+          <div >
+            <div><a class="profileoption" >Your profile</a></div>
+            <div><a class="profileoption" href="subjects.html">Subjects</a></div>
+            <div><a class="profileoption" >Settings</a></div>
+            <div><a class="profileoption" href="index.html">Sign out</a></div>
+          </div>
+        </div>
+
+        <!-- Subject Drop down menu-->
+        <div class="subjectlist " id="toolbox" style="margin-left:900px; margin-top:5px; position:fixed; z-index:5;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);" ng-if="showsubjects">
+          <div class="updateheader" >
+            <span style="margin-top:5px; ">All</span>
+            <a href="subjects.html"style="float:right; margin-right:25px; color: rgba(0, 0, 0, 0.78)" >Edit</a>
+          </div>
+          <div id="subjectsscroll">
+          <a ng-repeat="count in [0,1,2,3,5,6,7,8,9]" class="subjectlisting" style="text-decoration: none;">
+            <div class="updatenumber">7</div>
+            <span style="color:black;font-weight:normal">{{count *2}}<span>
+          </a>
+          </div>
+        </div>
+
+        </div>
+
       <div class="totalcontainer" >
           <div class="subjectsection">
             <div class="subjectsheader">

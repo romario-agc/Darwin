@@ -7,7 +7,7 @@ app.controller('maincontroller', function($scope, $http) {
   $scope.loadMainData = function() {
     $scope.url = null;
 
-    $http.get("https://www.reddit.com/r/leagueoflegends+teslamotors+spacex.json")
+    $http.get("https://www.reddit.com/r/all+leagueoflegends+teslamotors+spacex.json")
       .success(function(data) {
         $scope.names = data;
       });
