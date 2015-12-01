@@ -16,7 +16,7 @@ html,
   }
 
   .invisilayer{
-    display: inline-block !important;
+      display: inline-block !important;
       width: 1210px ;
       margin-left: auto;
       margin-right: auto;

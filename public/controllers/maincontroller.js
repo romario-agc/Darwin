@@ -54,6 +54,13 @@ app.controller('maincontroller', function($scope, $http) {
     return ratings;
   };
 
+  $scope.setProject = function (id) {
+     $scope.currentvideo = $scope.videos[id];
+     $scope.currentvideourl = $sce.trustAsResourceUrl($scope.names.data.children[count].data.secure_media.oembed.url);
+   };
+
+
+
 });
 
 app.directive('loading', ['$http', function($http) {
@@ -82,10 +89,23 @@ app.controller('SubjectTitle', ['$scope', function($scope) {
         sources: 4,
       };
 
+
       $scope.updateModel = function(name) {
         $scope.Subject= {
           title: name,
           sources: 4,
         };
       };
+
+      $scope.editsubject={
+        title: 'Subject 1',
+      };
+
+      $scope.updateeditmodel = function(name) {
+        $scope.editsubject= {
+          title: name,
+          sources: 4,
+        };
+      };
+
     }]);

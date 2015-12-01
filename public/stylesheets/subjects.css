@@ -8,41 +8,49 @@ html,
   }
 
   .totalcontainer{
+    margin-top: 8px !important;
     width: 1001px;
     margin: 0 auto;
     overflow: hidden;
-    border: 1px solid lightgrey;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 3px;
+    background-color: white;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.10);
   }
 
   #subjectlistscroll {
     width: auto;
-    height: 85%;
+    height: 700px;
     overflow: auto;
     font-size: 12px;
     border-bottom: 1px solid lightgrey;
   }
 
+
+
   .subjectsection{
     float: left;
-    height: 90vh;
-    width:300px;
+    height: auto;
+    width:270px;
     background-color: white;
-    overflow: hidden;
   }
 
   .subjectsheader{
     border-bottom: 1px solid lightgrey;
     padding: 15px;
+    padding-top: 12px;
+    padding-bottom: 16px;
+    background-color: rgba(0, 0, 0, 0.04);
+    height: 15px;
     font-size: 13px;
     color: rgb(69, 69, 69);
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
   }
 
   .subjectlisting2 {
     position: relative;
-    height: 18px;
+    height: 15px;
     padding: 16px;
     width: auto;
     padding-left: 25px;
@@ -72,15 +80,22 @@ html,
   }
 
   .editsubject{
-    margin-left: 30px;
-    margin-top: 20px;
-    font-size: 20px;
-    font-weight: 300;
+    border-bottom: 1px solid lightgrey;
+    padding: 15px;
+    padding-top: 12px;
+    padding-bottom: 16px;
+    background-color: rgba(0, 0, 0, 0.04);
+    height: 15px;
+    font-size: 13px;
+    color: rgb(69, 69, 69);
+    font-weight: 500;
+    text-align: center;
+    width: 100%
   }
 
   .namesectioncontainer{
     margin-left: 30px;
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 12px;
     font-weight: 300;
   }
@@ -120,4 +135,35 @@ html,
     font-size: 13px;
     font-weight: 600;
     color:  rgb(69, 69, 69);
+  }
+
+  .savebutton{
+    margin-left:10px;
+    margin-top:20px;
+    width:100px;
+    height:32px;
+    background-color:rgb(52, 61, 70);
+    color:white;
+    border: none;
+    border-radius: 2px;
+  }
+
+  .savebutton:hover{
+    background-color: rgb(79, 90, 102);
+    border: 1px solid grey
+  }
+
+  .editbutton2{
+    background-color:rgb(52, 61, 70);
+    color:white;
+    border: none;
+    border-radius: 2px;
+    height: 20px;
+    width: 35px;
+    margin-left: 8px;
+    display:inline-block
+  }
+
+  .editbutton2:hover{
+    background-color: rgb(79, 90, 102);
   }
