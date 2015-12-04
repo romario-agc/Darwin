@@ -68,6 +68,11 @@
     <div class=" mdl-cell--12-col-desktop">
       <div class="invisilayer">
 
+        <div ng-init="derp=false" ng-hide="derp==false" class="successoverlay">
+          <img class="successadd" src="images/success.png"/>
+          <div style="text-align:center; margin-top:10px">Successfully added Subject!</div>
+        </div>
+
         <!-- Profile Drop down menu-->
         <div class="profilelist" style="position:absolute; margin-top:-10px;" id="toolbox" ng-if="showprofileoptions">
           <div>
@@ -94,32 +99,33 @@
 
       </div>
 
-      <div class="totalcontainer" ng-controller="SubjectTitle">
-          <div ng-init="loadsubjectnames()" class="subjectsection">
-            <div class="subjectsheader">
-              Subjects
-            </div>
+      <div class="totalcontainer" >
+          <div class="subjectsection">
+            <div class="subjectsheader"> Subjects </div>
             <div id="subjectlistscroll">
               <div ng-repeat="name in subjectsnames" class="subjectlisting2"  ng-click="updateeditmodel('Different Subject')">
                 {{name.name}}
               </div>
             </div>
           </div>
-          <div class="detailssection" ng-init="editname=false">
-            <div class="editsubject" ng-model="editsubject">{{editsubject.title}}</div>
-            <div style="width:400px; height:30px; padding-left:30px; padding-top:30px;">
-              <div style="font-size:22px; font-weight:300;display:inline-block">League of legends</div>
-              <button class="editbutton2" ng-click="editname= !editname">Edit</button>
+          <div class="detailssection" ng-controller="SubjectTitle" >
+
+            <!-- Section title-->
+            <div class="editsubject" ng-model="editsubject" ng-init="master.name='Temp Name'">{{master.name}}</div>
+
+            <!-- Name of subject-->
+            <div ng-show="!editname" style="width:400px; height:30px; padding-left:30px; padding-top:30px;">
+              <div style="font-size:22px; font-weight:300;display:inline-block">{{master.name}}</div>
+              <button class="editbutton2" ng-click="editname = true">Edit</button>
             </div>
-            <div ng-if="editname" >
-              <div class="namesectioncontainer" style="display:inline-block">
-                <form>
-                  <input type="name"  value="League of Legends">
+
+            <!-- Edit name of subject-->
+                <form  ng-show="editname" class="namesectioncontainer">
+                  <input type="name" style="display:inline-block" ng-model="subject.name" placeholder="{{master.name}}"/>
+                  <input type="button" value="Save changes" class="savebutton"  ng-click="updateeditmodel(subject); editname = false"/>
+                  <input type="button" value="Cancel" class="savebutton" ng-click="editname= false" />
                 </form>
-              </div>
-              <button class="savebutton" >Save changes</button>
-              <button class="savebutton" >Cancel</button>
-            </div>
+
             <div class="sourcessection">Sources</div>
           </div>
       </div>

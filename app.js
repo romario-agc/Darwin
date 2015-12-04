@@ -53,11 +53,13 @@ mongoose.connection.once('open', function(err) {
     });
 
     sub.save(function(err){
-      if (err) throw err;
+      if (err) {
+        res.send('error');
+        console.log(err);
+      }
+      res.send('success');
+      console.log(datetime + colors.magenta(" [funnel]") + colors.bold.magenta(' New Subject Successfully Added'));
     });
-
-    console.log(datetime + colors.magenta(" [funnel]") + colors.bold.magenta(' New Subject Successfully Added'));
-
   });
 
 

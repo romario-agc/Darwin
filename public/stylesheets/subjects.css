@@ -21,10 +21,11 @@ html,
 
   #subjectlistscroll {
     width: auto;
-    height: 88vh;
+    height: 82vh;
     overflow: auto;
     font-size: 12px;
     border-bottom: 1px solid lightgrey;
+
   }
 
 
@@ -99,6 +100,7 @@ html,
     margin-top: 20px;
     font-size: 12px;
     font-weight: 300;
+    display:inline-block
   }
 
   form input[type='name'] {
@@ -118,7 +120,7 @@ html,
     font-family: helvetica;
     font-size: 12px !important;
     color: black !important;
-    width: 400px;
+    width: 350px;
     height: 27px;
     border-radius: 2px;
     overflow: hidden;
@@ -144,14 +146,19 @@ html,
     width:100px;
     height:32px;
     background-color:rgb(52, 61, 70);
+    font-size: 11px !important;
     color:white;
     border: none;
     border-radius: 2px;
+    outline: none;
+    display:inline-block !important
   }
 
   .savebutton:hover{
-    background-color: rgb(79, 90, 102);
-    border: 1px solid grey
+    background-color: rgb(38, 44, 50);
+  }
+  .savebutton:active{
+    background-color: rgb(83, 99, 112)
   }
 
   .editbutton2{
@@ -162,9 +169,37 @@ html,
     height: 20px;
     width: 35px;
     margin-left: 8px;
-    display:inline-block
+    display:inline-block;
+    outline: none;
   }
 
   .editbutton2:hover{
-    background-color: rgb(79, 90, 102);
+    background-color: rgb(38, 44, 50);
+  }
+
+  .editbutton2:active{
+    background-color: rgb(83, 99, 112);
+  }
+
+  .successoverlay{
+    margin-left: 480px;
+    margin-top: 200px;
+    color: black;
+    font-weight: 400;
+    font-size: 12px;
+    background-color: white;
+    position: absolute;
+    z-index: 500;
+    width: 210px;
+    height: 160px;
+    border-radius: 2px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0,0,0,0.13);
+  }
+
+  .successadd{
+    margin-left: 73px;
+    margin-top: 30px;
+    height: 60px;
+    width: 60px;
   }

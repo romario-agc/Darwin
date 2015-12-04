@@ -11,6 +11,10 @@ app.controller('maincontroller', function($scope, $http) {
       .success(function(data) {
         $scope.names = data;
       });
+
+      $scope.subject={
+        name:'league of legendery'
+      };
   };
 
   //Function that loads  data from  Tesla url
@@ -46,12 +50,23 @@ app.controller('maincontroller', function($scope, $http) {
       });
   };
 
+  $scope.loadsubjectnames();
+
   $scope.range = function(count){
     var ratings = [];
     for (var i = 0; i < count; i++) {
       ratings.push(i);
     }
     return ratings;
+  };
+
+
+  $scope.savenewname = function(data){
+    $scope.subject={
+      name: data,
+    };
+
+    return subject.name;
   };
 
   $scope.setProject = function (id) {
@@ -97,15 +112,21 @@ app.controller('SubjectTitle', ['$scope', function($scope) {
         };
       };
 
-      $scope.editsubject={
-        title: 'Subject 1',
-      };
+      $scope.master={ };
 
       $scope.updateeditmodel = function(name) {
-        $scope.editsubject= {
-          title: name,
-          sources: 4,
-        };
+        $scope.master= angular.copy(name);
+
+        $http.post("/newpost", name).success(function(data) {
+            $scope.message = data;
+          });
+
       };
+
+      $scope.reset = function() {
+        $scope.subject= angular.copy($scope.master);
+      };
+
+      $scope.reset();
 
     }]);
