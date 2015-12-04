@@ -9,6 +9,7 @@ html,
 
   .totalcontainer{
     margin-top: 8px !important;
+    height: 88vh;
     width: 1001px;
     margin: 0 auto;
     overflow: hidden;
@@ -20,7 +21,7 @@ html,
 
   #subjectlistscroll {
     width: auto;
-    height: 700px;
+    height: 88vh;
     overflow: auto;
     font-size: 12px;
     border-bottom: 1px solid lightgrey;
@@ -74,7 +75,7 @@ html,
   .detailssection{
     float: left;
     border-left: 1px solid lightgrey;
-    height: 90vh;
+    height: 88vh;
     width:700px;
     background-color: white;
   }
