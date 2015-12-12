@@ -113,10 +113,9 @@
             <!-- Favourites-->
             <div class="derp2" id="toolbox">
               <div class="updateheader">
-                <span style="margin-top:15px;">Favourites</span>
-                <div class="updateheadernumber">16</div>
+                <span style="margin-top:15px; color:black">Favourites</span>
               </div>
-              <div id="scroll">
+              <div style="margin-top:7px">
                 <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false" ng-mouseleave="showedit=true" ng-click="loadleagueData(); updateModel('League of Legends')" class="updatetopics" style="text-decoration: none;">
                   <div class="updatenumber">7</div>
                   <img ng-if="showimage" class="settingsimage" src="images/settings.png">
@@ -143,7 +142,7 @@
 
             <!-- Live Event-->
             <div class="derp2">
-              <div style="  font-size:12px; padding:12px; padding-left:20px; font-weight:500; color:grey; font-size:11px;border-bottom:1px solid lightgrey">LIVE EVENTS</div>
+              <div style="  font-size:12px; padding:10px; padding-left:20px; font-weight:300; color:black; font-size:11px">Live Events</div>
               <a ng-click="loadteslaData()" class="updatetopics" style="text-decoration: none">
                 <div class="updatenumber">50</div>
                 <span style="color:black; font-weight:normal">Tesla Model X Event
@@ -165,24 +164,24 @@
           <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="display:none"></div>
 
           <!-- Post card -->
-          <div class="mdl-frontpagecard" ng-repeat="count in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]">
+          <div class="mdl-frontpagecard" ng-init="hidethispost=false" ng-repeat="count in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]">
             <div class="hidepostdiv" ng-if="showhidepostdive">
-              <div ng-click="hidethispost= !hidethispost" class="hidetext">Hide post</div>
+              <div ng-click="hidethispost=true" class="hidetext">Hide post</div>
             </div>
-            <div ng-hide="hidethispost" class="cardcontainer">
+            <div  class="cardcontainer">
               <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <img class="arrowdown" src="images/arrowdown.png" ng-click="showhidepostdive = ! showhidepostdive" />
               <div class="cardsourcecontainer">
                 <a style="color:#034860; font-weight:600; font-size:12px; margin-top:15px; text-transform: capitalize;" ng-href="https://www.reddit.com/r/{{ names.data.children[count].data.subreddit }}">{{ names.data.children[count].data.subreddit }}</a>
               </div>
-              <div class="linedivider"></div>
+              <div style="height:auto; width:auto; background-color:rgba(0, 0, 0, 0.04); padding-bottom:15px; margin-top:24px; border-top:1px solid rgba(0,0,0, 0.08); border-bottom:1px solid rgba(0,0,0, 0.08)">
               <a class="cardtitle" ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
               <div class="imagediv" ng-hide="!names.data.children[count].data.preview.images[0].source.url ">
                 <a ng-href="{{ names.data.children[count].data.url}}">
                   <img ng-src="{{names.data.children[count].data.preview.images[0].source.url}}" class="imageclass">
                 </a>
               </div>
-              <div class="bottomlinedivider"></div>
+              </div>
               <div class="commentcontainer">
                 <div class="mdl-card__supportingblack ">
                   <div class="authorname">

@@ -15,6 +15,7 @@ app.controller('maincontroller', function($scope, $http) {
       $scope.subject={
         name:'league of legendery'
       };
+
   };
 
   //Function that loads  data from  Tesla url
@@ -40,6 +41,14 @@ app.controller('maincontroller', function($scope, $http) {
       });
   };
 
+  /*Function that loads  data from  Tesla url
+  $scope.postnewname = function() {
+    $http.post("/newpost")
+      .success(function(data) {
+        $scope.message = success;
+      });
+  };
+*/
   //Initial load
   $scope.loadMainData();
 
@@ -98,7 +107,7 @@ app.directive('loading', ['$http', function($http) {
 
 }]);
 
-app.controller('SubjectTitle', ['$scope', function($scope) {
+app.controller('SubjectTitle', ['$scope', function($scope, $http) {
       $scope.Subject = {
         title: 'Global',
         sources: 4,
@@ -116,10 +125,6 @@ app.controller('SubjectTitle', ['$scope', function($scope) {
 
       $scope.updateeditmodel = function(name) {
         $scope.master= angular.copy(name);
-
-        $http.post("/newpost", name).success(function(data) {
-            $scope.message = data;
-          });
 
       };
 

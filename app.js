@@ -41,6 +41,8 @@ mongoose.connection.once('open', function(err) {
   // Posts new name and url to database
   app.post('/newpost', function(req, res) {
 
+    console.log(datetime + colors.magenta(" [funnel]") + colors.bold.magenta(' New Post Recieved'));
+
     //accepts url of site
     var data= [req.body];
 
@@ -54,7 +56,6 @@ mongoose.connection.once('open', function(err) {
 
     sub.save(function(err){
       if (err) {
-        res.send('error');
         console.log(err);
       }
       res.send('success');
@@ -81,7 +82,9 @@ mongoose.connection.once('open', function(err) {
     });
 
     console.log(datetime + colors.magenta(" [funnel]") + colors.bold.blue(' Returned list of all subjects'));
+
   });
+
 
 
   console.log(datetime + colors.magenta(" [funnel]") + colors.bold.magenta(' Server running on port 3000'));

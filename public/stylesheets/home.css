@@ -31,8 +31,6 @@ html,
     overflow: auto;
     margin-top: 10px;
     font-size: 12px;
-    border-top: 1px solid grey;
-    border-color: #E4E4E4;
   }
 
   #subjectsscroll {
@@ -40,7 +38,7 @@ html,
     height:  auto;
     overflow: auto;
     overflow-x: hidden;
-    margin-top: 12px;
+    margin-top: 5px;
     font-size: 12px;
     border-top: 1px solid grey;
     border-color: #E4E4E4;
@@ -130,6 +128,7 @@ html,
     transition-duration: 0.075s;
     transition-timing-function: ease-in-out;
     cursor: pointer;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
   }
 
 
@@ -173,6 +172,7 @@ html,
     border: 1px solid rgba(0, 0, 0, 0.11);
     overflow: hidden;
     color: white;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
   }
 
   .activityheader {
@@ -216,21 +216,23 @@ html,
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    border-radius: 3px;
+    border-radius: 2px;
     border: 1px solid grey;
     width: 218px;
     font-size: 12px;
     font-family: "helvetica neue", "Trebuchet MS", "Arial", sans-serif;
     background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.17);
     overflow: hidden;
     min-height: auto;
-    margin-top: 14px;
+    padding-bottom: 15px;
+    margin-top: 8px;
     margin-left: 10px;
     transition-property: background border width height box-shadow;
     transition-duration: 0.1s;
     transition-timing-function: ease-in-out;
     cursor: pointer;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
   }
 
   .subjectlist{
@@ -464,8 +466,9 @@ html,
 
   .updatetopics {
     position: relative;
-    height: 18px;
-    padding: 15px;
+    height: 12px;
+    padding: 10px;
+    padding-bottom: 17px;
     padding-left: 23px;
     text-align: left;
     font-weight: 300px;
@@ -530,9 +533,9 @@ html,
   .updateheader {
       font-family: helvetica !important;
       color: #5a5a5a;
-      font-size: 13px;
-      font-weight: bold;
+      font-size: 11px;
       padding-left: 25px;
+      font-weight: lighter;
       padding-top: 12px;
       vertical-align: bottom;
       font-family: SourceSansPro;
@@ -541,8 +544,9 @@ html,
 
   .updateheadernumber{
     display:inline-block;
-    height:20px;
+    height:10px;
     min-width:18px;
+    padding-bottom: 8px;
     background-color:#b53535;
     border-radius:2px;
     float:right;
@@ -552,7 +556,6 @@ html,
     color:white;
     font-weight:600;
     text-align:center;
-    box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.4);
   }
 
   .editbutton{
@@ -580,19 +583,18 @@ html,
 
   .updatenumber{
     display:inline-block;
-    height:14px;
-    width:17px;
+    height:13px;
+    width:20px;
     background-color:rgb(163, 163, 163);
     border-radius:2px;
     float:right;
     margin-right:27px;
     overflow:hidden;
-    padding-bottom: 5px;
+    padding-bottom: 6px;
     font-size:9px;
-    font-weight:600;
+    font-weight:400;
     color:white;
     text-align:center;
-    box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.2);
   }
 
   .checkbox {
@@ -622,6 +624,7 @@ html,
       width: 465px;
       margin-top: 13px;
       font-size: 14px;
+      line-height: 1.5;
       color: black;
       margin-left: 23px
   }
@@ -846,7 +849,8 @@ html,
     transition-property: max-height, box-shadow;
     transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
-    border-bottom: 2px solid  rgb(43, 50, 57)
+    border-bottom: 2px solid  rgb(43, 50, 57);
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
   }
 
 
@@ -1132,6 +1136,7 @@ input[type=text]:focus {
   transition-duration: 0.1s;
   transition-timing-function: ease-in-out;
   cursor: pointer;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
 .rightarrow{

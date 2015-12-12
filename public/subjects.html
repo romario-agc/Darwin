@@ -30,6 +30,13 @@
 </head>
 
 <!-- Nav bar-->
+<div ng-init="derp=false" ng-hide="derp==false" class="fade-in one"style="background-color:rgb(26, 26, 26); height:100vh; width:100vw; position:absolute; z-index:499; opacity:0.9 ">
+<div  class="successoverlay">
+  <img class="successadd" src="images/success.png"/>
+  <div style="text-align:center; margin-top:5px">Added</div>
+</div>
+</div>
+
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <header class="mdl-layout__header2 shadow">
@@ -59,19 +66,19 @@
 
       </nav>
     </div>
+
+
   </header>
 
   <!-- Start of main content-->
   <body ng-controller="SubjectTitle">
+
     <main class="mdl-layout__content">
   <div class="mdl-grid containee">
     <div class=" mdl-cell--12-col-desktop">
       <div class="invisilayer">
+<!--n -->
 
-        <div ng-init="derp=false" ng-hide="derp==false" class="successoverlay">
-          <img class="successadd" src="images/success.png"/>
-          <div style="text-align:center; margin-top:10px">Successfully added Subject!</div>
-        </div>
 
         <!-- Profile Drop down menu-->
         <div class="profilelist" style="position:absolute; margin-top:-10px;" id="toolbox" ng-if="showprofileoptions">
@@ -100,6 +107,8 @@
       </div>
 
       <div class="totalcontainer" >
+
+        <!-- List of Subject -->
           <div class="subjectsection">
             <div class="subjectsheader"> Subjects </div>
             <div id="subjectlistscroll">
@@ -108,22 +117,23 @@
               </div>
             </div>
           </div>
-          <div class="detailssection" ng-controller="SubjectTitle" >
+
+          <div class="detailssection" ng-controller="SubjectTitle"  >
 
             <!-- Section title-->
             <div class="editsubject" ng-model="editsubject" ng-init="master.name='Temp Name'">{{master.name}}</div>
 
             <!-- Name of subject-->
-            <div ng-show="!editname" style="width:400px; height:30px; padding-left:30px; padding-top:30px;">
+            <div style="width:400px; height:30px; padding-left:30px; padding-top:30px;">
               <div style="font-size:22px; font-weight:300;display:inline-block">{{master.name}}</div>
-              <button class="editbutton2" ng-click="editname = true">Edit</button>
+              <button class="editbutton2" >Edit</button>
             </div>
 
             <!-- Edit name of subject-->
-                <form  ng-show="editname" class="namesectioncontainer">
+                <form  class="namesectioncontainer">
                   <input type="name" style="display:inline-block" ng-model="subject.name" placeholder="{{master.name}}"/>
-                  <input type="button" value="Save changes" class="savebutton"  ng-click="updateeditmodel(subject); editname = false"/>
-                  <input type="button" value="Cancel" class="savebutton" ng-click="editname= false" />
+                  <input type="button" value="Save changes" class="savebutton"  ng-click="updateeditmodel(subject)"/>
+                  <input type="button" value="Cancel" class="savebutton"  />
                 </form>
 
             <div class="sourcessection">Sources</div>
