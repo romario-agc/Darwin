@@ -249,7 +249,7 @@ html,
     top: 0;
     border: 1px solid rgba(77, 77, 77, 0.28) !important;
     width: 278px;
-    height: 342px;
+    max-height: 382px;
     font-size: 12px;
     font-family: "helvetica neue", "Trebuchet MS", "Arial", sans-serif;
     background-color: #f6f6f6;
@@ -595,6 +595,11 @@ html,
     font-weight:400;
     color:white;
     text-align:center;
+  }
+
+  .updatenumberhover{
+    color: black;
+    background-color: white;
   }
 
   .checkbox {
@@ -1016,11 +1021,27 @@ form input[type='text'] {
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   outline: none;
-
 }
+
 input[type=text]:focus {
   background-color: white;
   color: black !important;
+}
+
+input[type=minisearch] {
+  background-color: white;
+  color: black !important;
+  height: 40px;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: -7px;
+  margin-left: -1px;
+  margin-top: 10px;
+  font-size: 11px !important;
+  padding-left: 15px;
+  float: left;
+  height: 25px;
+  outline: none;
 }
 
 .searchdropdown{

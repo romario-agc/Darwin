@@ -90,9 +90,12 @@
               <span style="margin-top:5px; ">All</span>
               <a href="subjects.html" style="float:right; margin-right:25px; color: rgba(0, 0, 0, 0.78)">Edit</a>
             </div>
+            <form>
+              <input spellcheck="false" autocapitalize="off" type="minisearch" autocorrect="off"  ng-model="search" placeholder="Search " ng-click="searchbarclick = ! searchbarclick">
+            </form>
             <div ng-model="subjectsnames" id="subjectsscroll">
-              <a ng-repeat="name in subjectsnames" class="subjectlisting" style="text-decoration: none;">
-                <div class="updatenumber">7</div>
+              <a ng-repeat="name in subjectsnames | filter:search" class="subjectlisting" style="text-decoration: none;" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+                <div class="updatenumber" ng-class="{updatenumberhover: hover=true; updatenumber: hover=false}" >7</div>
                 <span>{{name.name}}<span>
               </a>
             </div>
