@@ -22,7 +22,7 @@ app.controller('maincontroller', function($scope, $http) {
       });
   };
 
-  /*
+  /* Sends new name to databse
   $scope.postnewname = function() {
     $http.post("/newpost")
       .success(function(data) {
@@ -42,22 +42,6 @@ app.controller('maincontroller', function($scope, $http) {
 
   $scope.loadsubjectnames();
 
-  $scope.range = function(count){
-    var ratings = [];
-    for (var i = 0; i < count; i++) {
-      ratings.push(i);
-    }
-    return ratings;
-  };
-
-
-  $scope.savenewname = function(data){
-    $scope.subject={
-      name: data,
-    };
-
-    return subject.name;
-  };
 
   $scope.setProject = function (id) {
      $scope.currentvideo = $scope.videos[id];

@@ -95,7 +95,7 @@
             </form>
             <div ng-model="subjectsnames" id="subjectsscroll">
               <a ng-click="loadData(name.url); updateModel(name.name)" ng-repeat="name in subjectsnames | filter:search" class="subjectlisting" style="text-decoration: none;" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
-                <div class="updatenumber" ng-class="{updatenumberhover: hover=true; updatenumber: hover=false}" >7</div>
+                <div class="updatenumber" ng-class="{updatenumberhover: hover=true; updatenumber: hover=false}" >{{name.updates}}</div>
                 <span>{{name.name}}<span>
               </a>
             </div>
@@ -121,7 +121,7 @@
               <div style="margin-top:7px; overflow-y: auto; overflow-x:hidden">
                 <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false"  ng-hide="name.favourite=='no'"  ng-repeat="name in subjectsnames" ng-click="loadData(name.url); updateModel(name.name)" class="updatetopics" style="text-decoration: none; color:black; font-weight: 400">
                   <img ng-if="showimage" class="settingsimage" src="images/settings.png">
-                  <div class="updatenumber" >7</div>
+                  <div class="updatenumber" >{{name.updates}}</div>
                   <span>{{name.name}}<span>
                 </a>
               </div>
@@ -151,7 +151,7 @@
           <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="display:none"></div>
 
           <!-- Post card -->
-          <div class="mdl-frontpagecard" ng-init="hidethispost=false" ng-repeat="count in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]">
+          <div class="mdl-frontpagecard" ng-init="hidethispost=false" ng-repeat="data in names.data.children">
             <div class="hidepostdiv" ng-if="showhidepostdive">
               <div ng-click="hidethispost=true" class="hidetext">Hide post</div>
             </div>
@@ -159,13 +159,13 @@
               <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <img class="arrowdown" src="images/arrowdown.png" ng-click="showhidepostdive = ! showhidepostdive" />
               <div class="cardsourcecontainer">
-                <a style="color:#034860; font-weight:600; font-size:12px; margin-top:15px; text-transform: capitalize;" ng-href="https://www.reddit.com/r/{{ names.data.children[count].data.subreddit }}">{{ names.data.children[count].data.subreddit }}</a>
+                <a style="color:#034860; font-weight:600; font-size:12px; margin-top:15px; text-transform: capitalize;" ng-href="https://www.reddit.com/r/{{ data.data.subreddit }}">{{ data.data.subreddit }}</a>
               </div>
               <div style="height:auto; width:auto; background-color:rgba(0, 0, 0, 0.035); padding-bottom:15px; margin-top:24px;margin-bottom:2px; border-top:1px solid rgba(0,0,0, 0.05); border-bottom:1px solid rgba(0,0,0, 0.05)">
-              <a class="cardtitle" ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
-              <div class="imagediv" ng-hide="!names.data.children[count].data.preview.images[0].source.url ">
-                <a ng-href="{{ names.data.children[count].data.url}}">
-                  <img ng-src="{{names.data.children[count].data.preview.images[0].source.url}}" class="imageclass">
+              <a class="cardtitle" ng-href="https://www.reddit.com{{ data.data.permalink }}">{{ data.data.title }}</a>
+              <div class="imagediv" ng-hide="!data.data.preview.images[0].source.url ">
+                <a ng-href="{{ data.data.url}}">
+                  <img ng-src="{{data.data.preview.images[0].source.url}}" class="imageclass">
                 </a>
               </div>
               </div>
@@ -173,16 +173,16 @@
                 <div class="mdl-card__supportingblack ">
                   <div class="authorname">
                     <img class="usericon" src="images/user.png" />
-                    <a style="font-weight: 600; " ng-href="https://www.reddit.com/user/{{ names.data.children[count].data.author }}">{{ names.data.children[count].data.author }}</a>
+                    <a style="font-weight: 600; " ng-href="https://www.reddit.com/user/{{ data.data.author }}">{{ data.data.author }}</a>
                   </div>
                   <div style="margin-top:-3px; display:inline-block; font-weight:600">
                     <img class="upvoteicon" src="images/upvote.png" />
-                    <span>{{ names.data.children[count].data.ups }}
+                    <span>{{ data.data.ups }}
                       <span>
                   </div>
                   <div class="fpcomment">
                     <img class="commenticon" src="images/comment.png" />
-                    <a style="margin-left:3px; font-weight: 600; " ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.num_comments }} comments</a>
+                    <a style="margin-left:3px; font-weight: 600; " ng-href="https://www.reddit.com{{ data.data.permalink }}">{{ data.data.num_comments }} comments</a>
                   </div>
                 </div>
               </div>

@@ -6,7 +6,8 @@ var mongoose = restful.mongoose;
 var subjectschema = new mongoose.Schema({
   subjectlist: [{name: String,
                 url: String,
-                favourite: String}]
+                favourite: String,
+                updates: Number }]
 });
 
 //Return model

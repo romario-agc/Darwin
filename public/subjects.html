@@ -101,7 +101,7 @@
           </form>
           <div ng-model="subjectsnames" id="subjectsscroll">
             <a ng-repeat="name in subjectsnames | filter:search" class="subjectlisting" style="text-decoration: none;">
-              <div class="updatenumber">7</div>
+              <div class="updatenumber">{{name.updates}}</div>
               <span>{{name.name}}<span>
             </a>
           </div>
