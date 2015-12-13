@@ -487,8 +487,18 @@ html,
   }
 
   .favclicked{
-    background-color: #343d46;
-    color: white
+    background-color: #536270;
+    color: white !important
+  }
+
+  .favclicked:hover{
+    background-color:#536270;
+    color: white !important
+  }
+
+  .favclickednumber{
+    background-color: white !important;
+    color: black !important
   }
 
   .subjectlisting {

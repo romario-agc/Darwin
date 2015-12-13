@@ -20,6 +20,7 @@ app.controller('maincontroller', function($scope, $http) {
       .success(function(data) {
         $scope.names = data;
       });
+
   };
 
   /* Sends new name to databse
@@ -48,13 +49,13 @@ app.controller('maincontroller', function($scope, $http) {
      $scope.currentvideourl = $sce.trustAsResourceUrl($scope.names.data.children[count].data.secure_media.oembed.url);
    };
 
-   $scope.selected = 0;
+   $scope.select= function(item) {
+        $scope.selected = item;
+ };
 
-    $scope.select= function(index) {
-       $scope.selected = index;
-    };
-
-
+ $scope.isActive = function(item) {
+        return $scope.selected === item;
+ };
 
 });
 
@@ -105,4 +106,17 @@ app.controller('SubjectTitle', ['$scope', function($scope, $http) {
 
       $scope.reset();
 
+    }]);
+
+
+    app.controller('ScrollController', ['$scope', '$location', '$anchorScroll',
+    function ($scope, $location, $anchorScroll) {
+      $scope.scroll = function() {
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash('div1');
+
+        // call $anchorScroll()
+        $anchorScroll();
+      };
     }]);

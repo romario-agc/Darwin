@@ -68,7 +68,7 @@
   <!-- Start of main content-->
 
   <body ng-controller="SubjectTitle">
-    <main class="mdl-layout__content">
+    <main class="mdl-layout__content" ng-controller="ScrollController">
       <div class="mdl-grid containee">
 
         <div class="invisilayer">
@@ -119,9 +119,9 @@
                 <span style="margin-top:15px; color:black">Favourites</span>
               </div>
               <div style="margin-top:7px; overflow-y: auto; overflow-x:hidden">
-                <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false"  ng-hide="name.favourite=='no'"  ng-repeat="name in subjectsnames" ng-click="loadData(name.url); updateModel(name.name)" class="updatetopics" style="text-decoration: none; color:black; font-weight: 400">
+                <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false"  ng-hide="name.favourite=='no'"  ng-repeat="name in subjectsnames" ng-click="loadData(name.url); updateModel(name.name);scroll();select(name.name)" ng-click="" ng-class="{favclicked: isActive(name.name)}"  class="updatetopics" style="text-decoration: none; color:black; font-weight: 400">
                   <img ng-if="showimage" class="settingsimage" src="images/settings.png">
-                  <div class="updatenumber" >{{name.updates}}</div>
+                  <div class="updatenumber"  ng-class="{favclickednumber: isActive(name.name)}">{{name.updates}}</div>
                   <span>{{name.name}}<span>
                 </a>
               </div>
@@ -145,7 +145,7 @@
         </div>
 
 
-        <div class=" mdl-cell--5-col-desktop" style="margin-left: 41px; margin-top:-8px">
+        <div class=" mdl-cell--5-col-desktop" id="div1"  style="margin-left: 41px; margin-top:-8px">
 
           <!-- Loadering icon-->
           <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="display:none"></div>
