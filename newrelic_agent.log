@@ -697,3 +697,77 @@
 {"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":33987,"time":"2015-12-12T16:34:01.239Z","msg":"Starting New Relic for Node.js connection process."}
 {"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":33987,"time":"2015-12-12T16:35:03.197Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
 {"v":0,"level":50,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":33987,"time":"2015-12-12T16:38:03.528Z","msg":"New Relic for Node.js halted startup due to an error:","class":"NewRelic::Agent::LicenseException","statusCode":200}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":34618,"time":"2015-12-12T17:14:19.276Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":34618,"time":"2015-12-12T17:15:21.240Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":50,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":34618,"time":"2015-12-12T17:18:21.560Z","msg":"New Relic for Node.js halted startup due to an error:","class":"NewRelic::Agent::LicenseException","statusCode":200}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":34806,"time":"2015-12-12T17:27:11.104Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":34806,"time":"2015-12-12T17:28:12.762Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":50,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":34806,"time":"2015-12-12T17:31:15.093Z","msg":"New Relic for Node.js halted startup due to an error:","class":"NewRelic::Agent::LicenseException","statusCode":200}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":44669,"time":"2015-12-13T09:33:32.629Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":44669,"time":"2015-12-13T09:34:35.664Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":44686,"time":"2015-12-13T09:35:01.542Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":44686,"time":"2015-12-13T09:36:03.696Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":44715,"time":"2015-12-13T09:36:34.352Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":44715,"time":"2015-12-13T09:37:35.535Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":44753,"time":"2015-12-13T09:39:29.090Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":44753,"time":"2015-12-13T09:40:30.544Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":50,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":44753,"time":"2015-12-13T09:43:30.861Z","msg":"New Relic for Node.js halted startup due to an error:","class":"NewRelic::Agent::LicenseException","statusCode":200}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45238,"time":"2015-12-13T10:14:51.162Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45242,"time":"2015-12-13T10:15:04.794Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45252,"time":"2015-12-13T10:15:15.236Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45252,"time":"2015-12-13T10:16:16.356Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45282,"time":"2015-12-13T10:17:16.146Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45282,"time":"2015-12-13T10:18:17.339Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":50,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45282,"time":"2015-12-13T10:21:17.664Z","msg":"New Relic for Node.js halted startup due to an error:","class":"NewRelic::Agent::LicenseException","statusCode":200}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45336,"time":"2015-12-13T10:21:34.161Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45346,"time":"2015-12-13T10:22:01.357Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45356,"time":"2015-12-13T10:22:11.480Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45360,"time":"2015-12-13T10:22:24.099Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45370,"time":"2015-12-13T10:22:43.796Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45376,"time":"2015-12-13T10:22:57.201Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45386,"time":"2015-12-13T10:23:16.368Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45390,"time":"2015-12-13T10:23:34.790Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45405,"time":"2015-12-13T10:24:12.821Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45415,"time":"2015-12-13T10:25:01.110Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45431,"time":"2015-12-13T10:25:41.644Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45435,"time":"2015-12-13T10:25:59.916Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45444,"time":"2015-12-13T10:26:36.963Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45454,"time":"2015-12-13T10:26:56.829Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45464,"time":"2015-12-13T10:27:18.453Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45468,"time":"2015-12-13T10:27:30.786Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45468,"time":"2015-12-13T10:28:31.939Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45522,"time":"2015-12-13T10:30:49.195Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45522,"time":"2015-12-13T10:31:50.443Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":50,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45522,"time":"2015-12-13T10:34:50.733Z","msg":"New Relic for Node.js halted startup due to an error:","class":"NewRelic::Agent::LicenseException","statusCode":200}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45596,"time":"2015-12-13T10:35:44.218Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45596,"time":"2015-12-13T10:36:45.611Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45625,"time":"2015-12-13T10:38:04.982Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45634,"time":"2015-12-13T10:38:21.604Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45634,"time":"2015-12-13T10:39:23.181Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45675,"time":"2015-12-13T10:40:53.310Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45675,"time":"2015-12-13T10:41:54.921Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45700,"time":"2015-12-13T10:42:21.127Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45711,"time":"2015-12-13T10:43:02.513Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45711,"time":"2015-12-13T10:44:03.767Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45730,"time":"2015-12-13T10:44:08.924Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45740,"time":"2015-12-13T10:44:20.699Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45740,"time":"2015-12-13T10:45:22.232Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45769,"time":"2015-12-13T10:46:27.940Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45772,"time":"2015-12-13T10:46:32.663Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45782,"time":"2015-12-13T10:47:00.432Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45782,"time":"2015-12-13T10:48:02.078Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45821,"time":"2015-12-13T10:49:17.542Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45833,"time":"2015-12-13T10:49:59.153Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45836,"time":"2015-12-13T10:50:03.230Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45839,"time":"2015-12-13T10:50:09.905Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45839,"time":"2015-12-13T10:51:11.391Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":50,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45839,"time":"2015-12-13T10:54:11.710Z","msg":"New Relic for Node.js halted startup due to an error:","class":"NewRelic::Agent::LicenseException","statusCode":200}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45917,"time":"2015-12-13T10:55:21.368Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45917,"time":"2015-12-13T10:56:23.150Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":50,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45917,"time":"2015-12-13T10:59:23.444Z","msg":"New Relic for Node.js halted startup due to an error:","class":"NewRelic::Agent::LicenseException","statusCode":200}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45974,"time":"2015-12-13T10:59:33.830Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":45992,"time":"2015-12-13T11:00:25.253Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":46001,"time":"2015-12-13T11:00:50.231Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":46005,"time":"2015-12-13T11:00:58.558Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":40,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":46005,"time":"2015-12-13T11:02:00.167Z","msg":"No connection has been established to New Relic after 4 attempts.","component":"collector_api"}
+{"v":0,"level":50,"name":"newrelic","hostname":"Romarios-MBP.T-mobile.com","pid":46005,"time":"2015-12-13T11:05:00.467Z","msg":"New Relic for Node.js halted startup due to an error:","class":"NewRelic::Agent::LicenseException","statusCode":200}

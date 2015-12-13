@@ -60,7 +60,7 @@ html,
   outline: none;
   border-radius: 2px;
   border: none;
-  margin-top: 50px;
+  margin-top: 70px;
   transition-property: background border width height box-shadow;
   transition-duration: 0.225s;
   transition-timing-function: ease-in-out;

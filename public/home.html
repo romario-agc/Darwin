@@ -47,7 +47,7 @@
         <a href="home.html" ng-click="loadMainData() " class="mdl-navigation__link2" style="white" tabindex="0">
           <img class="homeicon" src="images/home.png" />Home
         </a>
-        <a ng-click="showsubjects = ! showsubjects; showprofileoptions = false; loadsubjectnames()" class="mdl-navigation__link2" tabindex="0">
+        <a ng-click="showsubjects = ! showsubjects; showprofileoptions = false" class="mdl-navigation__link2" tabindex="0">
           Subjects
         </a>
         <a ng-click="showprofileoptions = ! showprofileoptions; showsubjects=false" class="mdl-navigation__link2" tabindex="0">
@@ -94,7 +94,7 @@
               <input spellcheck="false" autocapitalize="off" type="minisearch" autocorrect="off"  ng-model="search" placeholder="Search " ng-click="searchbarclick = ! searchbarclick">
             </form>
             <div ng-model="subjectsnames" id="subjectsscroll">
-              <a ng-repeat="name in subjectsnames | filter:search" class="subjectlisting" style="text-decoration: none;" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+              <a ng-click="loadData(name.url); updateModel(name.name)" ng-repeat="name in subjectsnames | filter:search" class="subjectlisting" style="text-decoration: none;" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
                 <div class="updatenumber" ng-class="{updatenumberhover: hover=true; updatenumber: hover=false}" >7</div>
                 <span>{{name.name}}<span>
               </a>
@@ -118,27 +118,11 @@
               <div class="updateheader">
                 <span style="margin-top:15px; color:black">Favourites</span>
               </div>
-              <div style="margin-top:7px">
-                <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false" ng-mouseleave="showedit=true" ng-click="loadleagueData(); updateModel('League of Legends')" class="updatetopics" style="text-decoration: none;">
-                  <div class="updatenumber">7</div>
+              <div style="margin-top:7px; overflow-y: auto; overflow-x:hidden">
+                <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false"  ng-hide="name.favourite=='no'"  ng-repeat="name in subjectsnames" ng-click="loadData(name.url); updateModel(name.name)" class="updatetopics" style="text-decoration: none; color:black; font-weight: 400">
                   <img ng-if="showimage" class="settingsimage" src="images/settings.png">
-                  </>
-                  <span style="color:black;font-weight:normal">League of Legends
-                    <span>
-                </a>
-                <a ng-mouseover="showimage2 = true" ng-mouseleave="showimage2=false" ng-click="loadteslaData(); updateModel('Tesla Motors')" class="updatetopics" style="text-decoration: none">
-                  <img ng-if="showimage2" class="settingsimage" src="images/settings.png">
-                  </>
-                  <div class="updatenumber">5</div>
-                  <span style="color:black;font-weight:normal">Tesla Motors
-                    <span>
-                </a>
-                <a ng-mouseover="showimage3 = true" ng-mouseleave="showimage3=false" ng-click="loadSpaceXData(); updateModel('Space X')" class="updatetopics" style="text-decoration: none">
-                  <img ng-if="showimage3" class="settingsimage" src="images/settings.png">
-                  </>
-                  <div class="updatenumber">4</div>
-                  <span style="color:black;font-weight:normal;">Space X
-                    <span>
+                  <div class="updatenumber" >7</div>
+                  <span>{{name.name}}<span>
                 </a>
               </div>
             </div>
@@ -177,7 +161,7 @@
               <div class="cardsourcecontainer">
                 <a style="color:#034860; font-weight:600; font-size:12px; margin-top:15px; text-transform: capitalize;" ng-href="https://www.reddit.com/r/{{ names.data.children[count].data.subreddit }}">{{ names.data.children[count].data.subreddit }}</a>
               </div>
-              <div style="height:auto; width:auto; background-color:rgba(0, 0, 0, 0.04); padding-bottom:15px; margin-top:24px; border-top:1px solid rgba(0,0,0, 0.08); border-bottom:1px solid rgba(0,0,0, 0.08)">
+              <div style="height:auto; width:auto; background-color:rgba(0, 0, 0, 0.035); padding-bottom:15px; margin-top:24px;margin-bottom:2px; border-top:1px solid rgba(0,0,0, 0.05); border-bottom:1px solid rgba(0,0,0, 0.05)">
               <a class="cardtitle" ng-href="https://www.reddit.com{{ names.data.children[count].data.permalink }}">{{ names.data.children[count].data.title }}</a>
               <div class="imagediv" ng-hide="!names.data.children[count].data.preview.images[0].source.url ">
                 <a ng-href="{{ names.data.children[count].data.url}}">

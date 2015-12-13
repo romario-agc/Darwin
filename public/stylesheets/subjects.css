@@ -202,3 +202,15 @@ html,
     height: 70px;
     width: 70px;
   }
+
+
+  input[type=minisearch2] {
+    background-color: white;
+    color: black !important;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    font-size: 11px !important;
+    padding: 12px;
+    outline: none;
+  }

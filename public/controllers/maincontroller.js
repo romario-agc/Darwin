@@ -7,41 +7,22 @@ app.controller('maincontroller', function($scope, $http) {
   $scope.loadMainData = function() {
     $scope.url = null;
 
-    $http.get("https://www.reddit.com/r/all+leagueoflegends+teslamotors+spacex.json")
+    $http.get("https://www.reddit.com/r/all+leagueoflegends+teslamotors+spacex+poltiics.json")
       .success(function(data) {
         $scope.names = data;
       });
 
-      $scope.subject={
-        name:'league of legendery'
-      };
-
   };
 
-  //Function that loads  data from  Tesla url
-  $scope.loadteslaData = function() {
-    $http.get("https://www.reddit.com/r/teslamotors.json")
+  //Function that loads  data from inserted url
+  $scope.loadData = function(url) {
+    $http.get(url)
       .success(function(data) {
         $scope.names = data;
       });
   };
 
-  //Function that loads  data from League of Legends url
-  $scope.loadleagueData = function() {
-    $http.get("https://www.reddit.com/r/leagueoflegends.json")
-      .success(function(data) {
-        $scope.names = data;
-      });
-  };
-
-  $scope.loadSpaceXData = function() {
-    $http.get("https://www.reddit.com/r/spacex.json")
-      .success(function(data) {
-        $scope.names = data;
-      });
-  };
-
-  /*Function that loads  data from  Tesla url
+  /*
   $scope.postnewname = function() {
     $http.post("/newpost")
       .success(function(data) {
@@ -82,6 +63,12 @@ app.controller('maincontroller', function($scope, $http) {
      $scope.currentvideo = $scope.videos[id];
      $scope.currentvideourl = $sce.trustAsResourceUrl($scope.names.data.children[count].data.secure_media.oembed.url);
    };
+
+   $scope.selected = 0;
+
+    $scope.select= function(index) {
+       $scope.selected = index;
+    };
 
 
 

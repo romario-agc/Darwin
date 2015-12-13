@@ -1,6 +1,5 @@
 // Depencencies
-var nr = require('newrelic'),
-    express = require('express'),
+var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     methodOverride = require('method-override'),
@@ -77,11 +76,10 @@ mongoose.connection.once('open', function(err) {
         for(var i = 0; i < data[0].subjectlist.length; i++) {
           names.push(data[0].subjectlist[i].name);
         }
-        console.log(data[0].subjectlist);
         res.json(data[0].subjectlist);
     });
 
-    console.log(datetime + colors.magenta(" [funnel]") + colors.bold.blue(' Returned list of all subjects'));
+    console.log(datetime + colors.magenta(" [funnel]") + colors.bold.blue(' Returned subjects data'));
 
   });
 

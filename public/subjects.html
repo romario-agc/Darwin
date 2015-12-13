@@ -113,9 +113,14 @@
 
         <!-- List of Subject -->
           <div class="subjectsection">
+
             <div class="subjectsheader"> Subjects </div>
+            <form>
+              <input spellcheck="false" autocapitalize="off" type="minisearch2" autocorrect="off"  ng-model="search" placeholder="Search " ng-click="searchbarclick = ! searchbarclick">
+            </form>
             <div id="subjectlistscroll">
-              <div ng-repeat="name in subjectsnames" class="subjectlisting2"  ng-click="updateeditmodel('Different Subject')">
+
+              <div ng-repeat="name in subjectsnames | filter:search" class="subjectlisting2"  ng-click="updateeditmodel('Different Subject')">
                 {{name.name}}
               </div>
             </div>
