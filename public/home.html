@@ -94,7 +94,7 @@
               <input spellcheck="false" autocapitalize="off" type="minisearch" autocorrect="off"  ng-model="search" placeholder="Search " ng-click="searchbarclick = ! searchbarclick">
             </form>
             <div ng-model="subjectsnames" id="subjectsscroll">
-              <a ng-click="loadData(name.url); updateModel(name.name)" ng-repeat="name in subjectsnames | filter:search" class="subjectlisting" style="text-decoration: none;" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+              <a ng-click="loadData(name.url); updateModel(name.name);scroll()" ng-repeat="name in subjectsnames | filter:search" class="subjectlisting" style="text-decoration: none;" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
                 <div class="updatenumber" ng-class="{updatenumberhover: hover=true; updatenumber: hover=false}" >{{name.updates}}</div>
                 <span>{{name.name}}<span>
               </a>
@@ -119,7 +119,7 @@
                 <span style="margin-top:15px; color:black">Favourites</span>
               </div>
               <div style="margin-top:7px; overflow-y: auto; overflow-x:hidden">
-                <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false"  ng-hide="name.favourite=='no'"  ng-repeat="name in subjectsnames" ng-click="loadData(name.url); updateModel(name.name);scroll();select(name.name)" ng-click="" ng-class="{favclicked: isActive(name.name)}"  class="updatetopics" style="text-decoration: none; color:black; font-weight: 400">
+                <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false"  ng-hide="name.favourite=='no'"  ng-repeat="name in subjectsnames" ng-click="loadData(name.url); updateModel(name.name);scroll();select(name.name)"  ng-class="{favclicked: isActive(name.name)}"  class="updatetopics" style="text-decoration: none; color:black; font-weight: 400">
                   <img ng-if="showimage" class="settingsimage" src="images/settings.png">
                   <div class="updatenumber"  ng-class="{favclickednumber: isActive(name.name)}">{{name.updates}}</div>
                   <span>{{name.name}}<span>
@@ -128,11 +128,10 @@
             </div>
 
             <!-- Live Event-->
-            <div class="derp2">
-              <div style="  font-size:12px; padding:10px; padding-left:20px; font-weight:300; color:black; font-size:11px">Live Events</div>
-              <a ng-click="loadteslaData()" class="updatetopics" style="text-decoration: none">
-                <div class="updatenumber">50</div>
-                <span style="color:black; font-weight:normal">Tesla Model X Event
+            <div class="derp2" style="background-color:#343d46;">
+              <div style="  font-size:12px; padding:10px; padding-left:20px; font-weight:300; color:white; font-size:11px">Live Events</div>
+              <a ng-click="loadteslaData()" class="livetopics" style="text-decoration: none">
+                <span style="color:white; font-weight:normal">Tesla Model X Event
                   <span>
               </a>
             </div>
@@ -151,7 +150,7 @@
           <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="display:none"></div>
 
           <!-- Post card -->
-          <div class="mdl-frontpagecard" ng-init="hidethispost=false" ng-repeat="data in names.data.children">
+          <div class="mdl-frontpagecard" ng-init="hidethispost=false" ng-hide="hidethispost" ng-repeat="data in names.data.children">
             <div class="hidepostdiv" ng-if="showhidepostdive">
               <div ng-click="hidethispost=true" class="hidetext">Hide post</div>
             </div>

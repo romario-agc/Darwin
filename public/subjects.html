@@ -100,7 +100,7 @@
             <input spellcheck="false" autocapitalize="off" type="minisearch" autocorrect="off"  ng-model="search" placeholder="Search " ng-click="searchbarclick = ! searchbarclick">
           </form>
           <div ng-model="subjectsnames" id="subjectsscroll">
-            <a ng-repeat="name in subjectsnames | filter:search" class="subjectlisting" style="text-decoration: none;">
+            <a ng-click="loadData(name.url); updateModel(name.name);scroll()" href="home.html" ng-repeat="name in subjectsnames | filter:search" class="subjectlisting" style="text-decoration: none;">
               <div class="updatenumber">{{name.updates}}</div>
               <span>{{name.name}}<span>
             </a>
@@ -140,7 +140,7 @@
             <!-- Edit name of subject-->
                 <form  class="namesectioncontainer">
                   <input type="name" style="display:inline-block" ng-model="subject.name" placeholder="{{master.name}}"/>
-                  <input type="button" value="Save changes" class="savebutton"  ng-click="updateeditmodel(subject)"/>
+                  <input type="button" value="Save changes" class="savebutton"  ng-click="changesubname(master.name , subject.name)"/>
                   <input type="button" value="Cancel" class="savebutton"  />
                 </form>
 

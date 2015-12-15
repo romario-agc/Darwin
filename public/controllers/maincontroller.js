@@ -7,32 +7,12 @@ app.controller('maincontroller', function($scope, $http) {
   $scope.loadMainData = function() {
     $scope.url = null;
 
-    $http.get("https://www.reddit.com/r/all+leagueoflegends+teslamotors+spacex+poltiics.json")
+    $http.get("https://www.reddit.com/.json")
       .success(function(data) {
         $scope.names = data;
       });
 
   };
-
-  //Function that loads  data from inserted url
-  $scope.loadData = function(url) {
-    $http.get(url)
-      .success(function(data) {
-        $scope.names = data;
-      });
-
-  };
-
-  /* Sends new name to databse
-  $scope.postnewname = function() {
-    $http.post("/newpost")
-      .success(function(data) {
-        $scope.message = success;
-      });
-  };
-*/
-  //Initial load
-  $scope.loadMainData();
 
   $scope.loadsubjectnames = function() {
     $http.get("/getsubjects")
@@ -41,21 +21,55 @@ app.controller('maincontroller', function($scope, $http) {
       });
   };
 
+  //Initial loads
+  $scope.loadMainData();
   $scope.loadsubjectnames();
 
+  //Function that loads  data from inserted url
+  $scope.loadData = function(url) {
+    $http.get(url)
+      .success(function(data) {
+        $scope.names = data;
+      });
+  };
+
+  // Sends new name to databse
+  $scope.changesubname = function(oldname , newname) {
+
+    var change = {
+      oldname: oldname,
+      newname: newname
+    };
+
+    $http.post("/changename")
+      .success(function(data) {
+        $scope.message = success;
+      });
+  };
+
+  // Returns subject information
+  $scope.getsubdetails = function(name) {
+
+    $http.post("/getdetails")
+      .success(function(data) {
+        $scope.message = success;
+        $scope.subjectdata = data;
+      });
+  };
 
   $scope.setProject = function (id) {
      $scope.currentvideo = $scope.videos[id];
      $scope.currentvideourl = $sce.trustAsResourceUrl($scope.names.data.children[count].data.secure_media.oembed.url);
    };
 
-   $scope.select= function(item) {
+  // Active favourite class manager
+  $scope.select= function(item) {
         $scope.selected = item;
- };
+  };
 
- $scope.isActive = function(item) {
+  $scope.isActive = function(item) {
         return $scope.selected === item;
- };
+  };
 
 });
 
@@ -76,15 +90,14 @@ app.directive('loading', ['$http', function($http) {
       });
     }
   };
-
 }]);
 
 app.controller('SubjectTitle', ['$scope', function($scope, $http) {
+
       $scope.Subject = {
         title: 'Global',
         sources: 4,
       };
-
 
       $scope.updateModel = function(name) {
         $scope.Subject= {
@@ -109,7 +122,7 @@ app.controller('SubjectTitle', ['$scope', function($scope, $http) {
     }]);
 
 
-    app.controller('ScrollController', ['$scope', '$location', '$anchorScroll',
+app.controller('ScrollController', ['$scope', '$location', '$anchorScroll',
     function ($scope, $location, $anchorScroll) {
       $scope.scroll = function() {
         // set the location.hash to the id of
@@ -119,4 +132,4 @@ app.controller('SubjectTitle', ['$scope', function($scope, $http) {
         // call $anchorScroll()
         $anchorScroll();
       };
-    }]);
+}]);
