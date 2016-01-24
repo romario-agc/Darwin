@@ -120,7 +120,10 @@
               </div>
               <div style="margin-top:7px; overflow-y: auto; overflow-x:hidden">
                 <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false"  ng-hide="name.favourite=='no'"  ng-repeat="name in subjectsnames" ng-click="loadData(name.url); updateModel(name.name);scroll();select(name.name)"  ng-class="{favclicked: isActive(name.name)}"  class="updatetopics" style="text-decoration: none; color:black; font-weight: 400">
-                  <img ng-if="showimage" class="settingsimage" src="images/settings.png">
+                  <div class="hidepostdiv" ng-if="showhidepostdive">
+                    <div class="hidetext">Remove</div>
+                  </div>
+                  <img ng-if="showimage" ng-click="showhidepostdive = ! showhidepostdive" class="settingsimage" src="images/settings.png"/>
                   <div class="updatenumber"  ng-class="{favclickednumber: isActive(name.name)}">{{name.updates}}</div>
                   <span>{{name.name}}<span>
                 </a>

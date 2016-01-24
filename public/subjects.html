@@ -30,7 +30,7 @@
 </head>
 
 <!-- Nav bar-->
-<div ng-init="derp=false" ng-hide="derp==false" class="fade-in one"style="background-color:rgb(26, 26, 26); height:100vh; width:100vw; position:absolute; z-index:499; opacity:0.9 ">
+<div ng-init="derp=false" ng-hide="true" class="fade-in one"style="background-color:rgb(26, 26, 26); height:100vh; width:100vw; position:absolute; z-index:499; opacity:0.9 ">
 <div  class="successoverlay">
   <img class="successadd" src="images/success.png"/>
   <div style="text-align:center; margin-top:5px">Added</div>
@@ -71,7 +71,7 @@
   </header>
 
   <!-- Start of main content-->
-  <body ng-controller="SubjectTitle">
+  <body ng-controller="SubjectTitle" >
 
     <main class="mdl-layout__content">
   <div class="mdl-grid containee">
@@ -92,59 +92,75 @@
 
         <!-- Subject Drop down menu-->
         <div class="subjectlist " id="toolbox" style="margin-left:875px; margin-top:-10px !important; position:absolute; box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);" ng-if="showsubjects">
+
           <div class="updateheader">
             <span style="margin-top:5px; ">All</span>
             <a href="subjects.html" style="float:right; margin-right:25px; color: rgba(0, 0, 0, 0.78)">Edit</a>
           </div>
+
           <form>
             <input spellcheck="false" autocapitalize="off" type="minisearch" autocorrect="off"  ng-model="search" placeholder="Search " ng-click="searchbarclick = ! searchbarclick">
           </form>
+
           <div ng-model="subjectsnames" id="subjectsscroll">
             <a ng-click="loadData(name.url); updateModel(name.name);scroll()" href="home.html" ng-repeat="name in subjectsnames | filter:search" class="subjectlisting" style="text-decoration: none;">
               <div class="updatenumber">{{name.updates}}</div>
-              <span>{{name.name}}<span>
+              <span>{{name.name}}</span>
             </a>
           </div>
+
         </div>
 
       </div>
 
       <div class="totalcontainer" >
 
-        <!-- List of Subject -->
+          <!-- List of Subject -->
           <div class="subjectsection">
-
             <div class="subjectsheader"> Subjects </div>
+
+            <!-- Search Form -->
             <form>
               <input spellcheck="false" autocapitalize="off" type="minisearch2" autocorrect="off"  ng-model="search" placeholder="Search " ng-click="searchbarclick = ! searchbarclick">
             </form>
-            <div id="subjectlistscroll">
 
-              <div ng-repeat="name in subjectsnames | filter:search" class="subjectlisting2"  ng-click="updateeditmodel('Different Subject')">
+            <!-- Actual list-->
+            <div id="subjectlistscroll">
+              <div ng-repeat="name in subjectsnames | filter:search" class="subjectlisting2"  ng-click="updateeditmodel(name.name)">
                 {{name.name}}
               </div>
             </div>
           </div>
 
-          <div class="detailssection" ng-controller="SubjectTitle"  >
+          <!-- Section to edit subject -->
+          <div class="detailssection" ng-init="showedit={toggle:false)">
 
-            <!-- Section title-->
-            <div class="editsubject" ng-model="editsubject" ng-init="master.name='Temp Name'">{{master.name}}</div>
+            <!-- Edit section title-->
+            <div class="editsubject" ng-model="master" >{{master.name}}</div>
 
             <!-- Name of subject-->
-            <div style="width:400px; height:30px; padding-left:30px; padding-top:30px;">
-              <div style="font-size:22px; font-weight:300;display:inline-block">{{master.name}}</div>
-              <button class="editbutton2" >Edit</button>
+            <div style="width:400px; height:30px; margin-left:30px; margin-top:30px;">
+              <div style="font-size:22px; font-weight:300;display:inline-block;">{{master.name}}</div>
+              <button class="editbutton2" ng-click="showedit.toggle=true;" >Edit</button>
             </div>
 
             <!-- Edit name of subject-->
-                <form  class="namesectioncontainer">
-                  <input type="name" style="display:inline-block" ng-model="subject.name" placeholder="{{master.name}}"/>
-                  <input type="button" value="Save changes" class="savebutton"  ng-click="changesubname(master.name , subject.name)"/>
-                  <input type="button" value="Cancel" class="savebutton"  />
-                </form>
+            <form  class="namesectioncontainer" ng-if="showedit.toggle==true">
+              <input type="name" ng-model="Subject.title" style="display:inline-block"  placeholder="{{master.name}}"/>
+              <input type="button" value="Save changes" class="savebutton"  ng-click="changesubname(master.name , subject.name)"/>
+              <button  class="savebutton" ng-click="showedit.toggle=false">Cancel</button>
+            </form>
+
+            <div class="sourcessection">Description</div>
+            <div style="padding: 10px 10px 10px 30px; font-size: 12px">
+              JavaScript is a cross-platform, object-oriented scripting language. It is a small and lightweight language. Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its environment to provide programmatic control over them.
+              JavaScript contains a standard library of objects, such as Array, Date, and Math, and a core set of language elements such as operators, control structures, and statements. Core JavaScript can be extended for a variety of purposes by supplementing it with additional objects.
+            </div>
 
             <div class="sourcessection">Sources</div>
+            <div style="margin-left:30px; margin-top:15px;height:100px; width: 95%; background-color: rgba(0,0,0, 0.01); border: 1px solid rgba(0,0,0, 0.07); border-radius:2px">
+              <img class="sourceimage" style="margin-left:15px; margin-top:15px" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
+            </div>
           </div>
       </div>
     </div>

@@ -11,12 +11,10 @@ app.controller('maincontroller', function($scope, $http) {
       .success(function(data) {
         $scope.names = data;
       });
-
   };
 
   $scope.loadsubjectnames = function() {
-    $http.get("/getsubjects")
-      .success(function(data) {
+    $http.get("/getsubjects").success(function(data) {
         $scope.subjectsnames = data;
       });
   };
@@ -24,6 +22,7 @@ app.controller('maincontroller', function($scope, $http) {
   //Initial loads
   $scope.loadMainData();
   $scope.loadsubjectnames();
+
 
   //Function that loads  data from inserted url
   $scope.loadData = function(url) {
@@ -95,8 +94,8 @@ app.directive('loading', ['$http', function($http) {
 app.controller('SubjectTitle', ['$scope', function($scope, $http) {
 
       $scope.Subject = {
-        title: 'Global',
-        sources: 4,
+        title: null,
+        sources: null,
       };
 
       $scope.updateModel = function(name) {
@@ -104,13 +103,16 @@ app.controller('SubjectTitle', ['$scope', function($scope, $http) {
           title: name,
           sources: 4,
         };
+        console.log(name);
       };
 
-      $scope.master={ };
+      $scope.master={
+        name:'Default'
+      };
 
       $scope.updateeditmodel = function(name) {
-        $scope.master= angular.copy(name);
-
+        $scope.master= {name: name};
+        console.log(name);
       };
 
       $scope.reset = function() {
@@ -119,7 +121,7 @@ app.controller('SubjectTitle', ['$scope', function($scope, $http) {
 
       $scope.reset();
 
-    }]);
+  }]);
 
 
 app.controller('ScrollController', ['$scope', '$location', '$anchorScroll',
