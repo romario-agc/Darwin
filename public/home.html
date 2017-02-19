@@ -101,7 +101,7 @@
                    dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                     magna aliqua. Ut enim ad minim veniam</p>
                 <div class="standardbutton" style="margin-top:25px;text-align:center;
-                color:#4990E2; padding-left:0px;  width:205px;"  ng-click="loadData(name.url)">subscribe</div>
+                color:#4990E2; padding-left:0px;  width:95%;"  ng-click="loadData(name.url)">subscribe</div>
               </div>
 
               <div  style="font-size: 10px;
@@ -113,7 +113,7 @@
                 text-transform:uppercase;
                 margin-left:5%">Subscriptions
               </div>
-              <div style="margin-left: 5%;margin-top:10px;">
+              <div style="margin-top:10px;">
                 <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false"  ng-hide="name.favourite=='no'"
                 ng-repeat="name in subjectsnames" ng-click="loadData(name.url); updateModel(name.name);scroll();select(name.name)"
                 ng-class="{favclicked: isActive(name.name)}"  class="updatetopics" style="">
