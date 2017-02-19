@@ -4,9 +4,14 @@ html,
   select,
   textarea {
     font-size: 1.05em !important;
-    background-color:#2b3239;
+    background-color:#181d22;
 }
 
+@font-face {
+font-family: Circular Std;
+src: url('fonts/CircularStd-Black.ttf');
+font-weight: black;
+}
 
   @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
   @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
@@ -22,9 +27,9 @@ html,
 	        -moz-animation-fill-mode:forwards;
 	         animation-fill-mode:forwards;
 
-	          -webkit-animation-duration:1.5s;
-	           -moz-animation-duration:1.5s;
-	            animation-duration:1.5s;
+	          -webkit-animation-duration:0.75s;
+	           -moz-animation-duration:0.75s;
+	            animation-duration:0.75s;
     }
 
 .fade-in.one {
@@ -34,9 +39,12 @@ html,
 }
 
 .container{
-  width: 100%;
-  height: 100%;
-  padding-top: 1%
+  width: 1024px;
+  padding-top: 100px;
+  position: relative;
+  height: auto;
+  margin: auto;
+  padding-top: 1%;
 }
 
 .indextitle{
@@ -44,8 +52,10 @@ html,
   width: 300px;
   height: 120px;
   margin: 0 auto;
-  font-family: "dekar light", "Trebuchet MS", "Arial", sans-serif;
-  font-size: 90px;
+  font-family: 'Circular Std';
+  font-size: 80px;
+  letter-spacing: -2.21px;
+  font-weight: black;
   text-align: center;
   font-weight:lighter;
   color: white;
@@ -54,27 +64,27 @@ html,
 .loginbutton{
   height: 40px;
   min-width: 120px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-weight:500;
   background: white;
-  color: black;
-  box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.3);
+  color: #181d22;
+  box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.25);
   outline: none;
-  border-radius: 2px;
+  border-radius: 100px;
   border: none;
-  margin-top: 70px;
+  text-align: center;
   transition-property: background border width height box-shadow;
-  transition-duration: 0.225s;
+  transition-duration: 0.2s;
   transition-timing-function: ease-in-out;
   cursor: pointer;
 
 }
 
 .loginbutton:hover{
-  box-shadow: 0 7px 10px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 .loginbutton:active{
-  background-color: grey;
-  box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.3);
 }

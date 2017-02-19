@@ -26,6 +26,8 @@
 
   <!-- Google Fonts-->
   <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'></link>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://lineto.com/The+Fonts/Font+Categories/Text+Fonts/Circular/" rel="stylesheet">
 
 </head>
 <!-- Nav bar-->
@@ -33,22 +35,22 @@
 
   <header class="mdl-layout__header2 shadow">
     <div class="mdl-layout__header-row2">
-      <!-- Title -->
-      <a class="mdl-layout-title2" href="home.html">Darwin</a>
+      <!-- Title-->
 
+
+        <img src="images/darwin-logo.png"  href="home.html" style="width:83px;height:auto; padding-left:7px">
+      <!--
       <form>
-        <input spellcheck="false" autocapitalize="off" type="text" autocorrect="off" placeholder="Search Darwin" ng-click="searchbarclick = ! searchbarclick">
+        <input style="width:300%; color:#ea5b5b "spellcheck="false" autocapitalize="off" type="text" autocorrect="off" placeholder="Search Darwin" ng-click="searchbarclick = ! searchbarclick">
       </form>
+      -->
 
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl">
-        <a href="home.html" ng-click="loadMainData() " class="mdl-navigation__link2" style="white" tabindex="0">
-          <img class="homeicon" src="images/home.png" />Home
-        </a>
-        <a ng-click="showsubjects = ! showsubjects; showprofileoptions = false" class="mdl-navigation__link2" tabindex="0">
-          Subjects
+        <a ng-click="loadMainData() " class="mdl-navigation__link2" style="white" tabindex="0">
+          <img class="refreshicon" src="images/refresh.png" /> Refresh
         </a>
         <a ng-click="showprofileoptions = ! showprofileoptions; showsubjects=false" class="mdl-navigation__link2" tabindex="0">
           <img class="profilepic" src="images/profilepic.jpg" />
@@ -76,78 +78,66 @@
 
           <!-- Profile Drop down menu-->
           <div class="profilelist" id="toolbox" ng-if="showprofileoptions">
-            <div>
+            <div style="background-color:white; border: 1px solid lightgrey; width:140px; font-size:10px; float:right; margin-top:5px; border-radius:2px;
+            box-shadow:0px 5px 10px 0px rgba(0,0,0,0.15);position:absolute; text-transform: uppercase ">
               <div><a class="profileoption">Your profile</a></div>
-              <div><a class="profileoption" href="subjects.html">Subjects</a></div>
-              <div><a class="profileoption">Settings</a></div>
               <div><a class="profileoption" href="index.html">Sign out</a></div>
-            </div>
-          </div>
-
-          <!-- Subject Drop down menu-->
-          <div class="subjectlist " id="toolbox" style="margin-left:875px; margin-top:5px; position:fixed; z-index:5;box-shadow: 0 0 8px rgba(0, 0, 0, 0.10);" ng-if="showsubjects">
-            <div class="updateheader">
-              <span style="margin-top:5px; ">All</span>
-              <a href="subjects.html" style="float:right; margin-right:25px; color: rgba(0, 0, 0, 0.78)">Edit</a>
-            </div>
-            <form>
-              <input spellcheck="false" autocapitalize="off" type="minisearch" autocorrect="off"  ng-model="search" placeholder="Search " ng-click="searchbarclick = ! searchbarclick">
-            </form>
-            <div ng-model="subjectsnames" id="subjectsscroll">
-              <a ng-click="loadData(name.url); updateModel(name.name);scroll()" ng-repeat="name in subjectsnames | filter:search" class="subjectlisting" style="text-decoration: none;" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
-                <div class="updatenumber" ng-class="{updatenumberhover: hover=true; updatenumber: hover=false}" >{{name.updates}}</div>
-                <span>{{name.name}}<span>
-              </a>
             </div>
           </div>
 
         </div>
 
-        <div class=" mdl-cell--2-col-desktop" style="margin-top:-8px">
-          <div style="position:fixed; margin-top:-3px;">
-
-            <!-- Current Topic -->
-            <div class="currenttopicbox">
-              <div style="color: white; margin:8px; font-weight:400; text-align:center;  font-size:13px;" ng-model="Subject">
-                {{Subject.title}}
-              </div>
-            </div>
+        <div class=" mdl-cell--3-col-desktop" >
 
             <!-- Favourites-->
             <div class="derp2" id="toolbox">
-              <div class="updateheader">
-                <span style="margin-top:15px; color:black">Favourites</span>
+
+              <div class="activityheader">
+                <span>{{Subject.title}}</span>
+
+                <p style="padding-top:3px;font-size:10px; color:#c1c1c1">Last Updated: Today: 12:03pm</p>
+                <div style="width:33px; height:1px; background-color:#e4e0e0"></div>
+                <p style="padding-top:15px;font-size:11px; color:Black; line-height:20px; letter-spacing:0.29">Lorem ipsum
+                   dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam</p>
+                <div class="standardbutton" style="margin-top:25px;text-align:center;
+                color:#4990E2; padding-left:0px;  width:205px;"  ng-click="loadData(name.url)">subscribe</div>
               </div>
-              <div style="margin-top:7px; overflow-y: auto; overflow-x:hidden">
-                <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false"  ng-hide="name.favourite=='no'"  ng-repeat="name in subjectsnames" ng-click="loadData(name.url); updateModel(name.name);scroll();select(name.name)"  ng-class="{favclicked: isActive(name.name)}"  class="updatetopics" style="text-decoration: none; color:black; font-weight: 400">
+
+              <div  style="font-size: 10px;
+                font-weight: semibold;
+                padding-top: 15px;
+                font-family: Opensans;
+                letter-spacing: 0.5px;
+                color:#c5c5c5;
+                text-transform:uppercase;
+                margin-left:5%">Subscriptions
+              </div>
+              <div style="margin-left: 5%;margin-top:10px;">
+                <a ng-mouseover="showimage = true" ng-mouseleave="showimage=false"  ng-hide="name.favourite=='no'"
+                ng-repeat="name in subjectsnames" ng-click="loadData(name.url); updateModel(name.name);scroll();select(name.name)"
+                ng-class="{favclicked: isActive(name.name)}"  class="updatetopics" style="">
                   <div class="hidepostdiv" ng-if="showhidepostdive">
                     <div class="hidetext">Remove</div>
                   </div>
                   <img ng-if="showimage" ng-click="showhidepostdive = ! showhidepostdive" class="settingsimage" src="images/settings.png"/>
-                  <div class="updatenumber"  ng-class="{favclickednumber: isActive(name.name)}">{{name.updates}}</div>
+                  <!--  <div class="updatenumber"  ng-class="{favclickednumber: isActive(name.name)}">{{name.updates}}</div> -->
                   <span>{{name.name}}<span>
                 </a>
               </div>
             </div>
 
-            <!-- Live Event-->
-            <div class="derp2" style="background-color:#343d46;">
-              <div style="  font-size:12px; padding:10px; padding-left:20px; font-weight:300; color:white; font-size:11px">Live Events</div>
-              <a ng-click="loadteslaData()" class="livetopics" style="text-decoration: none">
-                <span style="color:white; font-weight:normal">Tesla Model X Event
-                  <span>
-              </a>
-            </div>
+
 
             <div class="basesignature1" style="padding:10px; padding-left:13px; text-align:center; font-weight:500; color:grey"> Funnel © 2015
               <span>• Developed by Romario Coffie</span>
             </div>
 
-          </div>
+
         </div>
 
 
-        <div class=" mdl-cell--5-col-desktop" id="div1"  style="margin-left: 41px; margin-top:-8px">
+        <div class=" mdl-cell--6-col-desktop" style="padding-top:25px" id="div1" >
 
           <!-- Loadering icon-->
           <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate" style="display:none"></div>
@@ -158,33 +148,33 @@
               <div ng-click="hidethispost=true" class="hidetext">Hide post</div>
             </div>
             <div  class="cardcontainer">
-              <img class="sourceimage" src="http://www1.pcmag.com/media/images/391545-reddit-logo.jpg?thumb=y" alt="">
               <img class="arrowdown" src="images/arrowdown.png" ng-click="showhidepostdive = ! showhidepostdive" />
               <div class="cardsourcecontainer">
-                <a style="color:#034860; font-weight:600; font-size:12px; margin-top:15px; text-transform: capitalize;" ng-href="https://www.reddit.com/r/{{ data.data.subreddit }}">{{ data.data.subreddit }}</a>
+                <a ng-href="https://www.reddit.com/r/{{ data.data.subreddit }}">{{ data.data.subreddit }}</a>
+                <span style="float:right; padding-right:175px; font-family:opensans; text"> 7 Hours ago</span>
               </div>
-              <div style="height:auto; width:auto; background-color:rgba(0, 0, 0, 0.035); padding-bottom:15px; margin-top:24px;margin-bottom:2px; border-top:1px solid rgba(0,0,0, 0.05); border-bottom:1px solid rgba(0,0,0, 0.05)">
+
+              <div style="height:auto; width:auto; padding-bottom:15px; padding-top:15px;margin-bottom:2px; ">
+
+              <a style="font-weight: 600; font-size:10px; display:block " ng-href="https://www.reddit.com/user/{{ data.data.author }}">{{ data.data.author }}</a>
               <a class="cardtitle" ng-href="https://www.reddit.com{{ data.data.permalink }}">{{ data.data.title }}</a>
               <div class="imagediv" ng-hide="!data.data.preview.images[0].source.url ">
-                <a ng-href="{{ data.data.url}}">
+                <a style="width:inherit !important"ng-href="{{ data.data.url}}">
                   <img ng-src="{{data.data.preview.images[0].source.url}}" class="imageclass">
                 </a>
               </div>
               </div>
               <div class="commentcontainer">
-                <div class="mdl-card__supportingblack ">
-                  <div class="authorname">
-                    <img class="usericon" src="images/user.png" />
-                    <a style="font-weight: 600; " ng-href="https://www.reddit.com/user/{{ data.data.author }}">{{ data.data.author }}</a>
-                  </div>
-                  <div style="margin-top:-3px; display:inline-block; font-weight:600">
+                <div class="cardsection3font">
+
+                  <div style="margin-top:-3px; display:inline-block;">
                     <img class="upvoteicon" src="images/upvote.png" />
-                    <span>{{ data.data.ups }}
-                      <span>
+                    <span style="padding-left:3px">{{ data.data.ups }}</span>
                   </div>
+
                   <div class="fpcomment">
                     <img class="commenticon" src="images/comment.png" />
-                    <a style="margin-left:3px; font-weight: 600; " ng-href="https://www.reddit.com{{ data.data.permalink }}">{{ data.data.num_comments }} comments</a>
+                    <a style="margin-left:3px; font-weight:bold " ng-href="https://www.reddit.com{{ data.data.permalink }}">{{ data.data.num_comments }} comments</a>
                   </div>
                 </div>
               </div>
@@ -200,12 +190,24 @@
           </div>
         </div>
 
-        <!-- Subjects-->
-        <div class="mdl-cell--3-col-desktop" style="margin-top:-8px; margin-left:-24px">
+        <!-- Current Topic -->
+        <div class="mdl-cell--3-col-desktop">
           <div class="activity" id="toolbox">
-            <div class="activityheader">
-              <img class="activityicon" src="images/activity.png" />
-              <span>Activity</span>
+
+
+            <div class="subjectlist " id="toolbox" >
+              <div class="allsubredditsheader">
+                <span>Subreddits</span>
+
+              </div>
+              <form style="">
+                <input spellcheck="false" autocapitalize="off" type="minisearch" autocorrect="off"  ng-model="search" placeholder="Search for Subreddit... " ng-click="searchbarclick = ! searchbarclick">
+              </form>
+              <div ng-model="subjectsnames">
+                <a ng-click="loadData(name.url); updateModel(name.name);scroll()" ng-repeat="name in subjectsnames | filter:search" class="updatetopics"  ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+                  <span>{{name.name}}<span>
+                </a>
+              </div>
             </div>
 
           </div>
