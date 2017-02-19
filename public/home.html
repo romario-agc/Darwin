@@ -204,7 +204,7 @@
                 <input spellcheck="false" autocapitalize="off" type="minisearch" autocorrect="off"  ng-model="search" placeholder="Search for Subreddit... " ng-click="searchbarclick = ! searchbarclick">
               </form>
               <div ng-model="subjectsnames">
-                <a ng-click="loadData(name.url); updateModel(name.name);scroll()" ng-repeat="name in subjectsnames | filter:search" class="updatetopics"  ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+                <a ng-click="loadData(name.url); updateModel(name.name);scroll()" ng-class="{favclicked: isActive(name.name)}" ng-repeat="name in subjectsnames | filter:search" class="updatetopics"  ng-mouseenter="hover = true" ng-mouseleave="hover = false">
                   <span>{{name.name}}<span>
                 </a>
               </div>
