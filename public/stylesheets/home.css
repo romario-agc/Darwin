@@ -270,6 +270,7 @@ html,
       /* min-height: auto; */
       /* margin-top: 50px !important; */
       margin-left: 25px;
+      margin-right: 25px;
       transition-property: background border width height box-shadow;
       transition-duration: 0.1s;
       transition-timing-function: ease-in-out;
