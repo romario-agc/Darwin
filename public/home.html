@@ -145,13 +145,13 @@
           <!-- Post card -->
           <div class="mdl-frontpagecard" ng-init="hidethispost=false" ng-hide="hidethispost" ng-repeat="data in names.data.children">
             <div class="hidepostdiv" ng-if="showhidepostdive">
-              <div ng-click="hidethispost=true" class="hidetext">Hide post</div>
+              <div ng-click="hidethispost=true" class="hidetext" style="z-index:5">Hide post</div>
             </div>
             <div  class="cardcontainer">
               <img class="arrowdown" src="images/arrowdown.png" ng-click="showhidepostdive = ! showhidepostdive" />
               <div class="cardsourcecontainer">
                 <a ng-href="https://www.reddit.com/r/{{ data.data.subreddit }}">{{ data.data.subreddit }}</a>
-                <span style="float:right; padding-right:175px; font-family:opensans; text"> 7 Hours ago</span>
+                <span style="float:right; padding-right:175px; font-family:opensans; font-weight:500;  font-size:9px"> 7 Hours ago</span>
               </div>
 
               <div style="height:auto; width:auto; padding-bottom:15px; padding-top:15px;margin-bottom:2px; ">
@@ -198,7 +198,7 @@
             <div class="subjectlist " id="toolbox" >
               <div class="allsubredditsheader">
                 <span>Subreddits</span>
-
+                <div style="width:33px; height:1px; background-color:#e4e0e0; margin-top:10px"></div>
               </div>
               <form style="">
                 <input spellcheck="false" autocapitalize="off" type="minisearch" autocorrect="off"  ng-model="search" placeholder="Search for Subreddit... " ng-click="searchbarclick = ! searchbarclick">

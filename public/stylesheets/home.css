@@ -140,6 +140,9 @@ html,
    transition-timing-function: ease-in-out;
    cursor: pointer;
    background-color: white;
+   border: 1px solid #dbdbdb ;
+   border-radius: 3px;
+   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
   }
 
 
@@ -177,7 +180,9 @@ html,
     border: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
     */
-    border-bottom: 1px solid #f4f4f4;
+    border: 1px solid #dbdbdb ;
+   border-radius: 3px;
+   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
     width: auto;
     height: auto;
     background-color:white;
@@ -234,7 +239,9 @@ html,
     font-size: 12px;
     font-family: "helvetica neue", "Trebuchet MS", "Arial", sans-serif;
     background-color: #ffffff;
-    border-bottom: 1px solid #fafafa;
+    border: 1px solid #dbdbdb ;
+    border-radius: 3px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
     overflow:hidden;
     padding-bottom: 15px;
     margin-top: 8px;
