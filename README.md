@@ -9,7 +9,7 @@ https://obscure-waters-1317.herokuapp.com/?#
 
 ## How it works
 
-This backend is relatively simple, build with [NodeJS](https://nodejs.org/en/), the sever runs on the [ExpressJS](http://expressjs.com/) framework. The front end uses [angular 1](https://angularjs.org/).
+This backend is relatively simple, build with [NodeJS](https://nodejs.org/en/), the sever runs on the [ExpressJS](http://expressjs.com/) framework. The front end uses [Angular 1](https://angularjs.org/).
 
 The data is obtained using [Reddit's Api](https://www.reddit.com/dev/api/).
 
