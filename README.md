@@ -14,3 +14,14 @@ This backend is relatively simple, build with [NodeJS](https://nodejs.org/en/), 
 The data is obtained using [Reddit's Api](https://www.reddit.com/dev/api/).
 
 The site is also attached to a [MongoDB](https://www.mongodb.com/) Database and hosted on [Heroku](https://www.heroku.com/home).
+
+
+## Upcoming features
+
+Currently working on adding a few features to make the site complete.
+
+* User Profiles
+* Ability to subscribe to Subreddits
+* Mobile version of site
+* iOS Application
+* Maybe rebuild replacing angular with ReactJS [Tentative]
