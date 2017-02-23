@@ -192,7 +192,7 @@ html,
   }
 
   .activityheader {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     padding-top: 20px;
     font-family: Opensans;
@@ -227,30 +227,30 @@ html,
 
   .derp2 {
     display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: auto;
-    font-size: 12px;
-    font-family: "helvetica neue", "Trebuchet MS", "Arial", sans-serif;
-    background-color: #ffffff;
-    border: 1px solid #dbdbdb ;
-    border-radius: 3px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
-    overflow:hidden;
-    padding-bottom: 15px;
-    margin-top: 8px;
-    padding-right: 10%;
-    padding-left: 10%;
-    transition-property: background border width height box-shadow;
-    transition-duration: 0.1s;
-    transition-timing-function: ease-in-out;
-    cursor: pointer;
+display: -webkit-flex;
+display: -ms-flexbox;
+display: flex;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
+width: auto;
+font-size: 12px;
+font-family: "helvetica neue", "Trebuchet MS", "Arial", sans-serif;
+/* background-color: #ffffff; */
+/* border: 1px solid #dbdbdb; */
+/* border-radius: 3px; */
+/* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05); */
+overflow: hidden;
+padding-bottom: 15px;
+margin-top: 8px;
+padding-right: 10%;
+padding-left: 10%;
+transition-property: background border width height box-shadow;
+transition-duration: 0.1s;
+transition-timing-function: ease-in-out;
+cursor: pointer;
     /*
 
     border-radius: 2px;
@@ -276,8 +276,8 @@ html,
     overflow: hidden;
       /* min-height: auto; */
       /* margin-top: 50px !important; */
-      margin-left: 25px;
-      margin-right: 25px;
+      margin-left: 15px;
+      margin-right: 15px;
       transition-property: background border width height box-shadow;
       transition-duration: 0.1s;
       transition-timing-function: ease-in-out;
@@ -456,7 +456,7 @@ html,
   .standardbutton {
     position: relative;
     height: auto;
-    border: 1px solid #f3f1f1;
+    border: 1px solid rgb(224, 224, 224);
     margin-bottom: 12px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -469,61 +469,60 @@ html,
     letter-spacing: 0.58px;
     text-decoration: none;
     text-transform: uppercase;
-    margin-top:25px;
-    text-align:center;
-    color:#4990E2;
+    margin-top: 25px;
+    text-align: center;
+    color: #4990E2;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
   }
 
   .standardbutton:hover {
-    background-color: #f4f4f4;
     text-decoration: none;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
   }
 
   .standardbutton:active{
-    background-color: white;
-    color: white;
   }
 
   .updatetopics {
     position: relative;
     height: auto;
-    border: 1px solid #f3f1f1;
-    margin-bottom: 12px;
+    border-bottom: 1px solid #f3f1f1;
     padding-top: 13px;
-    padding-bottom: 11px;
-    padding-left: 25px;
+    padding-bottom: 13px;
+    padding-left: 15px;
     text-align: left;
-    font-size: 9px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     background-color: rgb(245, 245, 245, 0.06);
     cursor: pointer;
-    width: 85%;
-    letter-spacing: 0.58px;
+    width: 90%;
+    letter-spacing: -0.18px;
     text-decoration: none;
-    color: black;
-    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.86);
   }
 
   .updatetopics:hover {
-    background-color: #f4f4f4;
+    background-color:  rgba(0, 0, 0, 0.02);
     text-decoration: none;
+    order-bottom: none;
+    border-radius: 3px
   }
 
   .updatetopics:active{
-    background-color: #4990e2;
-    color: white;
+    color: #4990e2;
+    order-bottom: none;
   }
 
 
   .favclicked{
-    background-color: #4990e2;
-    color: white !important;
+    color: #4990e2 !important;
     border: none;
+    font-weight: 500;
   }
 
   .favclicked:hover{
-    background-color:#4990e2;
-    color: white !important
   }
 
   .favclickednumber{
@@ -1053,18 +1052,18 @@ input[type=text]:focus {
 }
 
 input[type=minisearch] {
-  background-color: white;
-  border: 1px solid #d4d4d4;
-  color: black !important;
-  height: 40px;
-  padding: 5px;
-  width: 85%;
-  margin-bottom: 15px;
-  margin-top: 10px;
-  font-size: 11px !important;
-  padding-left: 15px;
-  height: 25px;
-  outline: none;
+  background-color: #f5f5f5;
+    border: 1px solid white;
+    color: black !important;
+    height: 40px;
+    padding: 5px;
+    width: 90%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-size: 11px !important;
+    padding-left: 15px;
+    height: 25px;
+    outline: none;
 }
 
 .searchdropdown{
